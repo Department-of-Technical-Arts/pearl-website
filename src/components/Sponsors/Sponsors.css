@@ -1,0 +1,223 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
+.background-container-gallery {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+}
+
+.background-image-sponsors{
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("../../assets/anirudh-Xu4Pz7GI9JY-unsplash\ 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  max-width: 100%;
+  animation: 1s ease-out 0s 1 zoomIn2;
+}
+
+
+.image-gallery-spons {
+  z-index: -1;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("../../assets/anirudh-Xu4Pz7GI9JY-unsplash\ 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  animation: 1s ease-out 0s 1 zoomIn2;
+}
+
+.content-gallery-spons {
+  position: absolute;
+  height: 201px;
+  width: 609px;
+  
+  
+}
+
+.pepsico-image{
+  height: 15vh;
+}
+.oursponsors-title {
+  text-align: center;
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  display: inline-flex;
+  
+  
+  color: #e9e9dd;
+ 
+  padding-top: 200px;
+  justify-items: center;
+  align-items: center;
+  place-items: center;
+}
+.text-spons{
+  text-align: center;
+}
+.heading-text-spons {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 80px;
+  font-weight: 600;  
+  color: #e9e9dd;
+  padding-top:6%;
+  text-align: center;
+  justify-items: center;
+  
+  
+}
+.heading-text-old-spons {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 80px;
+  font-weight: 600;  
+  color: #e9e9dd;  
+  text-align: center;
+  justify-items: center;
+  
+  
+}
+.logo-image {
+  height: 10vh;
+  width: auto;
+  border-radius: 10px;
+}
+.forever-logo {
+  height: 70px;
+  
+}
+
+.adda-logo {
+  height: 150px;
+  width: auto;
+}
+.redfm-logo {
+  height: 150px;
+  width: auto;
+  border-radius: 10px;
+}
+.zee-image{
+  height : 130px;
+  width:auto;
+}
+.dna-image{
+  height : 130px;
+  width:auto;
+}
+.asus-image{
+  height : 130px;
+  width:auto;
+}
+.sponsors-title {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 600;  
+  color: #e9e9dd;
+  padding-top:6%;
+  text-align: center;
+  justify-items: center;
+  
+  
+}
+
+.cotitle-sponsors {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 600;
+  height: 182px;
+  color: #e9e9dd;
+  padding-top: 230px;
+  transform: translate(-50%, -50%);
+}
+.gold-sponsors {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 600;
+  height: 182px;
+  color: #e9e9dd;
+  padding-top: 700px;
+  transform: translate(-50%, -50%);
+}
+.silver-sponsors {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 600;
+  height: 182px;
+  color: #e9e9dd;
+  padding-top: 1300px;
+  transform: translate(-50%, -50%);
+}
+
+.associate-sponsors {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 600;
+  height: 182px;
+  color: #e9e9dd;
+  padding-top: 500px;
+  transform: translate(-50%, -50%);
+}
+
+.associate-sponsors-2 {
+  position: relative;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 50px;
+  font-weight: 600;
+  height: 182px;
+  color: #e9e9dd;
+  padding-top: 450px;
+  transform: translate(-50%, -50%);
+}
+.card-container-gallery {
+  position: absolute;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 34px;
+  width: 100vw;
+  top: 40%;
+  justify-content: space-around;
+  padding: 0 10%;
+  align-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+@media screen and (max-width: 1000px) {
+
+  .sponsors-title{
+    font-size: 35px;
+    padding :5vh
+  }
+  .oursponsors-title{
+    padding-bottom: 5vh;
+  }
+}

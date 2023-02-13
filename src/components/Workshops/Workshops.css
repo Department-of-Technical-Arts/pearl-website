@@ -1,0 +1,225 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&display=swap");
+body {
+  min-height: 100%;
+  background-size: cover;
+  /* background-size: auto 100%; */
+  background-repeat: no-repeat;
+}
+.background-container-workshops {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.background-workshops {
+  top: 0;
+  left: 0;
+  background-color: black;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+}
+
+/* .image-workshops {
+  top: 0;
+  left: 0;
+  position: absolute;
+  background-image: url("../../assets/earth-g174993377_1920\ 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  animation: 1s ease-out 0s 1 zoomIn2;
+}
+
+.content-workshops {
+  position: relative;
+  height: 201px;
+  width: 609px;
+  top: 35%;
+  left: 50%;
+  animation: 2s ease-out 0s 1 fadeIn;
+}
+
+.content-workshops h1 {
+  position: absolute;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 150px;
+  font-weight: 600;
+  height: 182px;
+  mix-blend-mode: difference;
+  color: #e9e9dd;
+  transform: translate(-50%, -50%);
+}
+.headerContainer {
+  display: flex;
+  margin-top: 311px;
+  justify-content: center;
+}
+.header {
+  font-family: "Inter", sans-serif;
+
+  font-size: 100px;
+  font-weight: 600;
+  line-height: 182px;
+  letter-spacing: 0em;
+
+  mix-blend-mode: difference;
+
+  color: #e9e9dd; */
+
+  /* left: 471px; */
+  /* top: 311px; */
+  /* border-radius: nullpx;
+}
+.eventsContainer {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40px;
+}
+.subHeader {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 27px; */
+  /* identical to box height */
+
+  /* color: #fffffc;
+}
+.sliderContainer {
+  margin-right: 20px;
+}
+.leftarrow {
+  position: absolute;
+  left: 800px;
+}
+.rightarrow {
+  position: absolute;
+  left: 1350px;
+} */
+
+.image-workshops {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("../../assets/earth-g174993377_1920\ 1.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  animation: 1s ease-out 0s 1 zoomIn2;
+  background-attachment: fixed;
+
+}
+
+.content-workshops {
+  position: relative;
+  height: 20vh;
+  width: 30vw;
+  top: 35%;
+  left: 50%;
+  animation: 2s ease-out 0s 1 fadeIn;
+}
+
+.content-workshops h1 {
+  position: absolute;
+  right: -40.5vw;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 11vw;
+  font-weight: 600;
+  height: 20vh;
+  mix-blend-mode: difference;
+  color: #e9e9dd;
+  transform: translate(-50%, -50%);
+}
+
+
+.card-container-workshops{
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100vw;
+  top: 60%;
+  justify-content: space-around;
+  flex-flow: wrap;
+  padding: 0 12%;
+  flex: 0 1 auto;
+}
+
+.hover-cards-workshops {
+  background-color: black;
+  position: relative;
+  height: 200px;
+  width: 250px;
+  background-size:contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-bottom: 55%;
+  margin-left: 1.5rem;
+  font-family: 'Inter';
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  padding-left:10%;
+  margin-right: 1rem;
+  margin-left: 1rem;  
+  transition: transform 0.3s;
+}
+.hover-cards-workshops:hover {
+  transform:scale(1.3);
+  z-index: 10;
+}
+
+.hover-cards-workshops p {
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
+
+}
+/*  
+@media screen and (max-width: 500px) {
+  .hover-cards-workshops{
+    margin-bottom: 6rem;
+    margin-left:1.5rem;
+    
+  } */
+  /* .card-container-workshops{
+    align-items: center;
+
+  }
+} */
+
+@media screen and (max-width: 560px) {
+  .hover-cards-workshops{
+    margin-bottom: 6rem;
+    margin-left:1rem;
+    width: 280px;
+    background-position: top;
+    margin-bottom: 40%;
+  }
+  .hover-cards-workshops:hover {
+      transform:scale(1);
+      z-index: 10;
+    }
+}
