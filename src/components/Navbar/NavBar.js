@@ -3,7 +3,7 @@ import DrawerComp from "../Drawer/Drawer";
 import { AppBar, Toolbar, useMediaQuery } from "@mui/material";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
-import mainLogo from "../../images/Asset2.png";
+import mainLogo from "../../assets-pearl/Pearl_logo2023.png";
 
 const NavBar = () => {
   const isTablet = useMediaQuery("(max-width:480px)", "(max-height:1024px)");

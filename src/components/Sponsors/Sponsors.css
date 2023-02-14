@@ -10,21 +10,23 @@
   height: 100vh;
   width: 100vw;
 }
+.background-spons {
+  background-color: #d8f9fe;
+}
 
-.background-image-sponsors{
+.background-image-sponsors {
   top: 0;
   left: 0;
   position: fixed;
-  background-image: url("../../assets/anirudh-Xu4Pz7GI9JY-unsplash\ 1.png");
+  background-image: url("../../assets-pearl/sponsors_page-01.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
   max-width: 100%;
-  animation: 1s ease-out 0s 1 zoomIn2;
+  animation: 1s ease-out 0s 1 zoomOut;
 }
-
 
 .image-gallery-spons {
   z-index: -1;
@@ -45,11 +47,9 @@
   position: absolute;
   height: 201px;
   width: 609px;
-  
-  
 }
 
-.pepsico-image{
+.pepsico-image {
   height: 15vh;
 }
 .oursponsors-title {
@@ -58,16 +58,15 @@
   font-family: "Inter";
   font-style: normal;
   display: inline-flex;
-  
-  
+
   color: #e9e9dd;
- 
+
   padding-top: 200px;
   justify-items: center;
   align-items: center;
   place-items: center;
 }
-.text-spons{
+.text-spons {
   text-align: center;
 }
 .heading-text-spons {
@@ -75,25 +74,21 @@
   font-family: "Inter";
   font-style: normal;
   font-size: 80px;
-  font-weight: 600;  
+  font-weight: 600;
   color: #e9e9dd;
-  padding-top:6%;
+  padding-top: 6%;
   text-align: center;
   justify-items: center;
-  
-  
 }
 .heading-text-old-spons {
   position: relative;
   font-family: "Inter";
   font-style: normal;
   font-size: 80px;
-  font-weight: 600;  
-  color: #e9e9dd;  
+  font-weight: 600;
+  color: #e9e9dd;
   text-align: center;
   justify-items: center;
-  
-  
 }
 .logo-image {
   height: 10vh;
@@ -102,7 +97,6 @@
 }
 .forever-logo {
   height: 70px;
-  
 }
 
 .adda-logo {
@@ -114,30 +108,28 @@
   width: auto;
   border-radius: 10px;
 }
-.zee-image{
-  height : 130px;
-  width:auto;
+.zee-image {
+  height: 130px;
+  width: auto;
 }
-.dna-image{
-  height : 130px;
-  width:auto;
+.dna-image {
+  height: 130px;
+  width: auto;
 }
-.asus-image{
-  height : 130px;
-  width:auto;
+.asus-image {
+  height: 130px;
+  width: auto;
 }
 .sponsors-title {
   position: relative;
   font-family: "Inter";
   font-style: normal;
   font-size: 50px;
-  font-weight: 600;  
+  font-weight: 600;
   color: #e9e9dd;
-  padding-top:6%;
+  padding-top: 6%;
   text-align: center;
   justify-items: center;
-  
-  
 }
 
 .cotitle-sponsors {
@@ -212,12 +204,11 @@
 }
 
 @media screen and (max-width: 1000px) {
-
-  .sponsors-title{
+  .sponsors-title {
     font-size: 35px;
-    padding :5vh
+    padding: 5vh;
   }
-  .oursponsors-title{
+  .oursponsors-title {
     padding-bottom: 5vh;
   }
 }

@@ -15,7 +15,7 @@ body {
 .background-workshops {
   top: 0;
   left: 0;
-  background-color: black;
+  background-color: #f8e5e8;
   position: absolute;
   background-size: cover;
   background-repeat: no-repeat;
@@ -76,9 +76,9 @@ body {
 
   color: #e9e9dd; */
 
-  /* left: 471px; */
-  /* top: 311px; */
-  /* border-radius: nullpx;
+/* left: 471px; */
+/* top: 311px; */
+/* border-radius: nullpx;
 }
 .eventsContainer {
   display: flex;
@@ -92,9 +92,9 @@ body {
   font-weight: 700;
   font-size: 22px;
   line-height: 27px; */
-  /* identical to box height */
+/* identical to box height */
 
-  /* color: #fffffc;
+/* color: #fffffc;
 }
 .sliderContainer {
   margin-right: 20px;
@@ -107,21 +107,29 @@ body {
   position: absolute;
   left: 1350px;
 } */
-
+@keyframes zoomOut {
+  0% {
+    scale: 1.5;
+    opacity: 0;
+  }
+  100% {
+    scale: 1;
+    opacity: 1;
+  }
+}
 .image-workshops {
   top: 0;
   left: 0;
   position: fixed;
-  background-image: url("../../assets/earth-g174993377_1920\ 1.png");
+  background-image: url("../../assets-pearl/web_workshops_Mesa de trabajo 1.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  animation: 1s ease-out 0s 1 zoomIn2;
+  animation: 1.5s ease-out 0s 1 zoomOut;
   background-attachment: fixed;
-
 }
 
 .content-workshops {
@@ -146,8 +154,7 @@ body {
   transform: translate(-50%, -50%);
 }
 
-
-.card-container-workshops{
+.card-container-workshops {
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -161,29 +168,29 @@ body {
 }
 
 .hover-cards-workshops {
-  background-color: black;
+  background-color: #f8e5e8;
   position: relative;
   height: 200px;
   width: 250px;
-  background-size:contain;
+  background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
   border: 1px solid white;
   border-radius: 15px;
   margin-bottom: 55%;
   margin-left: 1.5rem;
-  font-family: 'Inter';
+  font-family: "Inter";
   color: #fffffc;
   text-transform: uppercase;
   bottom: 0;
   animation: 2s ease-out 0s 1 fadeIn;
-  padding-left:10%;
+  padding-left: 10%;
   margin-right: 1rem;
-  margin-left: 1rem;  
+  margin-left: 1rem;
   transition: transform 0.3s;
 }
 .hover-cards-workshops:hover {
-  transform:scale(1.3);
+  transform: scale(1.3);
   z-index: 10;
 }
 
@@ -195,7 +202,6 @@ body {
   transform: translate(-50%);
   line-height: 27px;
   width: 210px;
-
 }
 /*  
 @media screen and (max-width: 500px) {
@@ -204,22 +210,22 @@ body {
     margin-left:1.5rem;
     
   } */
-  /* .card-container-workshops{
+/* .card-container-workshops{
     align-items: center;
 
   }
 } */
 
 @media screen and (max-width: 560px) {
-  .hover-cards-workshops{
+  .hover-cards-workshops {
     margin-bottom: 6rem;
-    margin-left:1rem;
+    margin-left: 1rem;
     width: 280px;
     background-position: top;
     margin-bottom: 40%;
   }
   .hover-cards-workshops:hover {
-      transform:scale(1);
-      z-index: 10;
-    }
+    transform: scale(1);
+    z-index: 10;
+  }
 }

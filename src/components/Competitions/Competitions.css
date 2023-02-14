@@ -18,20 +18,21 @@ body {
   height: 100%;
   width: 100%;
   overflow: visible;
+  background-color: #f7d1de;
 }
 
 .image-competitions {
   top: 0;
   left: 0;
   position: fixed;
-  background-image: url("../../assets/earth-g174993377_1920\ 1.png");
+  background-image: url("../../assets-pearl/web_competitions.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  animation: 1s ease-out 0s 1 zoomIn2;
+  animation: 2s ease-out 0s 1 zoomOut;
   background-attachment: fixed;
 }
 
@@ -58,7 +59,6 @@ body {
 }
 
 .card-container-competitions {
-  
   position: absolute;
   display: flex;
   flex-direction: row;
@@ -72,7 +72,7 @@ body {
 }
 
 .hover-cards-competitions {
-  background-color: black;
+  background-color: #f7d1de;
   position: relative;
   height: 200px;
   width: 250px;

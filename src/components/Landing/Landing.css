@@ -11,24 +11,44 @@
   /*height: 80vh;*/
   width: 100%;
 }
-
+.landing-container {
+  position: absolute;
+  /* height: 150vh; */
+  width: 100%;
+}
 .bg {
+  position: absolute;
   top: 0;
   left: 0;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
   height: 100%;
   width: 100%;
   position: fixed;
-  background-image: url(../../assets/aman-pal-1c2iHG5_MgE-unsplash.jpg);
+  background-image: url(../../assets-pearl/website_landing-01-01.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  z-index: -1;
 }
 
 .bg.landing-title {
   position: absolute;
+}
+
+.landing-desc-container {
+  position: absolute;
+  top: 14vh;
+  left: 56vw;
+  width: 40vw;
+  height: 48vh;
+  background-color: #ffffff4e;
+  border-radius: 4vmin;
+  padding: 2%;
+}
+.landing-desc {
+  font-size: 3vmin;
+  text-align: left;
+  font-weight: 600;
+  color: #e4b963;
 }
 
 .image-landing {

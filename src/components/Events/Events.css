@@ -1,100 +1,100 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes zoomIn2 {
-    0% {
-        transform: scale(1);
-    }
-    100% {
-        transform: scale(1.5);
-    }
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
 }
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@600&display=swap");
 .background-container-events {
-    position: relative;
-    height: 100vh;
-    width: 100vw;
-    overflow: auto;
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
 }
 
-.background {
-    top: 0;
-    left: 0;
-    background-color: black;
-    position: absolute;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    overflow: visible;
+.background-events {
+  top: 0;
+  left: 0;
+  background-color: #d8f9fe;
+  position: absolute;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
 }
 
 .image-events {
-    top: 0;
-    left: 0;
-    position: fixed;
-    z-index: 0;
-    background-image: url("../../assets/earth-g174993377_1920\ 1.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-    animation: 1s ease-out 0s 1 zoomIn2;
-    background-attachment: fixed;
+  top: 0;
+  left: 0;
+  position: fixed;
+  z-index: 0;
+  background-image: url("../../assets-pearl/website__iconspg-01-01.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  animation: 1s ease-out 0s 1 zoomOut;
+  background-attachment: fixed;
 }
 
 .content-events {
-    position: relative;
-    height: 20vh;
-    width: 30vw;
-    top: 35%;
-    left: 50%;
-    animation: 2s ease-out 0s 1 fadeIn;
+  position: relative;
+  height: 20vh;
+  width: 30vw;
+  top: 35%;
+  left: 50%;
+  animation: 2s ease-out 0s 1 fadeIn;
 }
 
 .content-events h1 {
-    position: absolute;
-    padding-top: 10vh;
-    font-family: 'Inter';
-    font-style: normal;
-    font-size: 11vw;
-    font-weight: 600;
-    height: 40vh;
-    mix-blend-mode: difference;
-    color: #e9e9dd;
-    transform: translate(-50%, -50%);
+  position: absolute;
+  padding-top: 10vh;
+  font-family: "Inter";
+  font-style: normal;
+  font-size: 11vw;
+  font-weight: 600;
+  height: 40vh;
+  mix-blend-mode: difference;
+  color: #e9e9dd;
+  transform: translate(-50%, -50%);
 }
 
 .card-container {
-    position: absolute;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    width: 100vw;
-    top: 60%;
-    justify-content: space-around;
-    flex-flow: wrap;
-    padding: 0 12%;
-    flex: 0 1 auto;
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100vw;
+  top: 60%;
+  justify-content: space-around;
+  flex-flow: wrap;
+  padding: 0 12%;
+  flex: 0 1 auto;
 }
 .hover-cards-passes {
-    background-color: black;
+  background-color: black;
   position: relative;
   height: 390px;
   width: 400px;
@@ -116,184 +116,182 @@
   transition: transform 0.5s;
 }
 .hover-cards-one {
-    position: relative;
-    background-image: url(../../assets/Algomaniac_dp.jpg);
-    height: 220px;
-    width: 180px;
-    border-radius: 15px;
-    margin-bottom: 20%;
-    font-family: 'Inter';
-    color: #fffffc;
-    text-transform: uppercase;
-    bottom: 0;
-    animation: 2s ease-out 0s 1 fadeIn;
-    background-size: 100% 100%;
-    transition: transform 0.5s;
+  position: relative;
+  background-image: url(../../assets/Algomaniac_dp.jpg);
+  height: 220px;
+  width: 180px;
+  border-radius: 15px;
+  margin-bottom: 20%;
+  font-family: "Inter";
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  background-size: 100% 100%;
+  transition: transform 0.5s;
 }
 .hover-cards-two {
-    position: relative;
-    background-image: url(../../assets/codejam_dp.jpg);
-    height: 220px;
-    width: 180px;
-    border-radius: 15px;
-    margin-bottom: 20%;
-    font-family: 'Inter';
-    color: #fffffc;
-    text-transform: uppercase;
-    bottom: 0;
-    animation: 2s ease-out 0s 1 fadeIn;
-    background-size: cover;
-    transition: transform 0.5s;
+  position: relative;
+  background-image: url(../../assets/codejam_dp.jpg);
+  height: 220px;
+  width: 180px;
+  border-radius: 15px;
+  margin-bottom: 20%;
+  font-family: "Inter";
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  background-size: cover;
+  transition: transform 0.5s;
 }
 .hover-cards-three {
-    position: relative;
-    background-image: url(../../assets/nidhinarwal_cover.jpeg);
-    background-position: center;
-    height: 220px;
-    width: 180px;
-    border-radius: 15px;
-    margin-bottom: 20%;
-    font-family: 'Inter';
-    color: #fffffc;
-    text-transform: uppercase;
-    bottom: 0;
-    animation: 2s ease-out 0s 1 fadeIn;
-    background-size: cover;
-    transition: transform 0.5s;
+  position: relative;
+  background-image: url(../../assets/nidhinarwal_cover.jpeg);
+  background-position: center;
+  height: 220px;
+  width: 180px;
+  border-radius: 15px;
+  margin-bottom: 20%;
+  font-family: "Inter";
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  background-size: cover;
+  transition: transform 0.5s;
 }
 .hover-cards-four {
-    position: relative;
-    background-image: url(../../assets/pro-show\ cover.JPG);
-    background-size: cover;
-    height: 220px;
-    width: 180px;
-    border-radius: 15px;
-    margin-bottom: 20%;
-    font-family: 'Inter';
-    color: #fffffc;
-    text-transform: uppercase;
-    bottom: 0;
-    animation: 2s ease-out 0s 1 fadeIn;
-    background-size: cover;
-    transition: transform 0.5s;
+  position: relative;
+  background-image: url(../../assets/pro-show\ cover.JPG);
+  background-size: cover;
+  height: 220px;
+  width: 180px;
+  border-radius: 15px;
+  margin-bottom: 20%;
+  font-family: "Inter";
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  background-size: cover;
+  transition: transform 0.5s;
 }
 .hover-cards-five {
-    position: relative;
-    background-position: center;
-    height: 220px;
-    width: 180px;
-    border-radius: 15px;
-    margin-bottom: 20%;
-    font-family: 'Inter';
-    color: #fffffc;
-    text-transform: uppercase;
-    bottom: 0;
-    animation: 2s ease-out 0s 1 fadeIn;
-    background-size: contain;
-    transition: transform 0.5s;
+  position: relative;
+  background-position: center;
+  height: 220px;
+  width: 180px;
+  border-radius: 15px;
+  margin-bottom: 20%;
+  font-family: "Inter";
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  background-size: contain;
+  transition: transform 0.5s;
 }
 
 .hover-cards-one p {
-    font-size: 18px;
-    position: absolute;
-    top: 225px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 27px;
-    width: 210px;
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
 }
 .passes-name {
-    font-size: 22px;
-    position: absolute;
-    top: 270px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 27px;
-    width: 210px;
+  font-size: 22px;
+  position: absolute;
+  top: 270px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
 }
 .passes-prize {
-    background-color: rgba(250, 250, 250, 0.2);
-    border-radius: 10px;
-    font-size: 20px;
-    position: absolute;
-    top: 230px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 30px;
-    width: 210px;
+  background-color: rgba(250, 250, 250, 0.2);
+  border-radius: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 230px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 30px;
+  width: 210px;
 }
 .passes-buy {
-    background-color: rgba(250, 250, 250, 0.05);
-    border-radius: 10px;
-    font-size: 20px;
-    position: absolute;
-    top: 30px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 30px;
-    width: 210px;
+  background-color: rgba(250, 250, 250, 0.05);
+  border-radius: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 30px;
+  width: 210px;
 }
 .hover-cards-two p {
-    font-size: 18px;
-    position: absolute;
-    top: 225px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 27px;
-    width: 210px;
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
 }
 .hover-cards-three p {
-    font-size: 18px;
-    position: absolute;
-    top: 225px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 27px;
-    width: 210px;
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
 }
 .hover-cards-four p {
-    font-size: 18px;
-    position: absolute;
-    top: 225px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 27px;
-    width: 210px;
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
 }
 .hover-cards-five p {
-    font-size: 18px;
-    position: absolute;
-    top: 225px;
-    left: 50%;
-    transform: translate(-50%);
-    line-height: 27px;
-    width: 210px;
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
 }
 .hover-cards-one:hover {
-    transform:scale(1.3);
-    z-index: 10;
-    
+  transform: scale(1.3);
+  z-index: 10;
 }
 .hover-cards-passes:hover {
-    transform:scale(1.3);
-    z-index: 10;
-    
+  transform: scale(1.3);
+  z-index: 10;
 }
 .hover-cards-two:hover {
-    transform:scale(1.3);
-    z-index: 10;
+  transform: scale(1.3);
+  z-index: 10;
 }
 .hover-cards-three:hover {
-    transform:scale(1.3);
-    z-index: 10;
+  transform: scale(1.3);
+  z-index: 10;
 }
 .hover-cards-four:hover {
-    transform:scale(1.3);
-    z-index: 10;
+  transform: scale(1.3);
+  z-index: 10;
 }
 .hover-cards-five:hover {
-    transform:scale(1.3);
-    z-index: 10;
+  transform: scale(1.3);
+  z-index: 10;
 }
 /* .row{
     display: flex;
@@ -301,74 +299,69 @@
     justify-content: space-around;
     flex-flow: wrap;
   */
-  /* } */
-  .column {
-    float: left;
-    width: 25%;
-    padding: 10px;
-    /* height: 300px;  */
-  }
+/* } */
+.column {
+  float: left;
+  width: 25%;
+  padding: 10px;
+  /* height: 300px;  */
+}
 
 @media screen and (max-width: 320px) {
-    .card-container{
-      margin-bottom: 6rem;
-
-    }
+  .card-container {
+    margin-bottom: 6rem;
   }
-  @media (min-width: 300px) and (max-width:650px){
-    .hover-cards-one{
-        width: 280px;
-        margin-bottom: 30%;
-      }
-      .hover-cards-passes{
-        width: 280px;
-        margin-bottom: 30%;
-      }
-      .hover-cards-two{
-        width: 280px;
-        margin-bottom: 30%;
-      }
-      .hover-cards-three{
-        width: 280px;
-        margin-bottom: 30%;
-      }
-      .hover-cards-four{
-        width: 280px;
-        margin-bottom: 30%;
-      
-    }
-    .hover-cards-five{
-        width: 280px;
-        margin-bottom: 30%;
-      
-    }
-    .hover-cards-passes:hover {
-        transform:scale(1);
-        z-index: 10;
-        
-    }
-      .hover-cards-one:hover {
-        transform:scale(1);
-        z-index: 10;
-        
-    }
-    .hover-cards-two:hover {
-        transform:scale(1);
-        z-index: 10;
-    }
-    .hover-cards-three:hover {
-        transform:scale(1);
-        z-index: 10;
-    }
-    .hover-cards-four:hover {
-        transform:scale(1);
-        z-index: 10;
-    }
-    .hover-cards-five:hover {
-        transform:scale(1);
-        z-index: 10;
-    }
-    .image-events {
-        position: fixed;
-    }
+}
+@media (min-width: 300px) and (max-width: 650px) {
+  .hover-cards-one {
+    width: 280px;
+    margin-bottom: 30%;
   }
+  .hover-cards-passes {
+    width: 280px;
+    margin-bottom: 30%;
+  }
+  .hover-cards-two {
+    width: 280px;
+    margin-bottom: 30%;
+  }
+  .hover-cards-three {
+    width: 280px;
+    margin-bottom: 30%;
+  }
+  .hover-cards-four {
+    width: 280px;
+    margin-bottom: 30%;
+  }
+  .hover-cards-five {
+    width: 280px;
+    margin-bottom: 30%;
+  }
+  .hover-cards-passes:hover {
+    transform: scale(1);
+    z-index: 10;
+  }
+  .hover-cards-one:hover {
+    transform: scale(1);
+    z-index: 10;
+  }
+  .hover-cards-two:hover {
+    transform: scale(1);
+    z-index: 10;
+  }
+  .hover-cards-three:hover {
+    transform: scale(1);
+    z-index: 10;
+  }
+  .hover-cards-four:hover {
+    transform: scale(1);
+    z-index: 10;
+  }
+  .hover-cards-five:hover {
+    transform: scale(1);
+    z-index: 10;
+  }
+  .image-events {
+    position: fixed;
+  }
+}

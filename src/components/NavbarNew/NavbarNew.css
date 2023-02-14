@@ -1,0 +1,72 @@
+:root {
+  --primary-color: #07067f;
+}
+.btn-custom {
+  color: white !important;
+  /* background-color: #dcaa59; */
+  background-color: #e4b963;
+  border-color: #e4b963;
+  border: 0.3vmin solid;
+  font-weight: 600;
+}
+.btn-custom.active {
+  background-color: white;
+  border-color: #e4b963;
+  color: #e4b963 !important;
+  border: 0.3vmin solid;
+  font-weight: 600;
+}
+.btn-custom:hover {
+  background-color: white;
+  border-color: #e4b963;
+  color: #e4b963 !important;
+}
+.navbar {
+  color: white;
+  /* position: fixed; */
+}
+
+.navItem {
+  color: white;
+}
+.logo-title {
+  font-family: "Slant";
+  font-size: x-large;
+  color: #07067f;
+}
+.nav-img {
+  width: 20vw;
+}
+
+@keyframes fadeIn {
+  0% {
+    background-color: rgb(0, 0, 0, 0);
+    -webkit-box-shadow: 0 8px 6px -6px rgb(0, 0, 0, 0);
+    -moz-box-shadow: 0 8px 6px -6px rgb(0, 0, 0, 0);
+    box-shadow: 0 8px 6px -6px rgb(0, 0, 0, 0);
+  }
+  100% {
+    background-color: white;
+    -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999;
+  }
+}
+
+.add {
+  animation: 1s ease-out 0s 1 fadeIn;
+  background-color: white;
+  -webkit-box-shadow: 0 8px 6px -6px #999;
+  -moz-box-shadow: 0 8px 6px -6px #999;
+  box-shadow: 0 8px 6px -6px #999;
+}
+
+@media screen and (max-width: 500px) and (min-width: 320px) {
+  .nav-img {
+    width: 45vw;
+  }
+  .logo-title {
+    font-family: "Slant";
+    font-size: large;
+  }
+}
