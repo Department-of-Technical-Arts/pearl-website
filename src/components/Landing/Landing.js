@@ -121,7 +121,7 @@ const Landing = () => {
                   <iframe
                     width="853"
                     height="480"
-                    src={`https://www.youtube.com/embed/Rl1yIND40lU`}
+                    src={"https://www.youtube.com/embed/ajXYdXiUkWc"}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title="2017"
