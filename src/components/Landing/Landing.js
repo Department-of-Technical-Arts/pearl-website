@@ -3,6 +3,8 @@ import "./Landing.css";
 import { useNavigate } from "react-router-dom";
 import Standout from "../Standout/Standout";
 import { useScroll } from "framer-motion";
+import { Animator, batch, Fade, FadeIn, ScrollContainer, ScrollPage, Sticky, ZoomIn } from "react-scroll-motion";
+import bg3 from '../../assets-pearl/website_landing-01-01.png'
 
 const Landing = () => {
   // const navigate = useNavigate();
@@ -41,28 +43,76 @@ const Landing = () => {
 
   return (
     <div>
-      <div className="landing-container" ref={elementRef}>
-        <div className="bg"></div>
-        {/* <h4 className="dates">25-27 November</h4> */}
-        {/* {scrolling && (
-              <p className="scroll-text">
-                {isTouch.matches ? "SWIPE UP" : "SCROLL DOWN"}
-              </p>
-            )} */}
-        {/*<h4 className="countdown">{`${days}d : ${hours}h : ${minutes}m`}</h4>*/}
-        {/* <Standout /> */}
-        <div className="landing-desc-container">
-          <p className="landing-desc">
-            Pearl is the annual national cultural fest of BITS Pilani, Hyderabad
-            Campus. Incepted in 2009 as an intra-college festival, a year after
-            the foundation of BITS Pilani, Hyderabad, the fest grew into a
-            national level college cultural fest with participation from more
-            than 50 colleges across India. This year's travel theme is just one
-            more reason to look forward to the annual cultural fest that we know
-            and adore.
-          </p>
-        </div>
-      </div>
+      <ScrollContainer>
+        <ScrollPage>
+          <Animator >
+            <div className="landing-container" ref={elementRef}>
+              <div className="bg"></div>
+              {/* <h4 className="dates">25-27 November</h4> */}
+              {/* {scrolling && (
+                    <p className="scroll-text">
+                      {isTouch.matches ? "SWIPE UP" : "SCROLL DOWN"}
+                    </p>
+                  )} */}
+              {/*<h4 className="countdown">{`${days}d : ${hours}h : ${minutes}m`}</h4>*/}
+              {/* <Standout /> */}
+              <div className="landing-desc-container">
+                <p className="landing-desc">
+                  Pearl is the annual national cultural fest of BITS Pilani, Hyderabad
+                  Campus. Incepted in 2009 as an intra-college festival, a year after
+                  the foundation of BITS Pilani, Hyderabad, the fest grew into a
+                  national level college cultural fest with participation from more
+                  than 50 colleges across India. This year's travel theme is just one
+                  more reason to look forward to the annual cultural fest that we know
+                  and adore.
+                </p>
+              </div>
+            </div>
+          </Animator>
+        </ScrollPage>
+      <ScrollPage>
+        <Animator animation={batch(Sticky(), FadeIn(), ZoomIn(1.5,1))}>
+          <div className="after-movies" style={{ backgroundImage: `url(${bg3})` }}>
+            <h1>AFTERMOVIES</h1>
+            <div className="movies">
+            <div className="movie">
+                <iframe
+                  width="853"
+                  height="480"
+                  src={`https://www.youtube.com/embed/Y_wt8LJdOKw`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="2022"
+                />
+                <h3>2022</h3>
+              </div>
+              <div className="movie">
+                <iframe
+                  width="853"
+                  height="480"
+                  src={`https://www.youtube.com/embed/ai3GS6Rlano`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="2018"
+                />
+                <h3>2018</h3>
+              </div>
+              <div className="movie">
+                <iframe
+                  width="853"
+                  height="480"
+                  src={`https://www.youtube.com/embed/Rl1yIND40lU`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  title="2017"
+                />
+                <h3>2017</h3>
+              </div>
+            </div>
+          </div>
+        </Animator>
+      </ScrollPage>
+      </ScrollContainer>
     </div>
   );
 };
