@@ -47,14 +47,14 @@
 
 .gallery-title {
   position: fixed;
-  font-family: "Inter";
+  font-family: "Croissant One";
   padding-top: 7%;
   padding-left: 27%;
   font-style: normal;
   font-size: 9.8vw;
   font-weight: 600;
 
-  color: #e9e9dd;
+  color: white;
 }
 
 .gallery-grid {

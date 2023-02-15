@@ -49,7 +49,7 @@ function NavbarMain() {
           }}
         />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ms-auto gap-3">
+          <Nav className="ms-auto gap-4">
             <LinkContainer to="/Competitions">
               <Button
                 variant="custom"
@@ -92,6 +92,28 @@ function NavbarMain() {
                 }}
               >
                 GALLERY
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/Workshops">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                REGISTRATIONS
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/Workshops">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                ACCOMODATIONS
               </Button>
             </LinkContainer>
           </Nav>

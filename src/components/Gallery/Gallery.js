@@ -4,7 +4,7 @@ import Imagegrid from "./Imagegrid";
 
 const Gallery = () => {
   useEffect(() => {
-    document.title = "Gallery - ATMOS";
+    document.title = "Gallery - PEARL";
   }, []);
 
   return (

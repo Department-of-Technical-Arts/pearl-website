@@ -48,7 +48,30 @@
   font-size: 3vmin;
   text-align: left;
   font-weight: 600;
-  color: #e4b963;
+  color: #bb4f80;
+}
+.landing-btn {
+  position: relative;
+  /* margin-top: 60vh;
+  margin-left: 16vw; */
+  z-index: 100;
+  margin-left: -45%;
+  margin-top: 2%;
+}
+.btn-landing {
+  color: white !important;
+  background-color: #e4b963 !important;
+  box-shadow: 1.4vmin 1vmin 2.5vmin -2vmin rgb(11, 11, 11) !important;
+}
+.btn-landing:hover {
+  color: #e4b963 !important;
+  background-color: white !important;
+  border: 0.2vmin #e4b963 !important;
+}
+.btn-landing.active {
+  color: #e4b963 !important;
+  background-color: white !important;
+  border: 0.2vmin #e4b963 !important;
 }
 
 .image-landing {
@@ -68,7 +91,7 @@
   font-weight: 600;
   height: 182px;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   top: 31%;
   left: 31%;
 }
@@ -80,7 +103,7 @@
   font-weight: 600;
   height: 182px;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   top: 51%;
   left: 39%;
   text-align: center;
@@ -124,7 +147,7 @@
   font-weight: 600;
   height: 182px;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   bottom: -15%;
   left: 44%;
   animation: blink 2s linear infinite;
@@ -158,7 +181,7 @@
   top: 60%;
   position: absolute;
   align-items: center;
-  background-color: #e9e9dd;
+  background-color: white;
   border-radius: 12px;
   box-shadow: transparent 0 0 0 3px, rgba(18, 18, 18, 0.1) 0 6px 20px;
   cursor: pointer;
@@ -231,7 +254,7 @@
   font-weight: 600;
   height: 182px;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   bottom: 0%;
   left: 44%;
 }
@@ -246,7 +269,7 @@
     font-weight: 600;
     font-size: 25vw;
     line-height: 91px;
-    color: #e9e9dd;
+    color: white;
     mix-blend-mode: difference;
   }
   .bg {
@@ -281,16 +304,20 @@
 }
 @media screen and (min-width: 300px) and (max-width: 480px) {
   .landing-desc-container {
-    top: 25vw;
+    top: 30vw;
     position: absolute;
     left: 50%;
     right: 50%;
-    transform: translate(-50%,0%);
+    transform: translate(-50%, 0%);
     width: 80vw;
     backdrop-filter: blur(10px);
   }
   .landing-desc {
-    font-size: 3vmax;
+    font-size: 2.8vmax;
+  }
+  .landing-btn {
+    margin-top: 10%;
+    margin-left: -48%;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 1024px) {
@@ -303,7 +330,7 @@
     top: 14vw;
     left: 50%;
     right: 50%;
-    transform: translate(-50%,0%);
+    transform: translate(-50%, 0%);
     width: 80vw;
     backdrop-filter: blur(10px);
   }
@@ -316,7 +343,7 @@
     font-weight: 600;
     font-size: 23vw;
     line-height: 91px;
-    color: #e9e9dd;
+    color: white;
     mix-blend-mode: difference;
   }
   .bg {
@@ -366,7 +393,8 @@
 .after-movies h1 {
   color: white;
   margin-top: 20vh;
-  font-size: 7vh;
+  font-weight: 700;
+  font-size: 8vh;
   text-shadow: 0px 10px 5px #f7d1de;
 }
 .movies {
@@ -390,9 +418,9 @@
   height: 30vh;
   width: 30vw;
 }
-.movie h3{
-    text-align: center;
-    text-shadow: 0px 0px 7px #f7d1de;
+.movie h3 {
+  text-align: center;
+  text-shadow: 0px 0px 7px #f7d1de;
 }
 @media (max-width: 900px) {
   .landing-footer {

@@ -44,7 +44,7 @@
 .standout-header {
   font-size: 7vh;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   margin-bottom: 4vh;
   z-index: -1;
 }
@@ -63,7 +63,7 @@
   font-weight: 600;
   height: 182px;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   left: 44%;
   animation: blink 2s linear infinite;
   transform: translate(0vh, 190vh);
@@ -81,7 +81,7 @@
   .standout-header {
     font-size: 10vw;
     mix-blend-mode: difference;
-    color: #e9e9dd;
+    color: white;
     mix-blend-mode: difference;
     z-index: -1;
   }
@@ -137,7 +137,7 @@
   .standout-header {
     font-size: 10vw;
     mix-blend-mode: difference;
-    color: #e9e9dd;
+    color: white;
     mix-blend-mode: difference;
     z-index: -1;
   }

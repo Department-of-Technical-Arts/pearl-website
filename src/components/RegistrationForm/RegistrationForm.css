@@ -3,7 +3,7 @@
   font-size: 9vmin;
   font-weight: 600;
   width: 100%;
-  color: #e9e9dd;
+  color: white;
 }
 
 .register-form {
@@ -20,7 +20,7 @@
   padding: 0.9vw;
   border-radius: 0.5vw;
   background: none;
-  border-bottom: 0.1vw solid #e9e9dd;
+  border-bottom: 0.1vw solid white;
   color: white;
   transition: 0.5s;
   background-color: white;
@@ -30,7 +30,7 @@
 }
 
 .form-input:focus {
-  border: 0.1vw solid #e9e9dd;
+  border: 0.1vw solid white;
   box-shadow: 0.5vw 0.5vw 2vw -1vw white;
   outline: none;
 }

@@ -56,7 +56,7 @@ body {
   font-weight: 600;
   height: 182px;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   transform: translate(-50%, -50%);
 }
 .headerContainer {
@@ -74,7 +74,7 @@ body {
 
   mix-blend-mode: difference;
 
-  color: #e9e9dd; */
+  color: white; */
 
 /* left: 471px; */
 /* top: 311px; */
@@ -138,19 +138,22 @@ body {
   width: 30vw;
   top: 35%;
   left: 50%;
-  animation: 2s ease-out 0s 1 fadeIn;
+  /* animation: 2s ease-out 0s 1 fadeIn; */
 }
 
 .content-workshops h1 {
   position: absolute;
-  right: -40.5vw;
+  /* right: -40.5vw; */
   font-family: "Inter";
   font-style: normal;
-  font-size: 11vw;
+  font-size: 9vw;
   font-weight: 600;
   height: 20vh;
   color: white;
+  opacity: 1;
+  z-index: 200;
   transform: translate(-50%, -50%);
+  font-family: "Croissant One";
 }
 
 .card-container-workshops {

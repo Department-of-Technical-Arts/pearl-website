@@ -59,7 +59,7 @@
   font-style: normal;
   display: inline-flex;
 
-  color: #e9e9dd;
+  color: white;
 
   padding-top: 200px;
   justify-items: center;
@@ -75,7 +75,7 @@
   font-style: normal;
   font-size: 80px;
   font-weight: 600;
-  color: #e9e9dd;
+  color: white;
   padding-top: 6%;
   text-align: center;
   justify-items: center;
@@ -86,7 +86,7 @@
   font-style: normal;
   font-size: 80px;
   font-weight: 600;
-  color: #e9e9dd;
+  color: white;
   text-align: center;
   justify-items: center;
 }
@@ -126,7 +126,7 @@
   font-style: normal;
   font-size: 50px;
   font-weight: 600;
-  color: #e9e9dd;
+  color: white;
   padding-top: 6%;
   text-align: center;
   justify-items: center;
@@ -139,7 +139,7 @@
   font-size: 50px;
   font-weight: 600;
   height: 182px;
-  color: #e9e9dd;
+  color: white;
   padding-top: 230px;
   transform: translate(-50%, -50%);
 }
@@ -150,7 +150,7 @@
   font-size: 50px;
   font-weight: 600;
   height: 182px;
-  color: #e9e9dd;
+  color: white;
   padding-top: 700px;
   transform: translate(-50%, -50%);
 }
@@ -161,7 +161,7 @@
   font-size: 50px;
   font-weight: 600;
   height: 182px;
-  color: #e9e9dd;
+  color: white;
   padding-top: 1300px;
   transform: translate(-50%, -50%);
 }
@@ -173,7 +173,7 @@
   font-size: 50px;
   font-weight: 600;
   height: 182px;
-  color: #e9e9dd;
+  color: white;
   padding-top: 500px;
   transform: translate(-50%, -50%);
 }
@@ -185,7 +185,7 @@
   font-size: 50px;
   font-weight: 600;
   height: 182px;
-  color: #e9e9dd;
+  color: white;
   padding-top: 450px;
   transform: translate(-50%, -50%);
 }

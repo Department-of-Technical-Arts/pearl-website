@@ -59,7 +59,7 @@ body {
   font-weight: 600;
   height: 20vh;
   mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   transform: translate(-50%, -50%);
 }
 
@@ -96,7 +96,7 @@ body {
   font-size: 6vmin;
   font-weight: 600;
   width: 100%;
-  color: #e9e9dd;
+  color: white;
   margin-bottom: -4%;
 }
 

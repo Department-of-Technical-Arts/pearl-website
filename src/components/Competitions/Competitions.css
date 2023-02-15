@@ -42,18 +42,17 @@ body {
   width: 30vw;
   top: 35%;
   left: 50%;
-  animation: 2s ease-out 0s 1 fadeIn;
+  /* animation: 2s ease-out 0s 1 fadeIn; */
 }
 
 .content-competitions h1 {
   position: absolute;
-
-  font-family: "Inter";
+  font-family: "Croissant One";
   font-style: normal;
   font-size: 8vw;
   font-weight: 600;
   height: 20vh;
-  color: #e9e9dd;
+  color: white;
   transform: translate(-50%, -50%);
 }
 

@@ -167,7 +167,7 @@
     line-height: 9.4vh;
     text-transform: uppercase;
     margin-bottom: 5vh;
-    color: #e9e9dd;
+    color: white;
     mix-blend-mode: difference;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
@@ -318,7 +318,7 @@
     line-height: 9.4vh;
     text-transform: uppercase;
     margin-bottom: 7vh;
-    color: #e9e9dd;
+    color: white;
     mix-blend-mode: difference;
     text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
