@@ -31,14 +31,15 @@ const Competitions = () => {
                     return (
                       <a
                         key={index}
-                        href={`/contest/comp/${eachCompetition.name}`}
+                        href={`/contest/comp/${eachCompetition.name.toLowerCase()}`}
                       >
                         <div
                           className="hover-cards-competitions"
-                          style={{
-                            backgroundImage: `url(${eachCompetition.image_url})`,
-                          }}
+                          // style={{
+                          //   backgroundImage: `url(${eachCompetition.image_url})`,
+                          // }}
                         >
+                          <img src={eachCompetition.image_url} className="competitions-image"/>
                           <p>{eachCompetition.name}</p>
                         </div>
                       </a>

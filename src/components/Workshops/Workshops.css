@@ -231,3 +231,9 @@ body {
     z-index: 10;
   }
 }
+.competitions-image{
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+}

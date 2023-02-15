@@ -32,7 +32,8 @@ const Workshops = () => {
                         } */}
             {loaded ? (
               Object.entries(workshops).map(([name, eachWorkshop]) => {
-                if (eachWorkshop.image_url)
+                // if (eachWorkshop.image_url)
+                    
                   return (
                     <a
                       key={eachWorkshop.name}
@@ -40,10 +41,11 @@ const Workshops = () => {
                     >
                       <div
                         className="hover-cards-competitions"
-                        style={{
-                          backgroundImage: `url(${eachWorkshop.image_url})`,
-                        }}
+                        // style={{
+                        //   backgroundImage: `url(${eachWorkshop.image_url})`,
+                        // }}
                       >
+                        <img src={eachWorkshop.image_url} className="competitions-image"/>
                         <p>{eachWorkshop.name}</p>
                       </div>
                     </a>
