@@ -149,8 +149,7 @@ body {
   font-size: 11vw;
   font-weight: 600;
   height: 20vh;
-  mix-blend-mode: difference;
-  color: #e9e9dd;
+  color: white;
   transform: translate(-50%, -50%);
 }
 

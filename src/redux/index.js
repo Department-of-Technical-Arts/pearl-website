@@ -9,6 +9,7 @@ const initialState = {
     selectedEvent: {}
 }
 
+
 export const Slice = createSlice({
     name: "DisplayData",
     initialState,

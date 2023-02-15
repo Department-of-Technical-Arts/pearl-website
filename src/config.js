@@ -1,25 +1,31 @@
-import firebase from "firebase/app"
-import "firebase/firestore"
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database"
+import { getStorage, ref} from "firebase/storage"
 
-const firebaseConfig = {
-  apiKey: "AIzaSyCa1peunGlb2kc-a37wYbdx3qd7T_JCV3Q",
-  authDomain: "atmos-bphc.firebaseapp.com",
-  projectId: "atmos-bphc",
-  storageBucket: "atmos-bphc.appspot.com",
-  messagingSenderId: "522462985483",
-  appId: "1:522462985483:web:c6a65e1796cf0c7e1eb60e"
-};
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
 
-firebase.initializeApp(firebaseConfig)
+// Your web app's Firebase configuration
 
-export const firestore = firebase.firestore()
-
-export const sheetLinks = {
-  "competitions": "",
-  "workshops": ""
+function StartFirebase(){
+    const firebaseConfig = {
+        apiKey: "AIzaSyD3br-ZmQ5azP-5r9H-0RxMvgm8iiOxyos",
+        authDomain: "pearl-admin-ecc9b.firebaseapp.com",
+        databaseURL: "https://pearl-admin-ecc9b-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "pearl-admin-ecc9b",
+        storageBucket: "pearl-admin-ecc9b.appspot.com", 
+        messagingSenderId: "784778703947",
+        appId: "1:784778703947:web:a9f9b25a6e74dd838349ce"
+      };
+    const app = initializeApp(firebaseConfig);
+    const storageRef = ref;
+    return [getDatabase(app), getStorage(app), storageRef]
 }
-
 export const urlEndpoint = "https://ucarecdn.com/"
 
 
-export default firebase
+
+
+// Initialize Firebase
+export default StartFirebase;
+

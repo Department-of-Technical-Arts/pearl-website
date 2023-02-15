@@ -3,9 +3,10 @@ import { useEffect } from 'react';
 import "./Workshops.css";
 import { urlEndpoint } from '../../config';
 import { useSelector } from 'react-redux';
-
+import { useFirebase } from '../../hooks/useFirebase';
 const Workshops = () => {
-    const {workshops} = useSelector ((state) => state.displayData)
+    // const {workshops} = useSelector ((state) => state.displayData)
+    const [competitions, workshops, loaded] = useFirebase()
     useEffect(() => {
         document.title = "WORKSHOPS - ATMOS"
     }, []);
@@ -19,7 +20,7 @@ const Workshops = () => {
                         <h1>WORKSHOPS</h1>
                     </div>
                     <div className='card-container-workshops'>
-                        {
+                        {/* {
                             workshops.map((eachWorkshop)=>{
                                 if (eachWorkshop.IMAGEURL)
                                 return(
@@ -28,7 +29,19 @@ const Workshops = () => {
                                       }}><p>{eachWorkshop.NAME}</p></div></a>
                                 )
                             })
-                        }
+                        } */}
+                        {loaded ?
+                            Object.entries(workshops).map(([name, eachWorkshop])=>{
+                                if (eachWorkshop.image_url)
+                                    return(
+                                        <a key={eachWorkshop.name} href={`/contest/comp/${eachWorkshop.name.toLowerCase()}`}>
+                                            <div className='hover-cards-competitions' style={{ backgroundImage: `url(${eachWorkshop.image_url})`}}>
+                                                <p>{eachWorkshop.name}</p>
+                                            </div>
+                                        </a>
+                                    )
+                            })
+                            :<></>}
                     </div>
                 </div>
             </div>

@@ -16,60 +16,78 @@ import Workshops from "./components/Workshops/Workshops";
 import ProShows from "./components/Proshows/Proshows";
 import Contest from "./components/Contest/Contest";
 import RegistrationForm from "./components/RegistrationForm/RegistrationForm";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import Papa from "papaparse";
 import { Actions } from "./redux";
 import P404page from "./components/Contest/404page";
 import Schedule from "./components/Schedule/Schedule";
+import {get, ref, child} from "firebase/database"
+import StartFirebase from "./config";
 
 const App = () => {
   const dispatch = useDispatch();
-  useEffect(() => {
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDM_B5Mbm4oE1Xn9e_lCYAS5eIWJi-Q-lCbsNsAcLPI-vxasaFAI0NeJQNfU8Mlvx2dXKZpvt99yS_/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results) => {
-          dispatch(Actions.initializeCompetitions(results.data));
-        },
-      }
-    );
+  const [database, storage] = StartFirebase()
+  
+  // useEffect(() => {
+  //   get(child(ref(database), `events`)).then((snapshot) => {
+  //     if (snapshot.exists()) {
+  //       setCompetitions(snapshot.val().Competitions);
+  //       setWorkshops(snapshot.val().Workshops);
+  //       setLoaded(true);
+  //       dispatch(Actions.initializeCompetitions(snapshot.val().Competitions));
+  //       console.log(snapshot.val().Competitions)
+  //       dispatch(Actions.initializeWorkshops(snapshot.val().Workshops));
+  //     } else {
+  //       console.log("No data available");
+  //     }
+  //   }).catch((error) => {
+  //     console.error(error);
+  //   });
+    // Papa.parse(
+    //   "https://docs.google.com/spreadsheets/d/e/2PACX-1vQDM_B5Mbm4oE1Xn9e_lCYAS5eIWJi-Q-lCbsNsAcLPI-vxasaFAI0NeJQNfU8Mlvx2dXKZpvt99yS_/pub?output=csv",
+    //   {
+    //     download: true,
+    //     header: true,
+    //     complete: (results) => {
+    //       dispatch(Actions.initializeCompetitions(results.data));
+    //     },
+    //   }
+    // );
 
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbwA6Nvy_YMR6psLNstZpoNM6vOOfO7TGEjiyrNHfGqkK_okk-3FraMri13nxR_x4V1l5alSQmQ8Co/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results) => {
-          dispatch(Actions.initializeWorkshops(results.data));
-        },
-      }
-    );
+    // Papa.parse(
+    //   "https://docs.google.com/spreadsheets/d/e/2PACX-1vTbwA6Nvy_YMR6psLNstZpoNM6vOOfO7TGEjiyrNHfGqkK_okk-3FraMri13nxR_x4V1l5alSQmQ8Co/pub?output=csv",
+    //   {
+    //     download: true,
+    //     header: true,
+    //     complete: (results) => {
+    //       dispatch(Actions.initializeWorkshops(results.data));
+    //     },
+    //   }
+    // );
 
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vSDPINaf2CxbAiYXoaT1G9tEXFZKUHVW9qYG9tucZMTdztvGPQIzI80sPGzRyZRtA4nMyfVWcXsS_BZ/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results) => {
-          dispatch(Actions.initializePreFest(results.data));
-        },
-      }
-    );
+    // Papa.parse(
+    //   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSDPINaf2CxbAiYXoaT1G9tEXFZKUHVW9qYG9tucZMTdztvGPQIzI80sPGzRyZRtA4nMyfVWcXsS_BZ/pub?output=csv",
+    //   {
+    //     download: true,
+    //     header: true,
+    //     complete: (results) => {
+    //       dispatch(Actions.initializePreFest(results.data));
+    //     },
+    //   }
+    // );
 
-    Papa.parse(
-      "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVt-nPXHT6ciUPC3NkanTXylF6Hb9UlPhSNsdxz_HdaRgyiYa6wQ3esMNYGgvrlltDMrcfwLQES1sX/pub?output=csv",
-      {
-        download: true,
-        header: true,
-        complete: (results) => {
-          dispatch(Actions.initializeTalks(results.data));
-        },
-      }
-    );
-  }, []);
+    // Papa.parse(
+    //   "https://docs.google.com/spreadsheets/d/e/2PACX-1vSVt-nPXHT6ciUPC3NkanTXylF6Hb9UlPhSNsdxz_HdaRgyiYa6wQ3esMNYGgvrlltDMrcfwLQES1sX/pub?output=csv",
+    //   {
+    //     download: true,
+    //     header: true,
+    //     complete: (results) => {
+    //       dispatch(Actions.initializeTalks(results.data));
+    //     },
+    //   }
+    // );
+  // }, []);
   return (
     <div>
       <div className="App">
@@ -83,17 +101,17 @@ const App = () => {
           <Route path="sponsors" element={<Sponsors />} />
           <Route path="about" element={<About />} />
           <Route path="talks" element={<Talks />} />
-          <Route path="competitions" element={<Competitions />} />
+          <Route path="competitions" element={<Competitions  />} />
           <Route path="workshops" element={<Workshops />} />
           <Route path="proshows" element={<ProShows />} />
           <Route path="prefest" element={<Prefest />} />
           <Route path="404" element={<P404page />} />
-          <Route path="schedule" element={<Schedule />} />
+          {/* <Route path="schedule" element={<Schedule />} /> */}
           <Route path="contest/:type/:id" element={<Contest />} />
-          <Route
+          {/* <Route
             path="contest/:type/:id/register"
             element={<RegistrationForm />}
-          />
+          /> */}
           <Route path="*" element={<P404page />} />
         </Routes>
       </div>

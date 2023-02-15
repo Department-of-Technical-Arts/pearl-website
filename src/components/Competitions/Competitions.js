@@ -3,13 +3,15 @@ import { useEffect } from 'react';
 import "./Competitions.css";
 import { useSelector } from 'react-redux';
 import { urlEndpoint } from "../../config";
+import { useFirebase } from '../../hooks/useFirebase';
 
 const Competitions = () => {
-    const {competitions} = useSelector ((state) => state.displayData)
+    // const {competitions} = useSelector ((state) => state.displayData)
+    const [competitions, workshops, loaded] = useFirebase()
     useEffect(() => {
         document.title = "COMPETITIONS - ATMOS"
+        console.log(loaded)
     }, []);
-    console.log();
 
     return(
         <div>
@@ -20,18 +22,22 @@ const Competitions = () => {
                         <h1>COMPETITIONS</h1>
                     </div>
                     <div className='card-container-competitions'>
-                        {
-                            competitions.map((eachCompetition)=>{
-                                if (eachCompetition.IMAGEURL)
-                                    return(
-                                        <a key={eachCompetition.NAME} href={`/contest/comp/${eachCompetition.NAME.toLowerCase()}`}>
-                                            <div className='hover-cards-competitions' style={{ backgroundImage: `url(${urlEndpoint}${eachCompetition.IMAGEURL})`}}>
-                                                <p>{eachCompetition.NAME}</p>
-                                            </div>
-                                        </a>
-                                    )
-                            })
-                        }
+
+
+                    {loaded ? Object.entries(competitions).map(([name, eachCompetition],index)=>{
+                            
+                                console.log(eachCompetition)
+                                console.log(loaded)
+                                if(loaded){
+                                return(
+                                    <a key={index} href={`/contest/comp/${eachCompetition.name}`}>
+                                        <div className='hover-cards-competitions' style={{ backgroundImage: `url(${eachCompetition.image_url})`}}>
+                                            <p>{eachCompetition.name}</p>
+                                        </div>
+                                    </a>
+                                )}
+                        })
+                    :<></>}
                     </div>
                 </div>
             </div>
