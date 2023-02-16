@@ -31,7 +31,7 @@ const Competitions = () => {
                     return (
                       <a
                         key={index}
-                        href={`/contest/comp/${eachCompetition.name.toLowerCase()}`}
+                        href={"https://"+eachCompetition.details}
                       >
                         <div
                           className="hover-cards-competitions"

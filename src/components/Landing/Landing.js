@@ -45,6 +45,28 @@ const Landing = () => {
       setSeconds(Math.floor((distance % (1000 * 60)) / 1000));
       console.log(seconds);
     }, 1000);
+    const handleScroll = async (e) => {
+      const height = elementRef.current?.scrollHeight;
+      var limit = 0.65;
+      isMobile ? (limit = 0.7) : (limit = 0.65);
+      setScrolling(false);
+      const smoothScroll = (h) => {
+        let i = h || 0;
+        if (i < height) {
+          setTimeout(() => {
+            window.scrollTo(0, i);
+            smoothScroll(i + 10);
+          }, 10);
+        }
+      };
+    }
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener("scroll", handleScroll);
+    };
+
   }, []);
 
   // const passesClicked = () => {
@@ -53,17 +75,18 @@ const Landing = () => {
 
   return (
     <div>
+      {scrolling && (
+                    <p className="scroll-text">
+                      {isTouch.matches ? "SWIPE UP TO EXPLORE" : "SCROLL DOWN TO EXPLORE"}
+                    </p>
+                  )}
       <ScrollContainer>
         <ScrollPage>
           <Animator>
             <div className="landing-container" ref={elementRef}>
               <div className="bg"></div>
               {/* <h4 className="dates">25-27 November</h4> */}
-              {/* {scrolling && (
-                    <p className="scroll-text">
-                      {isTouch.matches ? "SWIPE UP" : "SCROLL DOWN"}
-                    </p>
-                  )} */}
+              
               {/*<h4 className="countdown">{`${days}d : ${hours}h : ${minutes}m`}</h4>*/}
               {/* <Standout /> */}
               <div className="landing-desc-container">

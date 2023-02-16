@@ -37,7 +37,7 @@ const Workshops = () => {
                   return (
                     <a
                       key={eachWorkshop.name}
-                      href={`/contest/comp/${eachWorkshop.name.toLowerCase()}`}
+                      href={"https://"+eachWorkshop.details}
                     >
                       <div
                         className="hover-cards-competitions"

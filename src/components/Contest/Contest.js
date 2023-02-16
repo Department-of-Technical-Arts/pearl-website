@@ -13,48 +13,50 @@ const Contest = () => {
     const isTablet = useMediaQuery('(max-width:480px)','(max-height:1024px)');
     const isMobile = useMediaQuery('(max-width: 320px)','(max-height: 480px)');
     const [loader, setLoader] = useState(true)
-    const {competitions, workshops, prefest, selectedEvent} = useSelector((state) => state.displayData)
+    const [competitions, workshops, loaded] = useFirebase();
+    const [selectedEvent, setSelectedEvent] = useState()
+    // const {competitions, workshops, prefest, selectedEvent} = useSelector((state) => state.displayData)
     const [register, setReg] = useState(false)
     const params = useParams()
     const dispatch = useDispatch ()
     const navigate = useNavigate();
-    let unavailableNumber = 0;
 
     useEffect (() => {
-        if (params.type === "comp") {
-            competitions.map((eachCompetition) => {
-                if (eachCompetition.NAME.toLowerCase() === params.id) {
-                    dispatch (Actions.initializeSelectedEvent(eachCompetition))
-                    localStorage.setItem("event", JSON.stringify(eachCompetition))
-                    setLoader(false)
-                }
-            })
-            const possiblyEmptySet = competitions.filter((eachCompetition)=>eachCompetition.NAME.toLowerCase() === params.id);
-            console.log(possiblyEmptySet)
-            
-        }   
-        if (params.type === "work") {
-            workshops.map((eachWorkshop) => {
-                if (eachWorkshop.NAME.toLowerCase() === params.id) {
-                    dispatch (Actions.initializeSelectedEvent(eachWorkshop))
-                    setLoader(false)
-                }
-            })
-        }
-        if (params.type === "prefest") {
-            prefest.map((eachPrefest) => {
-                if (eachPrefest.NAME.toLowerCase() === params.id) {
-                    dispatch (Actions.initializeSelectedEvent(eachPrefest))
-                    setLoader(false)
-                }
-            })
-        }
+        if(loaded){
+            if (params.type === "comp") {
+                Object.entries(competitions).map(([name,eachCompetition]) => {
+                    if (eachCompetition.NAME.toLowerCase() === params.id) {
+                        setSelectedEvent(eachCompetition);
+                        // localStorage.setItem("event", JSON.stringify(eachCompetition))
+                        setLoader(false)
+                    }
+                })
+                const possiblyEmptySet = competitions.filter((eachCompetition)=>eachCompetition.NAME.toLowerCase() === params.id);
+                console.log(possiblyEmptySet)
+                
+            }   
+            if (params.type === "work") {
+                Object.entries(workshops).map(([name,eachWorkshop]) => {
+                    if (eachWorkshop.NAME.toLowerCase() === params.id) {
+                        setSelectedEvent(eachWorkshop);
+                        setLoader(false)
+                    }
+                })
+            }
+        // if (params.type === "prefest") {
+        //     prefest.map((eachPrefest) => {
+        //         if (eachPrefest.NAME.toLowerCase() === params.id) {
+        //             dispatch (Actions.initializeSelectedEvent(eachPrefest))
+        //             setLoader(false)
+        //         }
+        //     })
+        // }
 
-        setTimeout(()=>{
-            if(document.title=="undefined - ATMOS"){
-            navigate("/404")}
-        }, "20000")
-        
+        // setTimeout(()=>{
+        //     if(document.title=="undefined - ATMOS"){
+        //     navigate("/404")}
+        // }, "20000")
+        }
     }, [competitions, workshops])
     useEffect(() => {
         
@@ -85,7 +87,7 @@ const Contest = () => {
         setReg(true)
     },[])
     useEffect(() => {
-        document.title = selectedEvent?.NAME?.toUpperCase() + " - ATMOS"
+        document.title = selectedEvent?.name?.toUpperCase() + " - ATMOS"
         
     },[selectedEvent])
     

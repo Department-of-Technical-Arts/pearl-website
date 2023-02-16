@@ -25,7 +25,7 @@ const Events = () => {
                 <p>workshops</p>
               </div>
             </a>
-            <a href="/talks">
+            {/* <a href="/talks">
               {" "}
               <div className="hover-cards-three">
                 <p>talks</p>
@@ -36,7 +36,7 @@ const Events = () => {
                 {" "}
                 <p>pro-shows</p>
               </div>
-            </a>
+            </a> */}
           </div>
         </div>
       </div>

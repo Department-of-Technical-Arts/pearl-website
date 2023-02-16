@@ -36,8 +36,8 @@ function NavbarMain() {
         <Navbar.Brand href="/">
           <img
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
-            width="160"
-            height="90"
+            width="190"
+            height="110"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>
@@ -94,7 +94,7 @@ function NavbarMain() {
                 GALLERY
               </Button>
             </LinkContainer>
-            <LinkContainer to="/Workshops">
+            <LinkContainer to="/events">
               <Button
                 variant="custom"
                 onClick={() => {

@@ -117,9 +117,9 @@
 }
 .hover-cards-one {
   position: relative;
-  background-image: url(../../assets/Algomaniac_dp.jpg);
+  background-image: url(../../assets-pearl/237541-dance.avif);
   height: 220px;
-  width: 180px;
+  width: 300px;
   border-radius: 15px;
   margin-bottom: 20%;
   font-family: "Inter";
@@ -129,12 +129,13 @@
   animation: 2s ease-out 0s 1 fadeIn;
   background-size: 100% 100%;
   transition: transform 0.5s;
+  filter: grayscale();
 }
 .hover-cards-two {
   position: relative;
-  background-image: url(../../assets/codejam_dp.jpg);
+  background-image: url(../../assets-pearl/5-Tips-to-Making-The-Most-of-an-Acting-Workshop-pic-3.jpg);
   height: 220px;
-  width: 180px;
+  width: 300px;
   border-radius: 15px;
   margin-bottom: 20%;
   font-family: "Inter";
@@ -144,6 +145,7 @@
   animation: 2s ease-out 0s 1 fadeIn;
   background-size: cover;
   transition: transform 0.5s;
+  filter: grayscale();
 }
 .hover-cards-three {
   position: relative;
@@ -201,6 +203,7 @@
   transform: translate(-50%);
   line-height: 27px;
   width: 210px;
+  color: black;
 }
 .passes-name {
   font-size: 22px;
@@ -210,6 +213,7 @@
   transform: translate(-50%);
   line-height: 27px;
   width: 210px;
+  
 }
 .passes-prize {
   background-color: rgba(250, 250, 250, 0.2);
@@ -241,6 +245,8 @@
   transform: translate(-50%);
   line-height: 27px;
   width: 210px;
+  mix-blend-mode: difference;
+  color: black;
 }
 .hover-cards-three p {
   font-size: 18px;

@@ -146,18 +146,19 @@
   font-size: 1.6vw;
   font-weight: 600;
   height: 182px;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   color: white;
-  bottom: -15%;
+  backdrop-filter: blur(10px);
+  bottom: -10%;
   left: 44%;
-  animation: blink 2s linear infinite;
+  animation: blink 3s linear infinite;
 }
 @keyframes blink {
   0% {
     opacity: 0;
   }
   50% {
-    opacity: 0.5;
+    opacity: 1;
   }
   100% {
     opacity: 0;
@@ -257,6 +258,11 @@
   color: white;
   bottom: 0%;
   left: 44%;
+}
+@media (min-width: 1000px) and (max-height: 800px){
+  .after-movies {
+    margin-top: 15vh;
+  }
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px) {
@@ -381,7 +387,7 @@
   }
 }
 .after-movies {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -394,7 +400,7 @@
   color: white;
   margin-top: 20vh;
   font-weight: 700;
-  font-size: 8vh;
+  font-size: 8vmin;
   text-shadow: 0px 10px 5px #f7d1de;
 }
 .movies {
@@ -451,5 +457,8 @@
   }
   .movie h3 {
     text-shadow: 0px 10px 10px rgba(190, 60, 55, 0.8);
+  }
+  .after-movies h1{
+    
   }
 }
