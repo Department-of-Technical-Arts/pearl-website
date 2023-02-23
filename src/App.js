@@ -24,6 +24,7 @@ import P404page from "./components/Contest/404page";
 import Schedule from "./components/Schedule/Schedule";
 import {get, ref, child} from "firebase/database"
 import StartFirebase from "./config";
+import EventPage from "./components/EventPage/EventPage";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -95,13 +96,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="explore" element={<Explore />} />
-          <Route path="events" element={<Events />} />
+          {/* <Route path="events" element={<Events />} /> */}
           <Route path="passes" element={<Passes />} />
           <Route path="gallery" element={<Gallery />} />
           <Route path="sponsors" element={<Sponsors />} />
           <Route path="about" element={<About />} />
           <Route path="talks" element={<Talks />} />
           <Route path="competitions" element={<Competitions  />} />
+          <Route path="events" element={<EventPage  />} />
           <Route path="workshops" element={<Workshops />} />
           <Route path="proshows" element={<ProShows />} />
           <Route path="prefest" element={<Prefest />} />

@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Croissant+One&display=swap");
+body {
+  min-height: 100%;
+  background-size: cover;
+  /* background-size: auto 100%; */
+  /* background-repeat: no-repeat; */
+}
+.background-container-competitions {
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  overflow: auto;
+}
+
+.background-competitions {
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  overflow: visible;
+  background-color: #f7d1de;
+}
+
+.image-competitions {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-image: url("../../assets-pearl/web_competitions.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  animation: 2s ease-out 0s 1 zoomOut;
+  background-attachment: fixed;
+}
+
+.content-competitions {
+  position: relative;
+  height: 20vh;
+  width: 30vw;
+  top: 35%;
+  left: 50%;
+  /* animation: 2s ease-out 0s 1 fadeIn; */
+}
+
+.content-competitions h1 {
+  position: absolute;
+  font-family: "Croissant One";
+  font-style: normal;
+  font-size: 8vw;
+  font-weight: 600;
+  height: 20vh;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+.content-competitions h4 {
+  position: absolute;
+  z-index: 100;
+  font-family: "sans-serif";
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 600;
+  color: white;
+  transform: translate(-50%, -50%);
+}
+
+.card-container-competitions {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  width: 100vw;
+  top: 60%;
+  justify-content: space-around;
+  flex-flow: wrap;
+  padding: 0 15%;
+  flex: 0 1 auto;
+}
+
+.hover-cards-competitions {
+  background-color: #f7d1de;
+  position: relative;
+  height: 200px;
+  width: 250px;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  border: 1px solid white;
+  border-radius: 15px;
+  margin-bottom: 40%;
+  margin-left: 1.5rem;
+  font-family: "Inter";
+  color: #fffffc;
+  text-transform: uppercase;
+  bottom: 0;
+  animation: 2s ease-out 0s 1 fadeIn;
+  margin-right: 1rem;
+  margin-left: 1rem;
+  transition: transform 0.5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.hover-cards-competitions:hover {
+  transform: scale(1.3);
+  z-index: 10;
+}
+
+.hover-cards-competitions p {
+  font-size: 18px;
+  position: absolute;
+  top: 225px;
+  left: 50%;
+  transform: translate(-50%);
+  line-height: 27px;
+  width: 210px;
+}
+
+@media screen and (max-width: 500px) {
+  .hover-cards-competitions {
+    margin-bottom: 6rem;
+    margin-left: 1rem;
+    width: 280px;
+  }
+  .hover-cards-competitions:hover {
+    transform: scale(1);
+  }
+  .card-container-competitions {
+    align-items: center;
+  }
+}
+.competitions-image{
+  height: 100%;
+  width: max-content;
+  max-width: 100%;
+  overflow: hidden;
+  border-radius: inherit;
+  
+}
