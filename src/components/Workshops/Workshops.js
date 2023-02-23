@@ -10,7 +10,7 @@ const Workshops = () => {
   const isMobile = useMediaQuery('(max-width: 500px)','(max-height: 480px)');
   const [competitions, workshops, loaded, talks, accommodations] = useFirebase();
   useEffect(() => {
-    document.title = "WORKSHOPS - PEARL";
+    document.title = "ACCOMMODATIONS - PEARL";
   }, []);
 
   return (
@@ -34,7 +34,7 @@ const Workshops = () => {
                         } */}
               <div className='card-container' >
               { loaded && Object.entries(accommodations).map(([name, eachPass]) => {
-                  return <a href={eachPass.detailsLink}><div className='hover-cards-passes' style={{ backgroundImage: `url("/Pearl_logo2023.png")`}}><p className='passes-name' >{eachPass.name}</p><p className='passes-prize' >₹ {eachPass.price}</p><p className='passes-buy' >{!isMobile ? <>CLICK</> : <>TAP</>} TO BUY</p></div></a>
+                  return <a key={name} href={"https://"+eachPass.detailsLink}><div className='hover-cards-passes' style={{ backgroundImage: `url("/Pearl_logo2023.png")`}}><p className='passes-name' >{eachPass.name}</p><p className='passes-prize' >₹ {eachPass.price}</p><p className='passes-buy' >{!isMobile ? <>CLICK</> : <>TAP</>} TO BUY</p></div></a>
               })}
               {/* <a href="/competitions"><div className='hover-cards-one' ><p>Competitions</p></div></a>
               <a href="/workshops"><div className='hover-cards-two'><p>workshops</p></div></a>

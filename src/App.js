@@ -104,7 +104,7 @@ const App = () => {
           <Route path="talks" element={<Talks />} />
           <Route path="competitions" element={<Competitions  />} />
           <Route path="events" element={<EventPage  />} />
-          <Route path="workshops" element={<Workshops />} />
+          <Route path="accommodations" element={<Workshops />} />
           <Route path="proshows" element={<ProShows />} />
           <Route path="prefest" element={<Prefest />} />
           <Route path="404" element={<P404page />} />

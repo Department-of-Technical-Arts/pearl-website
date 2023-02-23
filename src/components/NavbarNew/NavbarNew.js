@@ -127,7 +127,7 @@ function NavbarMain() {
                 REGISTRATIONS
               </Button>
             </LinkContainer> */}
-            <LinkContainer to="/Workshops">
+            <LinkContainer to="/Accommodations">
               <Button
                 variant="custom"
                 onClick={() => {
