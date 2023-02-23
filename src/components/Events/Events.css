@@ -94,7 +94,7 @@
   flex: 0 1 auto;
 }
 .hover-cards-passes {
-  background-color: black;
+  background-color: rgb(250, 200, 210);
   position: relative;
   height: 390px;
   width: 400px;
@@ -208,7 +208,7 @@
 .passes-name {
   font-size: 22px;
   position: absolute;
-  top: 270px;
+  top: 290px;
   left: 50%;
   transform: translate(-50%);
   line-height: 27px;
@@ -220,14 +220,14 @@
   border-radius: 10px;
   font-size: 20px;
   position: absolute;
-  top: 230px;
+  top: 250px;
   left: 50%;
   transform: translate(-50%);
   line-height: 30px;
   width: 210px;
 }
 .passes-buy {
-  background-color: rgba(250, 250, 250, 0.05);
+  background-color: rgba(250, 200, 210,0.05);
   border-radius: 10px;
   font-size: 20px;
   position: absolute;

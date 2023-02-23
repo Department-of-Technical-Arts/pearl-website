@@ -36,8 +36,8 @@ function NavbarMain() {
         <Navbar.Brand href="/">
           <img
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
-            width="190"
-            height="110"
+            width="max-content"
+            height="80rem"
             className="d-inline-block align-top"
           />
         </Navbar.Brand>

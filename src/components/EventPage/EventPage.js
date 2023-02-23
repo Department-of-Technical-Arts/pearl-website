@@ -1,24 +1,28 @@
 import React, { useState } from "react";
 import { useEffect } from "react";
 import "./Competitions.css";
-import { useSelector } from "react-redux";
-import { urlEndpoint } from "../../config";
 import { useFirebase } from "../../hooks/useFirebase";
 import { Drawer, Checkbox, FormGroup, FormControlLabel, Typography, Button } from "@mui/material";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
+import { Sort } from "@mui/icons-material";
 
-const nullFilter = {
-  "competitions":true,
-  "workshops":true,
-  "talks":true,
-  "headliner":false
-}
+
 const EventPage = () => {
+  const nullFilter = {
+    "competitions":true,
+    "workshops":true,
+    "talks":true,
+    "headliner":false
+  }
+  const [value, setValue] = useState(1);
   const [drawerShown, setDrawerShown] = useState(false);
   const [competitions, workshops, loaded, talks] = useFirebase();
   const [filter, setFilter] = useState(nullFilter)
   const [events, setEvents] = useState([])
 
+  useEffect(()=>{
+    console.log(events);
+  }, [events])
 
   useEffect(() => {
     if(loaded){
@@ -44,10 +48,29 @@ const EventPage = () => {
         temp.push(eachTalk)
       })
     }
-    setEvents(temp)
+    setEvents(temp);
   }
+  const handleResetFilter = (e)=>{
+    e.preventDefault;
+    setFilter(nullFilter);
+    addEvents(nullFilter)
+    setValue(value*-1);
+  }
+
+  // Set Sort A to B , B to A
+  const sortHandler = (e) => {
+    e.preventDefault()
+    let newEvents = events;
+    newEvents = newEvents.sort((a,b)=>{
+      return value*(a.name.localeCompare(b.name)) ;
+    });
+    setEvents(newEvents);
+    setValue(value*-1);
+  }
+
+  // Set Filter states
   const handleFilter = (type) => {
-    let newFilter = nullFilter;
+    const newFilter = nullFilter;
     Object.entries(filter).map(([name, value])=>{
       if (type==name){
         newFilter[type]=!filter[type];
@@ -57,7 +80,9 @@ const EventPage = () => {
       }
     })
     if (newFilter.competitions==false && newFilter.talks==false && newFilter.workshops==false){
-      newFilter = nullFilter;
+      setFilter(nullFilter);
+      addEvents(nullFilter);
+      return;
     }
     setFilter(newFilter);
     addEvents(newFilter);
@@ -69,21 +94,13 @@ const EventPage = () => {
         <div className="background-competitions">
           <Drawer
             variant="temporary"
-            // container={container}
             anchor="left"
             open={drawerShown}
             onClose={()=>setDrawerShown(false)}
-            // ModalProps={{
-            //   keepMounted: true, // Better open performance on mobile.
-            // }}
             sx={{
-              
-              // display: { xs: 'block', sm: 'none' },
               '& .MuiDrawer-paper': { 
                 boxSizing: 'border-box',
                 width: 240,
-                // height:{xs:"100vh", sm:"100vh"},
-                // marginTop:"20vh", 
               },
             }}
           >
@@ -117,23 +134,21 @@ const EventPage = () => {
                           inputProps={{ 'aria-label': 'controlled' }}
                           
                         />} label="Headliner" />
-              <Button onClick={(e)=>{addEvents(); console.log(filter)}}>Reset</Button>
+              <Button onClick={handleResetFilter}>Reset</Button>
             </FormGroup>
-            
           </Drawer>
           <div className="image-competitions"></div>
           <div className="content-competitions">
             <h1>EVENTS</h1>
           </div>
           <div className="content-competitions">
-            {!drawerShown && <h4 onClick={()=>setDrawerShown(true)}><FilterAltIcon fontSize="large" />Filter</h4>}
+            {!drawerShown && <h4><p onClick={()=>setDrawerShown(true)}><FilterAltIcon fontSize="large" />Filter</p> <p onClick={sortHandler}><Sort /> Sort</p></h4>}
           </div>
           <div className="card-container-competitions">
-            {loaded ? (
+            {loaded && 
               events.map(
                 (eachEvent, index) => {
                   if (loaded) {
-                    // if (filter.headliner && !eachEvent.headliner){ return}
                     return ( !(filter.headliner && eachEvent.headliner) &&
                       <a
                         key={index}
@@ -141,9 +156,6 @@ const EventPage = () => {
                       >
                         <div
                           className="hover-cards-competitions"
-                          // style={{
-                          //   backgroundImage: `url(${eachEvent.image_url})`,
-                          // }}
                         >
                           <img src={eachEvent.image_url} className="competitions-image"/>
                           <p>{eachEvent.name}</p>
@@ -153,9 +165,7 @@ const EventPage = () => {
                   }
                 }
               )
-            ) : (
-              <></>
-            )}
+            }
             {(loaded && events.isEmpty) && <h1>NO EVENTS MATHCING THE FILTER </h1>}
           </div>
         </div>
