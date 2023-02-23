@@ -72,6 +72,17 @@ function NavbarMain() {
                 WORKSHOPS
               </Button>
             </LinkContainer>
+            <LinkContainer to="/talks">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                TALKS
+              </Button>
+            </LinkContainer>
             <LinkContainer to="/Sponsors">
               <Button
                 variant="custom"
