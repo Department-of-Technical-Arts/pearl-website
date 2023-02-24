@@ -127,6 +127,6 @@
   }
 }
 .logoimg {
-  width: max-content;
+  /* width: max-content; */
   height: 5rem;
 }
