@@ -48,7 +48,16 @@ const EventPage = () => {
         temp.push(eachTalk)
       })
     }
+    if(filter.headliner){
+      const headliners = temp.filter((eachEvent,index,array)=>{
+        console.log()
+        return eachEvent.headliner == true;
+      })
+      setEvents(headliners);
+      return;
+    }
     setEvents(temp);
+
   }
   const handleResetFilter = (e)=>{
     e.preventDefault;
@@ -149,8 +158,7 @@ const EventPage = () => {
               events.map(
                 (eachEvent, index) => {
                   if (loaded) {
-                    return ( !(filter.headliner && eachEvent.headliner) &&
-                      <a
+                    return ( <a
                         key={index}
                         href={"https://"+eachEvent.details}
                       >
