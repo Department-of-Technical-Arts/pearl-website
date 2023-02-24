@@ -5,6 +5,7 @@ import { useFirebase } from "../../hooks/useFirebase";
 import { Drawer, Checkbox, FormGroup, FormControlLabel, Typography, Button } from "@mui/material";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { Sort } from "@mui/icons-material";
+import useMixpanel from "../../hooks/useMixpanel";
 
 
 const EventPage = () => {
@@ -14,21 +15,21 @@ const EventPage = () => {
     "talks":true,
     "headliner":false
   }
+
+  //MARK: STATE VARIABLES
   const [value, setValue] = useState(1);
   const [drawerShown, setDrawerShown] = useState(false);
-  const [competitions, workshops, loaded, talks] = useFirebase();
   const [filter, setFilter] = useState(nullFilter)
   const [events, setEvents] = useState([])
 
-  useEffect(()=>{
-    console.log(events);
-  }, [events])
+  //MARK: HOOKS VARIABLES
+  const [competitions, workshops, loaded, talks] = useFirebase();
+  const { eventClicked } = useMixpanel()
 
   useEffect(() => {
     if(loaded){
       addEvents()
     }
-
   }, [loaded]);
 
   const addEvents = (filter=nullFilter) =>{
@@ -61,8 +62,14 @@ const EventPage = () => {
   }
   const handleResetFilter = (e)=>{
     e.preventDefault;
-    setFilter(nullFilter);
-    addEvents(nullFilter)
+    const newFilter = {
+      "competitions":true,
+      "workshops":true,
+      "talks":true,
+      "headliner":false
+    };
+    setFilter(newFilter);
+    addEvents(newFilter)
     setValue(value*-1);
   }
 
@@ -79,7 +86,12 @@ const EventPage = () => {
 
   // Set Filter states
   const handleFilter = (type) => {
-    const newFilter = nullFilter;
+    const newFilter = {
+      "competitions":true,
+      "workshops":true,
+      "talks":true,
+      "headliner":false
+    };
     Object.entries(filter).map(([name, value])=>{
       if (type==name){
         newFilter[type]=!filter[type];
@@ -89,8 +101,14 @@ const EventPage = () => {
       }
     })
     if (newFilter.competitions==false && newFilter.talks==false && newFilter.workshops==false){
-      setFilter(nullFilter);
-      addEvents(nullFilter);
+      const nfilter = {
+        "competitions":true,
+        "workshops":true,
+        "talks":true,
+        "headliner":false
+      }
+      setFilter(nfilter);
+      addEvents(nfilter);
       return;
     }
     setFilter(newFilter);
@@ -151,7 +169,7 @@ const EventPage = () => {
             <h1>EVENTS</h1>
           </div>
           <div className="content-competitions">
-            {!drawerShown && <h4><p onClick={()=>setDrawerShown(true)}><FilterAltIcon fontSize="large" />Filter</p> <p onClick={sortHandler}><Sort /> Sort</p></h4>}
+            {!drawerShown && <h4><p onClick={()=>setDrawerShown(true)}><FilterAltIcon fontSize="large" />Filter</p> <p onClick={sortHandler}><Sort />Sort {value==1 ? "A-Z":"Z-A"}</p></h4>}
           </div>
           <div className="card-container-competitions">
             {loaded && 
@@ -161,6 +179,7 @@ const EventPage = () => {
                     return ( <a
                         key={index}
                         href={"https://"+eachEvent.details}
+                        onClick={()=>{eventClicked(eachEvent.name, {})}}
                       >
                         <div
                           className="hover-cards-competitions"

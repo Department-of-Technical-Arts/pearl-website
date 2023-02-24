@@ -12,8 +12,7 @@
   width: 100%;
 }
 .landing-container {
-  position: absolute;
-  /* height: 150vh; */
+  height: 70vh;
   width: 100%;
 }
 .bg {
@@ -36,11 +35,11 @@
 
 .landing-desc-container {
   position: absolute;
-  top: 14vh;
+  top: 14rem;
   left: 56vw;
   width: 40vw;
   height: max-content;
-  background-color: #ffffff4e;
+  /* background-color: #ffffff4e; */
   border-radius: 4vmin;
   padding: 2%;
 }
@@ -340,7 +339,7 @@
     width: 80vw;
     backdrop-filter: blur(10px);
   }
-  .landing-title {
+  /* .landing-title {
     position: absolute;
     top: 40%;
     left: 8%;
@@ -351,8 +350,8 @@
     line-height: 91px;
     color: white;
     mix-blend-mode: difference;
-  }
-  .bg {
+  } */
+  /* .bg {
     z-index: -1;
     top: 0;
     left: 0;
@@ -363,7 +362,7 @@
     background-position: center;
     height: 100vh;
     width: 100vw;
-  }
+  } */
   .dates {
     font-size: 5.8vw;
     left: 27%;
@@ -387,6 +386,7 @@
   }
 }
 .after-movies {
+  margin-top: 10vh;
   height: 110vh;
   width: 100vw;
   display: flex;
@@ -428,6 +428,40 @@
   text-align: center;
   text-shadow: 0px 0px 7px #f7d1de;
 }
+
+
+.landing-footer {
+  width: 100vw;
+  backdrop-filter: blur(5px);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+.footer-bits {
+  height: 40vh;
+  object-fit: contain;
+}
+.links {
+  min-width: 100px;
+  color: #e4b963;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10vw;
+}
+.fa{
+  color: #e4b963;
+}
+.links h1 {
+  padding-bottom: 5vh;
+}
+.links p:focus p:hover p:active {
+  text-decoration: none !important;
+  color: white;
+}
 @media (max-width: 900px) {
   .landing-footer {
     flex-direction: column;
@@ -444,6 +478,9 @@
   .movie h3 {
     text-shadow: 0px 10px 10px rgba(190, 60, 55, 0.8);
   }
+  .landing-footer {
+    flex-direction: column;
+  }
 }
 @media (max-width: 1024px) {
   .movies {
@@ -458,7 +495,5 @@
   .movie h3 {
     text-shadow: 0px 10px 10px rgba(190, 60, 55, 0.8);
   }
-  .after-movies h1{
-    
-  }
+  
 }

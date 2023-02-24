@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./Landing.css";
+import bits from "./bits-img.png";
 import { useNavigate } from "react-router-dom";
 import Standout from "../Standout/Standout";
 import { useScroll } from "framer-motion";
@@ -15,6 +16,7 @@ import {
   ZoomIn,
 } from "react-scroll-motion";
 import bg3 from "../../assets-pearl/website_landing-01-01.png";
+import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 
 const Landing = () => {
   // const navigate = useNavigate();
@@ -75,16 +77,17 @@ const Landing = () => {
 
   return (
     <div>
+    <div className="bg"></div>
+    <ParallaxProvider>
       {scrolling && (
                     <p className="scroll-text">
                       {isTouch.matches ? "SWIPE UP TO EXPLORE" : "SCROLL DOWN TO EXPLORE"}
                     </p>
                   )}
-      <ScrollContainer>
+      {/* <ScrollContainer>
         <ScrollPage>
-          <Animator>
+          <Animator> */}
             <div className="landing-container" ref={elementRef}>
-              <div className="bg"></div>
               {/* <h4 className="dates">25-27 November</h4> */}
               
               {/*<h4 className="countdown">{`${days}d : ${hours}h : ${minutes}m`}</h4>*/}
@@ -108,9 +111,9 @@ const Landing = () => {
                 </div>
               </div>
             </div>
-          </Animator>
-        </ScrollPage>
-        <ScrollPage>
+          {/* </Animator>
+        </ScrollPage> */}
+        {/* <ScrollPage>
           <Animator animation={batch(Sticky(), FadeIn(), ZoomIn(1.5, 1))}>
             <div
               className="after-movies"
@@ -154,8 +157,75 @@ const Landing = () => {
               </div>
             </div>
           </Animator>
-        </ScrollPage>
-      </ScrollContainer>
+        </ScrollPage> */}
+      {/* </ScrollContainer> */}
+      
+      
+        <div
+          className="after-movies"
+          // style={{ backgroundImage: `url(${bg3})` }}
+        >
+          <h1>AFTERMOVIES</h1>
+          <Parallax speed={20}>
+          <div className="movies">
+            <div className="movie">
+            <Parallax speed={3}>
+              <iframe
+                width="853"
+                height="480"
+                src={`https://www.youtube.com/embed/Y_wt8LJdOKw`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="2022"
+              />
+              </Parallax>
+              <h3>2022</h3>
+            </div>
+            <div className="movie">
+            <Parallax speed={3}>
+              <iframe
+                width="853"
+                height="480"
+                src={`https://www.youtube.com/embed/ai3GS6Rlano`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="2018"
+              /></Parallax>
+              <h3>2018</h3>
+            </div>
+            <div className="movie">
+            <Parallax speed={3}>
+              <iframe
+                width="853"
+                height="480"
+                src={"https://www.youtube.com/embed/ajXYdXiUkWc"}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                title="2017"
+              /></Parallax>
+              <h3>2017</h3>
+            </div>
+          </div>
+          </Parallax>
+        </div>
+        <div className="landing-footer">
+        <img alt="arena" className="footer-bits" src={bits}></img>
+        <img alt="arena" className="footer-bits" src={"/Pearl_logo2023.png"}></img>
+        <div className="links">
+          <h3>Follow Us</h3>
+          <p>
+            <a href="https://www.instagram.com/arena.bitsh/" className="fa fa-instagram"></a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/arena.bitsh/" className="fa fa-facebook"></a>
+          </p>
+          <p>
+            <a href="https://www.instagram.com/arena.bitsh/" className="fa fa-youtube"></a>
+          </p>
+        </div>
+      </div>
+
+      </ParallaxProvider>
     </div>
   );
 };

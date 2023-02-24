@@ -34,12 +34,12 @@ function NavbarMain() {
     >
       <Container>
         <Navbar.Brand href="/">
+        <div className="wrapper">
           <img
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
             width="max-content"
-            height="80rem"
-            className="d-inline-block align-top"
-          />
+            className="d-inline-block align-top logoimg"
+          /></div>
         </Navbar.Brand>
         <Navbar.Toggle
           aria-controls="basic-navbar-nav"

@@ -5,7 +5,7 @@
   color: white !important;
   /* background-color: #dcaa59; */
   background-color: #e4b963;
-  border-color: #e4b963;
+  border-color: #e4b963 !important;
   border: 0.3vmin solid;
   font-weight: 600;
 }
