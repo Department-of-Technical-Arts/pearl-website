@@ -207,8 +207,8 @@ const EventPage = () => {
               my:"auto"
             }}>
               <Typography variant="h4">Genres</Typography>
-              {Object.entries(genreFilterShown).map(([value, checked])=>{
-                return <FormControlLabel control={<Checkbox
+              {Object.entries(genreFilterShown).map(([value, checked],index)=>{
+                return <FormControlLabel key={index} control={<Checkbox
                           checked={genreFilterApplied ? genreFilterShown[value] : false}
                           onChange={(e)=>handleGenreFilter(e,value)}
                           inputProps={{ 'aria-label': 'controlled' }}
