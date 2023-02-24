@@ -16,16 +16,26 @@ const EventPage = () => {
     "headliner":false
   }
 
+  const nullGenreFilter = {"Art":true, "Dramatics":true, "Music Club":true, "VFx":true, "Graphic Design":true, "Quizzes":true, "Comedy":true, "Cooking":true, "Language":true, "Movie":true, "Photography":true, "Fashion":true, "Gaming":true, "Journal Club":true}
+
+
   //MARK: STATE VARIABLES
   const [value, setValue] = useState(1);
   const [drawerShown, setDrawerShown] = useState(false);
   const [filter, setFilter] = useState(nullFilter)
+  const [genreFilterShown, setGenreFilterShown] = useState({"Art":false, "Dramatics":false, "Music Club":false, "VFx":false, "Graphic Design":false, "Quizzes":false, "Comedy":false, "Cooking":false, "Language":false, "Movie":false, "Photography":false, "Fashion":false, "Gaming":false, "Journal Club":false})
+  const [genreFilterApplied, setGenreFilterApplied] = useState(false);
   const [events, setEvents] = useState([])
 
-  //MARK: HOOKS VARIABLES
+
+  //MARK: Custom HOOKS VARIABLES
   const [competitions, workshops, loaded, talks] = useFirebase();
   const { eventClicked } = useMixpanel()
 
+
+  const [allEvents, setAllEvents] =useState([]);
+
+  // Load The Page
   useEffect(() => {
     if(loaded){
       addEvents()
@@ -37,6 +47,7 @@ const EventPage = () => {
     if (filter.competitions){
       Object.entries(competitions).forEach(([name, eachEvent])=>{
         temp.push(eachEvent)
+        
       })
     }
     if (filter.workshops){
@@ -58,10 +69,15 @@ const EventPage = () => {
       return;
     }
     setEvents(temp);
-
+    setAllEvents(temp);
   }
+
+
+
+  // Handle Filters and Sorts
+  //reset
   const handleResetFilter = (e)=>{
-    e.preventDefault;
+    e.preventDefault();
     const newFilter = {
       "competitions":true,
       "workshops":true,
@@ -69,6 +85,8 @@ const EventPage = () => {
       "headliner":false
     };
     setFilter(newFilter);
+    setGenreFilterApplied(false);
+    setGenreFilterShown(nullGenreFilter);
     addEvents(newFilter)
     setValue(value*-1);
   }
@@ -84,7 +102,7 @@ const EventPage = () => {
     setValue(value*-1);
   }
 
-  // Set Filter states
+  // Set Event type Filter states
   const handleFilter = (type) => {
     const newFilter = {
       "competitions":true,
@@ -115,6 +133,64 @@ const EventPage = () => {
     addEvents(newFilter);
     console.log(newFilter);
   }
+
+
+  // Set genre event filter 
+  const handleGenreFilter = (e, genre) => {
+    if(!genreFilterApplied){
+      makeGenreFilter(false);
+      setGenreFilterApplied(true);
+    }
+    const tempFilter = genreFilterShown;
+    tempFilter[genre] = !tempFilter[genre];
+    if (!genreFilterNull()){
+      setGenreFilterApplied(false);
+      updateViewGenreFilter();
+      setValue(value*-1);
+      return;
+    }
+    setGenreFilterShown(tempFilter);
+    updateViewGenreFilter();
+    setValue(value*-1);
+  }
+
+  const genreFilterNull = () =>{
+    Object.entries(genreFilterShown).forEach(([genre, value])=>{
+      if(value == true){
+        return false;
+      }
+    })
+    return true;
+  }
+
+  const updateViewGenreFilter = () => {
+    let temp = allEvents;
+    const chosenGenres = []
+      Object.entries(genreFilterShown).forEach(([genre, value])=>{
+        if (value){
+          chosenGenres.push(genre);
+        }
+      })
+    if (chosenGenres.length != 0){
+      temp = temp.filter((event, index)=>chosenGenres.find((genre)=>genre==event.genre))
+    }
+    else {
+      console.log("call");
+      setEvents(allEvents);
+      return;
+    }
+    console.log(temp);
+    setEvents(temp)
+  }
+
+  const makeGenreFilter = (full) =>{
+    const temp = genreFilterShown
+    Object.entries(temp).forEach(([genre, value]) =>{
+      temp[genre] = full;
+    })
+    setGenreFilterShown(temp);
+  }
+
   return (
     <div>
       <div className="background-container-competitions">
@@ -131,7 +207,19 @@ const EventPage = () => {
               },
             }}
           >
-            
+            <FormGroup sx={{
+              mx:"auto",
+              my:"auto"
+            }}>
+              <Typography variant="h4">Genres</Typography>
+              {Object.entries(genreFilterShown).map(([value, checked])=>{
+                return <FormControlLabel control={<Checkbox
+                          checked={genreFilterApplied ? genreFilterShown[value] : false}
+                          onChange={(e)=>handleGenreFilter(e,value)}
+                          inputProps={{ 'aria-label': 'controlled' }}
+                        />} label={value} />
+              })}
+            </FormGroup>
             <FormGroup sx={{
               mx:"auto",
               my:"auto"
@@ -185,7 +273,9 @@ const EventPage = () => {
                           className="hover-cards-competitions"
                         >
                           <img src={eachEvent.image_url} className="competitions-image"/>
-                          <p>{eachEvent.name}</p>
+                          <p className="card-name">{eachEvent.name}</p>
+                          <p className="card-price">{eachEvent.price}</p>
+                          <p className="card-genre">Genre: {eachEvent.genre}</p>
                         </div>
                       </a>
                     );

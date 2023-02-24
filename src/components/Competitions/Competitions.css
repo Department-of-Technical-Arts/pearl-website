@@ -98,7 +98,7 @@ body {
   z-index: 10;
 }
 
-.hover-cards-competitions p {
+/* .hover-cards-competitions p {
   font-size: 18px;
   position: absolute;
   top: 225px;
@@ -106,7 +106,7 @@ body {
   transform: translate(-50%);
   line-height: 27px;
   width: 210px;
-}
+} */
 
 @media screen and (max-width: 500px) {
   .hover-cards-competitions {
