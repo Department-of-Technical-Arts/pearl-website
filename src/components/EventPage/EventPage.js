@@ -62,7 +62,6 @@ const EventPage = () => {
     }
     if(filter.headliner){
       const headliners = temp.filter((eachEvent,index,array)=>{
-        console.log()
         return eachEvent.headliner == true;
       })
       setEvents(headliners);
@@ -115,7 +114,6 @@ const EventPage = () => {
         newFilter[type]=!filter[type];
       }else{
         newFilter[name]=filter[name];
-        console.log(name)
       }
     })
     if (newFilter.competitions==false && newFilter.talks==false && newFilter.workshops==false){
@@ -131,7 +129,6 @@ const EventPage = () => {
     }
     setFilter(newFilter);
     addEvents(newFilter);
-    console.log(newFilter);
   }
 
 
@@ -175,11 +172,9 @@ const EventPage = () => {
       temp = temp.filter((event, index)=>chosenGenres.find((genre)=>genre==event.genre))
     }
     else {
-      console.log("call");
       setEvents(allEvents);
       return;
     }
-    console.log(temp);
     setEvents(temp)
   }
 
