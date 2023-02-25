@@ -54,7 +54,7 @@
   /* margin-top: 60vh;
   margin-left: 16vw; */
   z-index: 100;
-  margin-left: -45%;
+  margin-left: -15%;
   margin-top: 2%;
 }
 .btn-landing {
@@ -322,7 +322,7 @@
   }
   .landing-btn {
     margin-top: 10%;
-    margin-left: -48%;
+    margin-left: -25%;
   }
 }
 @media screen and (min-width: 480px) and (max-width: 1024px) {

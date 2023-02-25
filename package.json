@@ -30,6 +30,7 @@
         "react-scripts": "^5.0.1",
         "react-scroll-motion": "^0.3.2",
         "react-scroll-parallax": "^3.3.2",
+        "react-youtube": "^10.1.0",
         "reactstrap": "^9.1.5",
         "swiper": "^8.4.2",
         "web-vitals": "^2.1.4"

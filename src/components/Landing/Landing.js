@@ -17,8 +17,45 @@ import {
 } from "react-scroll-motion";
 import bg3 from "../../assets-pearl/website_landing-01-01.png";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
+import YouTube from "react-youtube";
+import { Container, Icon, Typography } from "@mui/material";
+import { Box, height } from "@mui/system";
+import { FacebookRounded, Instagram, YoutubeSearchedForRounded } from "@mui/icons-material";
+import { IoLogoYoutube } from "react-icons/io5";
 
 const Landing = () => {
+  const [player, setPlayer] = React.useState(null);
+  const [playing, setPlaying] = React.useState(false);
+
+  const handlePlayerReady = (event) => {
+    setPlayer(event.target);
+  };
+
+  const handlePlayerStateChange = (event) => {
+    if (event.data === window.YT.PlayerState.PLAYING) {
+      setPlaying(true);
+    }
+  };
+  // useEffect(() => {
+  //   const handleFullscreenChange = () => {
+  //     if (document.fullscreenElement) {
+  //       if (!playing) {
+  //         player.playVideo();
+  //       }
+  //     } else {
+  //       if (playing) {
+  //         player.pauseVideo();
+  //       }
+  //     }
+  //   };
+  
+  //   document.addEventListener('fullscreenchange', handleFullscreenChange);
+  
+  //   return () => {
+  //     document.removeEventListener('fullscreenchange', handleFullscreenChange);
+  //   };
+  // }, [playing, player]);
+
   // const navigate = useNavigate();
   const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
   var count = 1;
@@ -173,7 +210,7 @@ const Landing = () => {
               <iframe
                 width="853"
                 height="480"
-                src={`https://www.youtube.com/embed/Y_wt8LJdOKw`}
+                src={`https://www.youtube.com/embed/Y_wt8LJdOKw?rel=0&autoplay=0&showinfo=0&controls=0&fullscreen=1`}
                 allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="2022"
@@ -191,7 +228,7 @@ const Landing = () => {
               <iframe
                 width="853"
                 height="480"
-                src={`https://www.youtube.com/embed/ai3GS6Rlano`}
+                src={`https://www.youtube.com/embed/ai3GS6Rlano?rel=0&autoplay=0&showinfo=0&controls=0&fullscreen=1`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="2018"
@@ -203,7 +240,7 @@ const Landing = () => {
               <iframe
                 width="853"
                 height="480"
-                src={"https://www.youtube.com/embed/ajXYdXiUkWc"}
+                src={"https://www.youtube.com/embed/ajXYdXiUkWc?rel=0&autoplay=0&showinfo=0&controls=0&fullscreen=1"}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="2017"
@@ -213,23 +250,46 @@ const Landing = () => {
           </div>
           </Parallax>
         </div>
-        <div className="landing-footer">
-        <img alt="arena" className="footer-bits" src={bits}></img>
-        <img alt="arena" className="footer-bits" src={"/Pearl_logo2023.png"}></img>
-        <div className="links">
-          <h3>Follow Us</h3>
-          <p>
-            <a href="https://www.instagram.com/arena.bitsh/" className="fa fa-instagram"></a>
-          </p>
-          <p>
-            <a href="https://www.instagram.com/arena.bitsh/" className="fa fa-facebook"></a>
-          </p>
-          <p>
-            <a href="https://www.instagram.com/arena.bitsh/" className="fa fa-youtube"></a>
-          </p>
-        </div>
-      </div>
-
+        <Container 
+          component={"div"}
+          sx={{
+            mx:0,
+            bottom:0,
+            width:"100vw",
+            height:250,
+            backdropFilter:"blur(10px)",
+            display:"flex",
+            flexDirection:{
+              xs:"column",
+              sm:"row",
+            }
+          }}>
+          <Container
+            sx={{
+              backgroundImage:`url(${bits})`,
+              backgroundPosition:"center",
+              backgroundSize:"contain",
+              backgroundRepeat:"no-repeat",
+              height:250,
+            }}
+          />
+          <Container sx={{
+            display:"flex",
+            flexDirection:{
+              xs:"column",
+              sm:"row",
+            },
+            justifyContent:"center",
+            alignItems:"center",
+            gap:5,
+            color:"white"
+          }}>
+            <Typography fontSize={"xx-large"} fontFamily={"Croissant One"}>Let's Connect</Typography>
+            <Typography fontSize={"xx-large"}><FacebookRounded /></Typography>
+            <Typography fontSize={"xx-large"}><Instagram /></Typography>
+            <Typography fontSize={"x-large"}><IoLogoYoutube /></Typography>
+          </Container>
+        </Container>
       </ParallaxProvider>
     </div>
   );
