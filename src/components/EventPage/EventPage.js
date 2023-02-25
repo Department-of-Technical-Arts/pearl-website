@@ -16,14 +16,14 @@ const EventPage = () => {
     "headliner":false
   }
 
-  const nullGenreFilter = {"Art":true, "Dramatics":true, "Music Club":true, "VFx":true, "Graphic Design":true, "Quizzes":true, "Comedy":true, "Cooking":true, "Language":true, "Movie":true, "Photography":true, "Fashion":true, "Gaming":true, "Journal Club":true}
+  const nullGenreFilter = {"Art":true, "Dramatics":true, "Music":true, "VFx":true, "Graphic Design":true, "Quizzes":true, "Comedy":true, "Cooking":true, "Language":true, "Movie":true, "Photography":true, "Fashion":true, "Gaming":true, "Journalism":true}
 
 
   //MARK: STATE VARIABLES
   const [value, setValue] = useState(1);
   const [drawerShown, setDrawerShown] = useState(false);
   const [filter, setFilter] = useState(nullFilter)
-  const [genreFilterShown, setGenreFilterShown] = useState({"Art":false, "Dramatics":false, "Music Club":false, "VFx":false, "Graphic Design":false, "Quizzes":false, "Comedy":false, "Cooking":false, "Language":false, "Movie":false, "Photography":false, "Fashion":false, "Gaming":false, "Journal Club":false})
+  const [genreFilterShown, setGenreFilterShown] = useState({"Art":false, "Dramatics":false, "Music":false, "VFx":false, "Graphic Design":false, "Quizzes":false, "Comedy":false, "Cooking":false, "Language":false, "Movie":false, "Photography":false, "Fashion":false, "Gaming":false, "Journalism":false})
   const [genreFilterApplied, setGenreFilterApplied] = useState(false);
   const [events, setEvents] = useState([])
 
@@ -204,20 +204,7 @@ const EventPage = () => {
           >
             <FormGroup sx={{
               mx:"auto",
-              my:"auto"
-            }}>
-              <Typography variant="h4">Genres</Typography>
-              {Object.entries(genreFilterShown).map(([value, checked],index)=>{
-                return <FormControlLabel key={index} control={<Checkbox
-                          checked={genreFilterApplied ? genreFilterShown[value] : false}
-                          onChange={(e)=>handleGenreFilter(e,value)}
-                          inputProps={{ 'aria-label': 'controlled' }}
-                        />} label={value} />
-              })}
-            </FormGroup>
-            <FormGroup sx={{
-              mx:"auto",
-              my:"auto"
+              mt:5
             }}>
               <Typography variant="h4">Events</Typography>
               <FormControlLabel control={<Checkbox
@@ -246,6 +233,19 @@ const EventPage = () => {
                         />} label="Headliner" />
               <Button onClick={handleResetFilter}>Reset</Button>
             </FormGroup>
+            <FormGroup sx={{
+              mx:"auto",
+              my:5
+            }}>
+              <Typography variant="h4">Genres</Typography>
+              {Object.entries(genreFilterShown).map(([value, checked],index)=>{
+                return <FormControlLabel key={index} control={<Checkbox
+                          checked={genreFilterApplied ? genreFilterShown[value] : false}
+                          onChange={(e)=>handleGenreFilter(e,value)}
+                          inputProps={{ 'aria-label': 'controlled' }}
+                        />} label={value} />
+              })}
+            </FormGroup>
           </Drawer>
           <div className="image-competitions"></div>
           <div className="content-competitions">
@@ -262,14 +262,15 @@ const EventPage = () => {
                     return ( <a
                         key={index}
                         href={"https://"+eachEvent.details}
+                        target="_blank"
                         onClick={()=>{eventClicked(eachEvent.name, {})}}
                       >
                         <div
                           className="hover-cards-competitions"
                         >
                           <img src={eachEvent.image_url} className="competitions-image"/>
-                          <p className="card-name">{eachEvent.name}</p>
-                          <p className="card-price">{eachEvent.price}</p>
+                          <p className="card-name">{eachEvent.price}</p>
+                          <p className="card-price">{eachEvent.name}</p>
                           <p className="card-genre">Genre: {eachEvent.genre}</p>
                         </div>
                       </a>
