@@ -20,6 +20,8 @@ const EventCard = (props) => {
             </CardContent>
             <CardActions>
                 <Button href={props.link} size="small">Register</Button>
+                <Typography flexGrow={1}/>
+                <Typography>Genre - {props.genre}</Typography>
             </CardActions>
         </Card>
     );
