@@ -129,4 +129,5 @@
 .logoimg {
   /* width: max-content; */
   height: 5rem;
+  object-fit: contain;
 }

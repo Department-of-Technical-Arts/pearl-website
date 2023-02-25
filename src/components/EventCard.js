@@ -4,7 +4,7 @@ import { Button } from 'react-bootstrap';
 
 const EventCard = (props) => {
     return (
-        <Card elevation={10} sx={{ mb:10, width: 280, maxHeight: 350 }}>
+        <Card elevation={10} sx={{ mx:{xs:"none", sm:2}, mb:10, width: 300, maxHeight: 350 }}>
             <CardMedia 
                 sx={{ height: 160 }}
                 image={props.image}
@@ -14,7 +14,7 @@ const EventCard = (props) => {
                 <Typography textAlign={"left"} gutterBottom sx={{minHeight:80}} variant="h5" component="div">
                     {props.name}
                 </Typography>
-                <Typography textAlign={"left"} variant="body2" color="text.secondary">
+                <Typography mb={-2} textAlign={"left"} variant="h6" color="text.secondary">
                     {props.price}
                 </Typography>
             </CardContent>

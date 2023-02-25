@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import "./Competitions.css";
 import { useFirebase } from "../../hooks/useFirebase";
-import { Drawer, Checkbox, FormGroup, FormControlLabel, Typography, Button, Container } from "@mui/material";
+import { Drawer, Checkbox, FormGroup, FormControlLabel, Typography, Button, Container, Box } from "@mui/material";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { Sort } from "@mui/icons-material";
 import useMixpanel from "../../hooks/useMixpanel";
@@ -271,13 +271,16 @@ const EventPage = () => {
           <div className="content-filter">
             {!drawerShown
              && 
-             <Container component={"div"} sx={{width:"100%", display:"flex", flexDirection:"column", mt:-8}}>
-              <Typography mb={2} textAlign={"right"} variant="h5" onClick={()=>setDrawerShown(true)}>
-                <FilterAltIcon sx={{my:"auto"}} fontSize="large" />Filter
-              </Typography> 
-              <Typography textAlign={"right"} variant="h5" onClick={sortHandler}>
-                <Sort sx={{my:"auto"}} />Sort {value==1 ? "A-Z":"Z-A"}
-              </Typography>
+             <Container component={"div"} sx={{width:"100%", display:"flex", justifyContent:"flex-end", mt:-8}}>
+              <Typography flexGrow={1}></Typography>
+              <Box component={"div"} sx={{flexDirection:"column"}}>
+                <Typography textAlign={"left"} mb={2}  variant="h5" onClick={()=>setDrawerShown(true)}>
+                  <FilterAltIcon sx={{mx:"none", my:"auto"}} fontSize="large" />Filter
+                </Typography> 
+                <Typography textAlign={"left"} variant="h5" onClick={sortHandler}>
+                  <Sort sx={{my:"auto"}} />{"   "}Sort {value==1 ? "A-Z":"Z-A"}
+                </Typography>
+              </Box>
              </Container>}
           </div>
           <div className="card-container-competitions">
