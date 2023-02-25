@@ -44,7 +44,13 @@ body {
   left: 50%;
   /* animation: 2s ease-out 0s 1 fadeIn; */
 }
-
+.content-filter {
+  position: relative;
+  width: 80vw;
+  top: 35%;
+  left: 10%;
+  /* animation: 2s ease-out 0s 1 fadeIn; */
+}
 .content-competitions h1 {
   position: absolute;
   font-family: "Croissant One";
@@ -55,7 +61,7 @@ body {
   color: white;
   transform: translate(-50%, -50%);
 }
-.content-competitions h4 {
+/* .content-competitions h4 {
   display: flex;
   gap: 1.5rem;
   position: absolute;
@@ -66,7 +72,7 @@ body {
   font-weight: 600;
   color: white;
   transform: translate(-50%, -50%);
-}
+} */
 
 .card-container-competitions {
   position: absolute;

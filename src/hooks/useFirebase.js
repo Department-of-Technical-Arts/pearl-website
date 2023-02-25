@@ -7,6 +7,7 @@ export const useFirebase = ()=>{
     const [competitions, setCompetitions] = useState()
     const [workshops, setWorkshops] = useState()
     const [talks, setTalks] = useState();
+    const [games, setGames] = useState();
     const [accommodations, setAccommodations] = useState()
     const [loaded, setLoaded] = useState(false);
     useEffect(() => {
@@ -17,6 +18,7 @@ export const useFirebase = ()=>{
           setWorkshops(snapshot.val().Workshops);
           setTalks(snapshot.val().Talks)
           setAccommodations(snapshot.val().Accommodations)
+          setGames(snapshot.val().Games)
           setLoaded(true);
         //   dispatch(Actions.initializeCompetitions(snapshot.val().Competitions));
           console.log(snapshot.val().Competitions)
@@ -28,5 +30,5 @@ export const useFirebase = ()=>{
         console.error(error);
       });},[])
   
-      return [competitions, workshops, loaded, talks, accommodations]
+      return [competitions, workshops, loaded, talks, accommodations, games]
   }

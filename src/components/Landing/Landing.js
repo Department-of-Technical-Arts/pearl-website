@@ -174,9 +174,14 @@ const Landing = () => {
                 width="853"
                 height="480"
                 src={`https://www.youtube.com/embed/Y_wt8LJdOKw`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="fullscreen; accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="2022"
+                allowfullscreen="allowfullscreen"
+                mozallowfullscreen="mozallowfullscreen" 
+                msallowfullscreen="msallowfullscreen" 
+                oallowfullscreen="oallowfullscreen" 
+                webkitallowfullscreen="webkitallowfullscreen"
               />
               </Parallax>
               <h3>2022</h3>

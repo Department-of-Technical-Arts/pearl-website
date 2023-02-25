@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import "./Competitions.css";
 import { useFirebase } from "../../hooks/useFirebase";
-import { Drawer, Checkbox, FormGroup, FormControlLabel, Typography, Button } from "@mui/material";
+import { Drawer, Checkbox, FormGroup, FormControlLabel, Typography, Button, Container } from "@mui/material";
 import FilterAltIcon from '@mui/icons-material/FilterAlt';
 import { Sort } from "@mui/icons-material";
 import useMixpanel from "../../hooks/useMixpanel";
+import EventCard from "../EventCard";
 
 
 const EventPage = () => {
@@ -13,6 +14,7 @@ const EventPage = () => {
     "competitions":true,
     "workshops":true,
     "talks":true,
+    "games":true,
     "headliner":false
   }
 
@@ -29,7 +31,7 @@ const EventPage = () => {
 
 
   //MARK: Custom HOOKS VARIABLES
-  const [competitions, workshops, loaded, talks] = useFirebase();
+  const [competitions, workshops, loaded, talks, acc, games] = useFirebase();
   const { eventClicked } = useMixpanel()
 
 
@@ -38,7 +40,7 @@ const EventPage = () => {
   // Load The Page
   useEffect(() => {
     if(loaded){
-      addEvents()
+      addEvents();
     }
   }, [loaded]);
 
@@ -46,18 +48,23 @@ const EventPage = () => {
     const temp = [];
     if (filter.competitions){
       Object.entries(competitions).forEach(([name, eachEvent])=>{
-        temp.push(eachEvent)
+        temp.push(eachEvent);
         
       })
     }
     if (filter.workshops){
       Object.entries(workshops).forEach(([name, eachWorkshop])=>{
-        temp.push(eachWorkshop)
+        temp.push(eachWorkshop);
       })
     }
     if (filter.talks){
       Object.entries(talks).forEach(([name, eachTalk])=>{
-        temp.push(eachTalk)
+        temp.push(eachTalk);
+      })
+    }
+    if (filter.games){
+      Object.entries(games).forEach(([name, eachGame])=>{
+        temp.push(eachGame);
       })
     }
     if(filter.headliner){
@@ -67,6 +74,7 @@ const EventPage = () => {
       setEvents(headliners);
       return;
     }
+    
     setEvents(temp);
     setAllEvents(temp);
   }
@@ -81,6 +89,7 @@ const EventPage = () => {
       "competitions":true,
       "workshops":true,
       "talks":true,
+      "games":true,
       "headliner":false
     };
     setFilter(newFilter);
@@ -107,6 +116,7 @@ const EventPage = () => {
       "competitions":true,
       "workshops":true,
       "talks":true,
+      "games":true,
       "headliner":false
     };
     Object.entries(filter).map(([name, value])=>{
@@ -116,13 +126,14 @@ const EventPage = () => {
         newFilter[name]=filter[name];
       }
     })
-    if (newFilter.competitions==false && newFilter.talks==false && newFilter.workshops==false){
+    if (newFilter.competitions==false && newFilter.talks==false && newFilter.workshops==false && newFilter.games==false){
       const nfilter = {
         "competitions":true,
         "workshops":true,
         "talks":true,
+        "games":true,
         "headliner":false
-      }
+      };
       setFilter(nfilter);
       addEvents(nfilter);
       return;
@@ -231,6 +242,12 @@ const EventPage = () => {
                           inputProps={{ 'aria-label': 'controlled' }}
                           
                         />} label="Headliner" />
+              <FormControlLabel control={<Checkbox
+                          checked={filter.games}
+                          onChange={()=>handleFilter("games")}
+                          inputProps={{ 'aria-label': 'controlled' }}
+                          
+                        />} label="Games" />
               <Button onClick={handleResetFilter}>Reset</Button>
             </FormGroup>
             <FormGroup sx={{
@@ -251,35 +268,29 @@ const EventPage = () => {
           <div className="content-competitions">
             <h1>EVENTS</h1>
           </div>
-          <div className="content-competitions">
-            {!drawerShown && <h4><p onClick={()=>setDrawerShown(true)}><FilterAltIcon fontSize="large" />Filter</p> <p onClick={sortHandler}><Sort />Sort {value==1 ? "A-Z":"Z-A"}</p></h4>}
+          <div className="content-filter">
+            {!drawerShown
+             && 
+             <Container component={"div"} sx={{width:"100%", display:"flex", flexDirection:"column", mt:-8}}>
+              <Typography mb={2} textAlign={"right"} variant="h5" onClick={()=>setDrawerShown(true)}>
+                <FilterAltIcon sx={{my:"auto"}} fontSize="large" />Filter
+              </Typography> 
+              <Typography textAlign={"right"} variant="h5" onClick={sortHandler}>
+                <Sort sx={{my:"auto"}} />Sort {value==1 ? "A-Z":"Z-A"}
+              </Typography>
+             </Container>}
           </div>
           <div className="card-container-competitions">
             {loaded && 
               events.map(
                 (eachEvent, index) => {
                   if (loaded) {
-                    return ( <a
-                        key={index}
-                        href={"https://"+eachEvent.details}
-                        target="_blank"
-                        onClick={()=>{eventClicked(eachEvent.name, {})}}
-                      >
-                        <div
-                          className="hover-cards-competitions"
-                        >
-                          <img src={eachEvent.image_url} className="competitions-image"/>
-                          <p className="card-name">{eachEvent.price}</p>
-                          <p className="card-price">{eachEvent.name}</p>
-                          <p className="card-genre">Genre: {eachEvent.genre}</p>
-                        </div>
-                      </a>
-                    );
+                    return (<EventCard link={"https://"+eachEvent.details} name={eachEvent.name} price={eachEvent.price} image={eachEvent.image_url}/>)
                   }
                 }
               )
             }
-            {(loaded && events.isEmpty) && <h1>NO EVENTS MATHCING THE FILTER </h1>}
+            {loaded && events.isEmpty && <h1>NO EVENTS MATHCING THE FILTER </h1>}
           </div>
         </div>
       </div>
