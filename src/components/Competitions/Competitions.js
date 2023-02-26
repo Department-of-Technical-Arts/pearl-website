@@ -8,6 +8,8 @@ import { useFirebase } from "../../hooks/useFirebase";
 const Competitions = () => {
   // const {competitions} = useSelector ((state) => state.displayData)
   const [competitions, workshops, loaded] = useFirebase();
+
+  console.log(competitions)
   useEffect(() => {
     document.title = "COMPETITIONS - PEARL";
     console.log(loaded);

@@ -89,10 +89,16 @@
   color: white;
   text-align: center;
   justify-items: center;
+  margin-top: 70px;
 }
 .logo-image {
   height: 10vh;
   width: auto;
+  border-radius: 10px;
+}
+.oracle-image {
+  height: 5vh;
+  width: 300px;
   border-radius: 10px;
 }
 .forever-logo {

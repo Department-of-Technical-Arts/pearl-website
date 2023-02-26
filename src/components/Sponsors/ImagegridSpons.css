@@ -1,10 +1,12 @@
 .container-grid-spons {
   transform: translate(0%, 20%);
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 2%;
-  grid-auto-rows: auto;
-  grid-auto-flow: dense;
+  justify-content: center;
+  place-items: center;
+  grid-template-columns: repeat(3, 3fr);
+  grid-gap: 40px;
+  
+ 
  padding: 5%;
   
 }
