@@ -250,7 +250,7 @@ const Landing = () => {
           </div>
           </Parallax>
         </div>
-        <Container 
+        {/* <Container 
           component={"div"}
           sx={{
             mx:0,
@@ -289,7 +289,7 @@ const Landing = () => {
             <Typography fontSize={"xx-large"}><Instagram /></Typography>
             <Typography fontSize={"x-large"}><IoLogoYoutube /></Typography>
           </Container>
-        </Container>
+        </Container> */}
       </ParallaxProvider>
     </div>
   );
