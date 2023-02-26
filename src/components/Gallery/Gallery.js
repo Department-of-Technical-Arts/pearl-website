@@ -13,6 +13,7 @@ const Gallery = () => {
       <div className="content-gallery">
         <h1 className="gallery-title">GALLERY</h1>
       </div>
+      <Imagegrid />
     </div>
   );
 };
