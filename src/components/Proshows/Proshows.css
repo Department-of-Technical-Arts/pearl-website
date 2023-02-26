@@ -85,7 +85,7 @@ color: #FFFFFC;
 .background-proshow {
   top: 0;
   left: 0;
-  background-color: black;
+  background-color: #7fdbe0;
   position: absolute;
   background-size: cover;
   background-repeat: no-repeat;
@@ -225,14 +225,14 @@ color: #FFFFFC;
   top: 0;
   left: 0;
   position: fixed;
-  background-image: url("../../assets/earth-g174993377_1920\ 1.png");
+  background-image: url("../../assets-pearl/website_gallery-01.png");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
   width: 100%;
   overflow: hidden;
-  animation: 1s ease-out 0s 1 zoomIn2;
+  /* animation: 1s ease-out 0s 1 zoomIn2; */
   background-attachment: fixed;
 }
 
@@ -254,7 +254,7 @@ color: #FFFFFC;
   font-size: 11vw;
   font-weight: 600;
   height: 20vh;
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   color: white;
   transform: translate(-50%, -50%);
 }
@@ -279,7 +279,7 @@ color: #FFFFFC;
   flex: 0 1 auto;
 }
 .proshows-heading {
-  mix-blend-mode: difference;
+  /* mix-blend-mode: difference; */
   font-size: 6vmin;
   font-weight: 600;
   width: 100%;

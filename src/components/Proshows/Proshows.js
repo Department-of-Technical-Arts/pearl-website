@@ -4,44 +4,14 @@ import proshowsImages from "../../images/events-photos/proshows-images";
 import currProshowsImages from "../../images/events-photos/currproshows-images";
 // import CurrentProshows from "../../CurrentProshow/Currentproshow";
 
-class Proshow {
-  constructor(name, date, link, image) {
-    this.name = name;
-    this.date = date;
-    this.link = link;
-    this.image = image;
-  }
-}
 
-const proshows = [
-  new Proshow(
-    "Anand Bhaskar Collective",
-    "27 NOV",
-    "https://www.instagram.com/p/ClDzUtXND4c/",
-    currProshowsImages[0]
-  ),
-  new Proshow(
-    "Arjun Kanungo",
-    "27 NOV",
-    "https://www.instagram.com/p/Ck3qZFlhHXp/",
-    currProshowsImages[1]
-  ),
-  new Proshow(
-    "Samay Raina",
-    "25 NOV",
-    "https://www.instagram.com/p/ClETWDdN3LW/",
-    currProshowsImages[2]
-  ),
-];
+
 
 const Proshows = () => {
-  const currProShowsNames = [
+  const proShowsNames = [
     "Anand Bhaskar Collective",
     "Arjun Kanungo",
-
     "Samay Raina",
-  ];
-  const proShowsNames = [
     "Armaan Malik",
     "Nishant Suri",
     "Danny Avila",
@@ -50,14 +20,6 @@ const Proshows = () => {
     "Vivek Singh",
     "Pineapple Express",
   ];
-  const proshowDates = ["27 NOV", "27 NOV", "25 NOV"];
-  const proshowLinks = [
-    "https://www.instagram.com/p/ClDzUtXND4c/",
-    "https://www.instagram.com/p/Ck3qZFlhHXp/",
-
-    "https://www.instagram.com/p/ClETWDdN3LW/",
-  ];
-
   useEffect(() => {
     document.title = "PROSHOWS - ATMOS";
   }, []);
@@ -71,8 +33,8 @@ const Proshows = () => {
             <h1>PROSHOWS</h1>
           </div>
           <div className="card-container-proshows">
-            <h4 className="proshows-heading">ATMOS '22 PROSHOWS</h4>
-            <div className="prev-proshows">
+            <h4 className="proshows-heading">PEARL '23 PROSHOWS</h4>
+            {/* <div className="prev-proshows">
               {Object.values(currProShowsNames).map((value, i) => {
                 const currPro = proshows[i];
                 return (
@@ -99,7 +61,7 @@ const Proshows = () => {
                   </a>
                 );
               })}
-            </div>
+            </div> */}
             <h4 className="proshows-heading">PREVIOUS PROSHOWS</h4>
             <div className="prev-proshows">
               {Object.values(proShowsNames).map((value, i) => {

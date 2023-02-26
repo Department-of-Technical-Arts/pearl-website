@@ -138,6 +138,28 @@ function NavbarMain() {
                 ACCOMODATIONS
               </Button>
             </LinkContainer>
+            <LinkContainer to="/passes">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                PASSES
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/proshows">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                PROSHOWS
+              </Button>
+            </LinkContainer>
           </Nav>
         </Navbar.Collapse>
       </Container>

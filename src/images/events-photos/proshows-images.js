@@ -1,4 +1,8 @@
 const proshowsImages = [
+  "/events-photos/anandbhaskar-cover.png",
+  "/events-photos/Arjun-cover.png",
+  
+  "/events-photos/Samay-cover.jpg",
   "/events-photos/pro-show_cover.JPG",
   "/events-photos/nishantsuri_cover.JPG",
   "/events-photos/dannyavila_cover.jpg",
