@@ -10,9 +10,9 @@
   font-weight: 600;
 }
 .btn-custom.active {
-  background-color: white;
-  border-color: #e4b963;
-  color: #e4b963 !important;
+  background-color: rgb(230, 100, 30);
+  border-color: rgb(230, 100, 30) !important;
+  color: white !important;
   border: 0.3vmin solid;
   font-weight: 600;
 }

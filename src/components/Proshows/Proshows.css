@@ -247,14 +247,13 @@ color: #FFFFFC;
 
 .content-proshows h1 {
   position: absolute;
-  right: -35.5vw;
   top: 34vh;
-  font-family: "Inter";
+  font-family: "TAN-Pearl";
   font-style: normal;
-  font-size: 11vw;
+  font-size: 5vw;
   font-weight: 600;
   height: 20vh;
-  /* mix-blend-mode: difference; */
+  mix-blend-mode: difference;
   color: white;
   transform: translate(-50%, -50%);
 }
@@ -280,10 +279,12 @@ color: #FFFFFC;
 }
 .proshows-heading {
   /* mix-blend-mode: difference; */
+  font-family: "TAN-Pearl";
   font-size: 6vmin;
   font-weight: 600;
   width: 100%;
   color: white;
+  mix-blend-mode: difference;
   margin-bottom: -4%;
 }
 

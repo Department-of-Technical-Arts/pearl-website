@@ -48,6 +48,7 @@
   text-align: left;
   font-weight: 600;
   color: #bb4f80;
+  font-family:cursive;
 }
 .landing-btn {
   position: relative;
@@ -56,11 +57,13 @@
   z-index: 100;
   margin-left: -15%;
   margin-top: 2%;
+
 }
 .btn-landing {
   color: white !important;
   background-color: #e4b963 !important;
   box-shadow: 1.4vmin 1vmin 2.5vmin -2vmin rgb(11, 11, 11) !important;
+  font-family:"TAN-Pearl";
 }
 .btn-landing:hover {
   color: #e4b963 !important;

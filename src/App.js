@@ -25,7 +25,7 @@ import Schedule from "./components/Schedule/Schedule";
 import {get, ref, child} from "firebase/database"
 import StartFirebase from "./config";
 import EventPage from "./components/EventPage/EventPage";
-
+import './fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf';
 const App = () => {
   const dispatch = useDispatch();
   const [database, storage] = StartFirebase()

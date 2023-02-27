@@ -47,14 +47,14 @@
 
 .gallery-title {
   position: fixed;
-  font-family: "Croissant One";
-  padding-top: 7%;
-  padding-left: 27%;
+  font-family: "TAN-Pearl";
+  left: 25%;
+  top:20%;
   font-style: normal;
   font-size: 9.8vw;
   font-weight: 600;
-
   color: white;
+  mix-blend-mode: difference;
 }
 
 .gallery-grid {

@@ -116,11 +116,11 @@ const Landing = () => {
     <div>
     <div className="bg"></div>
     <ParallaxProvider>
-      {scrolling && (
+      {/* {scrolling && (
                     <p className="scroll-text">
                       {isTouch.matches ? "SWIPE UP TO EXPLORE" : "SCROLL DOWN TO EXPLORE"}
                     </p>
-                  )}
+                  )} */}
       {/* <ScrollContainer>
         <ScrollPage>
           <Animator> */}

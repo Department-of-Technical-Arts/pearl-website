@@ -1,3 +1,9 @@
+@font-face {
+  font-family: "TAN-Pearl";
+  src: local("TAN-Pearl"),
+   url("./fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf") format("truetype");
+  font-weight: bold;
+  }
 .App {
   text-align: center;
 }

@@ -53,12 +53,13 @@ body {
 }
 .content-competitions h1 {
   position: absolute;
-  font-family: "Croissant One";
+  font-family: "TAN-Pearl";
   font-style: normal;
-  font-size: 8vw;
-  font-weight: 600;
+  font-size: 5vw;
+  font-weight: 1000;
   height: 20vh;
   color: white;
+  mix-blend-mode: difference;
   transform: translate(-50%, -50%);
 }
 /* .content-competitions h4 {

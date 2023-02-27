@@ -30,14 +30,17 @@ function NavbarMain() {
         navbg ? " navbar navbar-expand-lg add" : "navbar navbar-expand-lg"
       }
       expanded={expanded}
-      style={{ position: "fixed" }}
+      style={{ 
+        position: "fixed",
+        fontFamily:"TAN-Pearl" 
+        }}
     >
       <Container>
         <Navbar.Brand href="/">
         <div className="wrapper">
           <img
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
-            width="150"
+            width="125"
             className="d-inline-block align-top logoimg"
           /></div>
         </Navbar.Brand>
