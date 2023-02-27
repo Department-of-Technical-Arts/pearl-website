@@ -33,7 +33,7 @@ const Proshows = () => {
             <h1>PROSHOWS</h1>
           </div>
           <div className="card-container-proshows">
-            <h4 className="proshows-heading">PEARL '23 PROSHOWS</h4>
+            {/* <h4 className="proshows-heading">PEARL '23 PROSHOWS</h4> */}
             {/* <div className="prev-proshows">
               {Object.values(currProShowsNames).map((value, i) => {
                 const currPro = proshows[i];

@@ -48,12 +48,12 @@
 .gallery-title {
   position: fixed;
   font-family: "TAN-Pearl";
-  left: 25%;
+  left: 30%;
   top:20%;
   font-style: normal;
-  font-size: 9.8vw;
+  font-size: 6.8vw;
   font-weight: 600;
-  color: white;
+  color: rgb(6, 0, 0);
   mix-blend-mode: difference;
 }
 

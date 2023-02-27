@@ -40,7 +40,8 @@ function NavbarMain() {
         <div className="wrapper">
           <img
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
-            width="125"
+            width="160"
+            height="130"
             className="d-inline-block align-top logoimg"
           /></div>
         </Navbar.Brand>

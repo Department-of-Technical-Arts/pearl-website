@@ -128,11 +128,11 @@
 }
 .sponsors-title {
   position: relative;
-  font-family: "Inter";
+  font-family: "TAN-Pearl";
   font-style: normal;
-  font-size: 50px;
+  font-size: 3.8vw;
   font-weight: 600;
-  color: white;
+  color: rgb(2, 0, 0);
   padding-top: 6%;
   text-align: center;
   justify-items: center;
@@ -207,6 +207,14 @@
   align-content: center;
   align-items: center;
   justify-items: center;
+}
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  .asus-image{
+    width: 30vh;
+  }
+  .logo-image{
+    width: 30vh;
+  }
 }
 
 @media screen and (max-width: 1000px) {

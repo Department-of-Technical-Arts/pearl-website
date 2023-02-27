@@ -84,6 +84,9 @@
   height: 100%;
   width: 100%;
 }
+.after-movies h1{
+  margin-top: 25vh;
+}
 
 .landing-title {
   position: absolute;
@@ -309,6 +312,10 @@
     top: 58%;
     left: 32%;
   }
+  .btn-landing
+  {
+    margin-top: 45px;
+  }
 }
 @media screen and (min-width: 300px) and (max-width: 480px) {
   .landing-desc-container {
@@ -332,6 +339,10 @@
   .landing-desc {
     font-size: 3vmax;
     mix-blend-mode: difference;
+  }
+  .btn-landing
+  {
+    margin-top: 145px;
   }
   .landing-desc-container {
     position: absolute;
@@ -400,8 +411,9 @@
   background-repeat: no-repeat;
 }
 .after-movies h1 {
-  color: white;
-  margin-top: 20vh;
+  color: rgb(6, 0, 0);
+  /* margin-top: 20vh; */
+  font-family: "TAN-Pearl";
   font-weight: 700;
   font-size: 8vmin;
   text-shadow: 0px 10px 5px #f7d1de;
@@ -428,6 +440,7 @@
   width: 30vw;
 }
 .movie h3 {
+  margin-top: 10px;
   text-align: center;
   text-shadow: 0px 0px 7px #f7d1de;
 }
@@ -479,6 +492,7 @@
     width: 80vw;
   }
   .movie h3 {
+    margin-top: 10px;
     text-shadow: 0px 10px 10px rgba(190, 60, 55, 0.8);
   }
   .landing-footer {
@@ -496,6 +510,7 @@
     width: 80vw;
   }
   .movie h3 {
+    margin-top: 10px;
     text-shadow: 0px 10px 10px rgba(190, 60, 55, 0.8);
   }
   
