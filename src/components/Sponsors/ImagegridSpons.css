@@ -113,7 +113,7 @@
 @media screen and (max-width: 1000px) {
   .container-grid-spons {
     grid-template-columns: repeat(1, 1fr);
-    gap : 5vh;
+    gap : 6vh;
     padding: 5%;
     transform: translate(0%,0%);
   }
