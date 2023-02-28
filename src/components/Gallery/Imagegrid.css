@@ -4,7 +4,7 @@
   grid-gap: 2%;
   grid-auto-rows: auto;
   grid-auto-flow: dense;
-  padding-top: 50vh;
+  padding-top: 33vh;
   padding-left: 10vh;
   padding-right: 10vh;
 }
@@ -77,7 +77,7 @@
     grid-template-columns: repeat(1, 1fr);
     grid-gap: 0.55%;
     padding: 0%;
-    padding-top: 20vh;
+    padding-top: 14vh;
   }
   .w-1,
   .w-2,
