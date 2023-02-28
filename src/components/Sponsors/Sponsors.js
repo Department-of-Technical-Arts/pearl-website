@@ -222,18 +222,18 @@ const Imagegrid = () => {
        <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/4d3680df49d67fa9d800c7f072e9a33f.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/4d3680df49d67fa9d800c7f072e9a33f.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/250_870b522ebb064ac872dfd1775259ee79.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/250_870b522ebb064ac872dfd1775259ee79.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/1200px-Idea_Cellular_Logo.svg.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/1200px-Idea_Cellular_Logo.svg.png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -243,18 +243,18 @@ const Imagegrid = () => {
        <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/1600x960_1095941-agri-gold.jpg")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/1600x960_1095941-agri-gold.jpg")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/act-fibernet-logo.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/act-fibernet-logo.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/Airtel-Logo.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/Airtel-Logo.png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -263,18 +263,18 @@ const Imagegrid = () => {
        <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/bharathi.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/bharathi.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/British_Council_logo.svg.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/British_Council_logo.svg.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/download (1).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (1).png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -284,18 +284,18 @@ const Imagegrid = () => {
        <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/download (2).png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/download (2).png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/download (3).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (3).png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/download (4).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (4).png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -305,18 +305,18 @@ const Imagegrid = () => {
 <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/download (5).png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/download (5).png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/download (6).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (6).png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/download (7).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (7).png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -325,18 +325,18 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/download (8).png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/download (8).png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/download (9).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (9).png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/download (10).png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download (10).png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -345,18 +345,18 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/download.jpg")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/download.jpg")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/download.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/download.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/etv-network-television-channel-network18-etv-news-network-telugu.jpg")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/etv-network-television-channel-network18-etv-news-network-telugu.jpg")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -365,18 +365,18 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/flipkart-logo-online-shopping-399330bd5d225a5a-512x512.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/flipkart-logo-online-shopping-399330bd5d225a5a-512x512.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/hbl-logo.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/hbl-logo.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/Hero-Logo.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/Hero-Logo.png")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -385,18 +385,18 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/hp.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/hp.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/ims.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/ims.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/inkoniq-digital-media-agency-logo.jpg")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/inkoniq-digital-media-agency-logo.jpg")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -405,18 +405,18 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/Jet_Airways-Logo.wine.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/Jet_Airways-Logo.wine.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/LIC-Logo.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/LIC-Logo.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/logo-time.jpg")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/logo-time.jpg")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -426,18 +426,18 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/ONGC_Logo.svg.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/ONGC_Logo.svg.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/Parle_Products_logo.svg.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/Parle_Products_logo.svg.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/radio-mirchi11111.jpg")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/radio-mirchi11111.jpg")} class="logo-image"></img>
           </div>
         </div>      
         
@@ -446,30 +446,34 @@ const Imagegrid = () => {
       <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/RedBullEnergyDrink.svg.png")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/RedBullEnergyDrink.svg.png")} class="asus-image"></img>
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/new/Shapoorji_Pallonji_Group_logo.svg.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/Shapoorji_Pallonji_Group_logo.svg.png")} class="logo-image"></img>
 
           </div>
         </div>
         <div class="spons-container w-1 h-1">
           <div class="spons-item">
-          <img src={require("../../images/sponsors/new/The_Times_of_India_Logo_full.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/The_Times_of_India_Logo_full.png")} class="logo-image"></img>
           </div>
         </div>      
         
       </div>
 
-      <div class="container-grid-1-item">
+      <div class="container-grid-2_items">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-            <img src={require("../../images/sponsors/new/top-og.jpg")} class="asus-image"></img>
+            <img src={require("../../images/sponsors/top-og.jpg")} class="asus-image"></img>
           </div>
         </div>
-            
+        <div class="spons-container w-1 h-1">
+          <div class="sponsspons-item">
+            <img src={require("../../images/sponsors/innova-hospitals.png")} class="asus-image"></img>
+          </div>
+        </div>
         
       </div>
 
