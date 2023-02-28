@@ -45,7 +45,7 @@
 }
 .landing-desc {
   font-size: 3vmin;
-  text-align: left;
+  text-align: justify;
   font-weight: 600;
   color: #bb4f80;
   font-family:cursive;
@@ -329,6 +329,7 @@
   }
   .landing-desc {
     font-size: 2.8vmax;
+    text-align: justify;
   }
   .landing-btn {
     margin-top: 10%;
@@ -339,6 +340,7 @@
   .landing-desc {
     font-size: 3vmax;
     mix-blend-mode: difference;
+    text-align: justify;
   }
   .btn-landing
   {
