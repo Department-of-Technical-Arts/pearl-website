@@ -18,7 +18,7 @@ import {
 import bg3 from "../../assets-pearl/website_landing-01-01.png";
 import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import YouTube from "react-youtube";
-import { Container, Icon, Typography } from "@mui/material";
+import { Container, Icon, Link, Typography } from "@mui/material";
 import { Box, height } from "@mui/system";
 import { FacebookRounded, Instagram, YoutubeSearchedForRounded } from "@mui/icons-material";
 import { IoLogoYoutube } from "react-icons/io5";
@@ -250,22 +250,28 @@ const Landing = () => {
           </div>
           </Parallax>
         </div>
-        {/* <Container 
+        <Container 
           component={"div"}
           sx={{
-            mx:0,
+            mx:{
+              sm:"auto",
+              md:0
+            },
             bottom:0,
-            width:"100vw",
-            height:250,
-            backdropFilter:"blur(10px)",
+            minWidth:"100vw",
+            minHeight:250,
+            backgroundColor:"rgb(230,105,30)",
             display:"flex",
             flexDirection:{
               xs:"column",
-              sm:"row",
+              sm:"column",
+              md:"row",
             }
           }}>
           <Container
             sx={{
+              px:0,
+              ml:0,
               backgroundImage:`url(${bits})`,
               backgroundPosition:"center",
               backgroundSize:"contain",
@@ -273,6 +279,32 @@ const Landing = () => {
               height:250,
             }}
           />
+          <Typography flexGrow={1}/>
+          <Typography sx={{
+            width:{
+              sm:300,
+              md:800,
+            },
+            mx:{
+              sm:"auto",
+              md:0
+            },
+            my:{
+              sm:4,
+              md:"auto",
+            },
+            color:"white",
+          }}
+            fontFamily={"Poppins"}
+          >
+            Pearl is the annual national cultural fest of BITS Pilani,
+            Hyderabad Campus. Incepted in 2009 as an intra-college
+            festival, a year after the foundation of BITS Pilani,
+            Hyderabad, the fest grew into a national level college
+            cultural fest with participation from more than 50 colleges
+            across India.
+          </Typography>
+          <Typography flexGrow={1}/>
           <Container sx={{
             display:"flex",
             flexDirection:{
@@ -282,14 +314,15 @@ const Landing = () => {
             justifyContent:"center",
             alignItems:"center",
             gap:5,
-            color:"white"
+            color:"white",
+            mb:5,
           }}>
-            <Typography fontSize={"xx-large"} fontFamily={"Croissant One"}>Let's Connect</Typography>
-            <Typography fontSize={"xx-large"}><FacebookRounded /></Typography>
-            <Typography fontSize={"xx-large"}><Instagram /></Typography>
-            <Typography fontSize={"x-large"}><IoLogoYoutube /></Typography>
+            <Typography sx={{color:"white"}} fontSize={"xx-large"} fontFamily={"Poppins"}>Let's Connect</Typography>
+            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}}  href={"https://www.facebook.com/bitspearl/"}><FacebookRounded /></Link></Typography>
+            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}}  href={"https://www.instagram.com/pearl.bitsh/?hl=en"}><Instagram /></Link></Typography>
+            <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}}  href={"https://www.youtube.com/@pearlbitspilanihyderabad7969"}><IoLogoYoutube /></Link></Typography>
           </Container>
-        </Container> */}
+        </Container>
       </ParallaxProvider>
     </div>
   );

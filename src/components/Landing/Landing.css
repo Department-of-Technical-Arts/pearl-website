@@ -63,7 +63,7 @@
   color: white !important;
   background-color: #e4b963 !important;
   box-shadow: 1.4vmin 1vmin 2.5vmin -2vmin rgb(11, 11, 11) !important;
-  font-family:"TAN-Pearl";
+  font-family:"Poppins";
 }
 .btn-landing:hover {
   color: #e4b963 !important;
@@ -415,7 +415,7 @@
 .after-movies h1 {
   color: rgb(6, 0, 0);
   /* margin-top: 20vh; */
-  font-family: "TAN-Pearl";
+  font-family: "Poppins";
   font-weight: 700;
   font-size: 8vmin;
   text-shadow: 0px 10px 5px #f7d1de;

@@ -4,6 +4,8 @@
    url("./fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf") format("truetype");
   font-weight: bold;
   }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
 .App {
   text-align: center;
 }
