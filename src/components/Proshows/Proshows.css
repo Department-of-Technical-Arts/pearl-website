@@ -248,7 +248,7 @@ color: #FFFFFC;
 .content-proshows h1 {
   position: absolute;
   top: 34vh;
-  font-family: "TAN-Pearl";
+  font-family: "Poppins";
   font-style: normal;
   font-size: 5vw;
   font-weight: 600;
@@ -279,7 +279,7 @@ color: #FFFFFC;
 }
 .proshows-heading {
   /* mix-blend-mode: difference; */
-  font-family: "TAN-Pearl";
+  font-family: "Poppins";
   font-size: 6vmin;
   font-weight: 600;
   width: 100%;
@@ -316,7 +316,7 @@ color: #FFFFFC;
 } */
 
 .hover-cards-proshows p {
-  font-family: "TAN-Pearl";
+  font-family: "Poppins";
   color: black;
   font-size: 25px;
   position: absolute;

@@ -22,6 +22,7 @@
   height: 100vh;
   width: 100vw;
   background-color: #7fdbe0;
+  overflow: visible;
 }
 
 .image-gallery {
