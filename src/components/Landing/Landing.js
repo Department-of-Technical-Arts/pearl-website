@@ -20,7 +20,7 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import YouTube from "react-youtube";
 import { Container, Icon, Link, Typography } from "@mui/material";
 import { Box, height } from "@mui/system";
-import { FacebookRounded, Instagram, YoutubeSearchedForRounded } from "@mui/icons-material";
+import { FacebookRounded, Instagram, Mail, YoutubeSearchedForRounded } from "@mui/icons-material";
 import { IoLogoYoutube } from "react-icons/io5";
 import YTPlayer from "../YoutubePlayer/YoutubePlayer";
 
@@ -300,10 +300,8 @@ const Landing = () => {
           }}
             fontFamily={"Poppins"}
           >
-            Pearl is the annual national cultural fest of BITS Pilani,
-            Hyderabad Campus. Incepted in 2009 as an intra-college
-            festival, a year after the foundation of BITS Pilani,
-            Hyderabad, the fest grew into a national level college
+            Pearl is our annual national cultural fest. Incepted in 2009 as an intra-college
+            festival, a year after the foundation, the fest grew into a national level college
             cultural fest with participation from more than 50 colleges
             across India.
           </Typography>
@@ -321,9 +319,10 @@ const Landing = () => {
             mb:5,
           }}>
             <Typography sx={{color:"white"}} fontSize={"xx-large"} fontFamily={"Poppins"}>Let's Connect</Typography>
-            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}}  href={"https://www.facebook.com/bitspearl/"}><FacebookRounded /></Link></Typography>
-            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}}  href={"https://www.instagram.com/pearl.bitsh/?hl=en"}><Instagram /></Link></Typography>
-            <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}}  href={"https://www.youtube.com/@pearlbitspilanihyderabad7969"}><IoLogoYoutube /></Link></Typography>
+            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.facebook.com/bitspearl/"}><FacebookRounded /></Link></Typography>
+            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.instagram.com/pearl.bitsh/?hl=en"}><Instagram /></Link></Typography>
+            <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.youtube.com/@pearlbitspilanihyderabad7969"}><IoLogoYoutube /></Link></Typography>
+            <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"mailto:pearl@hyderabad.bits-pilani.ac.in"}><Mail /></Link></Typography>
           </Container>
         </Container>
       </ParallaxProvider>

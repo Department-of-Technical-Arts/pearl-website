@@ -19,7 +19,7 @@ const EventCard = (props) => {
                 </Typography>
             </CardContent>
             <CardActions>
-                <Button style={{
+                <Button target='_blank' style={{
                     fontFamily:"Poppins"
                 }}  href={props.link} size="small">Register</Button>
                 <Typography flexGrow={1}/>
