@@ -22,6 +22,7 @@ import { Container, Icon, Link, Typography } from "@mui/material";
 import { Box, height } from "@mui/system";
 import { FacebookRounded, Instagram, YoutubeSearchedForRounded } from "@mui/icons-material";
 import { IoLogoYoutube } from "react-icons/io5";
+import YTPlayer from "../YoutubePlayer/YoutubePlayer";
 
 const Landing = () => {
   const [player, setPlayer] = React.useState(null);
@@ -225,14 +226,16 @@ const Landing = () => {
             </div>
             <div className="movie">
             <Parallax speed={3}>
-              <iframe
+              <YTPlayer id={"ai3GS6Rlano"} />
+              {/* <iframe
                 width="853"
                 height="480"
                 src={`https://www.youtube.com/embed/ai3GS6Rlano?rel=0&autoplay=0&showinfo=0&controls=0&fullscreen=1`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 title="2018"
-              /></Parallax>
+              /> */}
+              </Parallax>
               <h3>2018</h3>
             </div>
             <div className="movie">
