@@ -143,8 +143,6 @@ body {
 
 .content-workshops h1 {
   position: absolute;
-  /* right: -40.5vw; */
-  font-family: "Inter";
   font-style: normal;
   font-size: 5vw;
   font-weight: 600;
@@ -153,7 +151,7 @@ body {
   opacity: 1;
   z-index: 200;
   transform: translate(-50%, -50%);
-  font-family: "TAN-Pearl";
+  font-family: "Poppins";
   mix-blend-mode: difference;
 }
 
@@ -182,7 +180,7 @@ body {
   border-radius: 15px;
   margin-bottom: 55%;
   margin-left: 1.5rem;
-  font-family: "Inter";
+  font-family: "Poppins";
   color: #fffffc;
   text-transform: uppercase;
   bottom: 0;

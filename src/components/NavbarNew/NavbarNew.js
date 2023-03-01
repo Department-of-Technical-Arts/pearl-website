@@ -32,7 +32,7 @@ function NavbarMain() {
       expanded={expanded}
       style={{ 
         position: "fixed",
-        fontFamily:"TAN-Pearl" 
+        fontFamily:"Poppins" 
         }}
     >
       <Container>

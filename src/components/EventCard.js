@@ -11,7 +11,7 @@ const EventCard = (props) => {
                 title="green iguana"
             />
             <CardContent>
-                <Typography fontFamily={"cursive"} textAlign={"left"} gutterBottom sx={{minHeight:80}} variant="h5" component="div">
+                <Typography fontFamily={"Poppins"} textAlign={"left"} gutterBottom sx={{minHeight:80}} variant="h5" component="div">
                     {props.name}
                 </Typography>
                 <Typography mb={-2} textAlign={"left"} variant="h6" color="text.secondary">
@@ -20,10 +20,10 @@ const EventCard = (props) => {
             </CardContent>
             <CardActions>
                 <Button style={{
-                    fontFamily:"cursive"
+                    fontFamily:"Poppins"
                 }}  href={props.link} size="small">Register</Button>
                 <Typography flexGrow={1}/>
-                <Typography fontFamily={"cursive"}>Genre - {props.genre}</Typography>
+                <Typography fontFamily={"Poppins"}>Genre - {props.genre}</Typography>
             </CardActions>
         </Card>
     );
