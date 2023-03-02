@@ -35,7 +35,7 @@
 
 .landing-desc-container {
   position: absolute;
-  top: 14rem;
+  top: 9rem;
   left: 56vw;
   width: 40vw;
   height: max-content;
@@ -319,7 +319,7 @@
 }
 @media screen and (min-width: 300px) and (max-width: 480px) {
   .landing-desc-container {
-    top: 30vw;
+    top: 33vw;
     position: absolute;
     left: 50%;
     right: 50%;
