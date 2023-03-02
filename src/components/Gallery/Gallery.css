@@ -55,6 +55,7 @@
   font-weight: 600;
   color: rgb(6, 0, 0);
   mix-blend-mode: difference;
+  text-transform: uppercase;
 }
 
 .gallery-grid {

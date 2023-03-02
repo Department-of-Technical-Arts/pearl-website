@@ -204,10 +204,10 @@ const Landing = () => {
           // style={{ backgroundImage: `url(${bg3})` }}
         >
           <h1>AFTERMOVIES</h1>
-          <Parallax speed={20}>
+          <Parallax speed={0}>
           <div className="movies">
             <div className="movie">
-            <Parallax speed={3}>
+            <Parallax speed={10}>
               <iframe
                 width="853"
                 height="480"
@@ -222,10 +222,10 @@ const Landing = () => {
                 webkitallowfullscreen="webkitallowfullscreen"
               />
               </Parallax>
-              <h3>2022</h3>
+              <Parallax speed={11}><h3>2022</h3></Parallax>
             </div>
             <div className="movie">
-            <Parallax speed={3}>
+            <Parallax speed={10}>
               <YTPlayer id={"ai3GS6Rlano"} />
               {/* <iframe
                 width="853"
@@ -236,10 +236,10 @@ const Landing = () => {
                 title="2018"
               /> */}
               </Parallax>
-              <h3>2018</h3>
+              <Parallax speed={11}><h3>2018</h3></Parallax>
             </div>
             <div className="movie">
-            <Parallax speed={3}>
+            <Parallax speed={10}>
               <iframe
                 width="853"
                 height="480"
@@ -248,7 +248,7 @@ const Landing = () => {
                 allowFullScreen
                 title="2017"
               /></Parallax>
-              <h3>2017</h3>
+              <Parallax speed={11}><h3>2017</h3></Parallax>
             </div>
           </div>
           </Parallax>
@@ -266,8 +266,8 @@ const Landing = () => {
             backgroundColor:"rgb(230,105,30)",
             display:"flex",
             flexDirection:{
-              xs:"column",
-              sm:"column",
+              xs:"column-reverse",
+              sm:"column-reverse",
               md:"row",
             }
           }}>
@@ -283,7 +283,7 @@ const Landing = () => {
             }}
           />
           <Typography flexGrow={1}/>
-          <Typography sx={{
+          {/* <Typography sx={{
             width:{
               sm:300,
               md:800,
@@ -304,25 +304,35 @@ const Landing = () => {
             festival, a year after the foundation, the fest grew into a national level college
             cultural fest with participation from more than 50 colleges
             across India.
-          </Typography>
-          <Typography flexGrow={1}/>
+          </Typography> */}
           <Container sx={{
             display:"flex",
-            flexDirection:{
-              xs:"column",
-              sm:"row",
-            },
+            flexDirection:"column",
+            alignItems:"center",
+            justifyContent:"space-around",
+            color:"white",
+            my:"auto",
+            mt:{xs:3,
+              sm:3,md:"auto"},
+          }}>
+            <Typography sx={{color:"white", mb:"none", textAlign:"left"}} fontSize={"xx-large"} fontFamily={"Poppins"}>Let's Connect</Typography>
+            <Container sx={{
+            display:"flex",
+            // flexDirection:{
+            //   xs:"column",
+            //   sm:"row",
+            // },
             justifyContent:"center",
             alignItems:"center",
-            gap:5,
+            gap:{xs:5,sm:10},
             color:"white",
             mb:5,
           }}>
-            <Typography sx={{color:"white"}} fontSize={"xx-large"} fontFamily={"Poppins"}>Let's Connect</Typography>
-            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.facebook.com/bitspearl/"}><FacebookRounded /></Link></Typography>
-            <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.instagram.com/pearl.bitsh/?hl=en"}><Instagram /></Link></Typography>
-            <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.youtube.com/@pearlbitspilanihyderabad7969"}><IoLogoYoutube /></Link></Typography>
-            <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"mailto:pearl@hyderabad.bits-pilani.ac.in"}><Mail /></Link></Typography>
+              <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.facebook.com/bitspearl/"}><FacebookRounded /></Link></Typography>
+              <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.instagram.com/pearl.bitsh/?hl=en"}><Instagram /></Link></Typography>
+              <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.youtube.com/@pearlbitspilanihyderabad7969"}><IoLogoYoutube /></Link></Typography>
+              <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"mailto:pearl@hyderabad.bits-pilani.ac.in"}><Mail /></Link></Typography>
+            </Container>
           </Container>
         </Container>
       </ParallaxProvider>
