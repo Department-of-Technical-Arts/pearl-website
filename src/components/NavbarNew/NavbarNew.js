@@ -65,6 +65,39 @@ function NavbarMain() {
                 EVENTS
               </Button>
             </LinkContainer>
+            <LinkContainer to="/passes">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                PASSES
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/proshows">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                PROSHOWS
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/Accommodations">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                ACCOMODATIONS
+              </Button>
+            </LinkContainer>
             {/* <LinkContainer to="/Competitions">
               <Button
                 variant="custom"
@@ -131,39 +164,9 @@ function NavbarMain() {
                 REGISTRATIONS
               </Button>
             </LinkContainer> */}
-            <LinkContainer to="/Accommodations">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                ACCOMODATIONS
-              </Button>
-            </LinkContainer>
-            <LinkContainer to="/passes">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                PASSES
-              </Button>
-            </LinkContainer>
-            <LinkContainer to="/proshows">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                PROSHOWS
-              </Button>
-            </LinkContainer>
+            
+            
+            
           </Nav>
         </Navbar.Collapse>
       </Container>

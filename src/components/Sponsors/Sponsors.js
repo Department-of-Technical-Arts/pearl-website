@@ -8,7 +8,7 @@ const Imagegrid = () => {
       <div className="background-image-sponsors"></div>
      
       <div className="heading-text-old-spons">
-        <h1 className="sponsors-title">Previous Sponsors</h1>
+        <h1 className="sponsors-title">PREVIOUS SPONSORS</h1>
       </div>
       
      
