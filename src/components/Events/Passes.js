@@ -1,5 +1,6 @@
 import {React, useEffect} from 'react' ;
 import "./Events.css"
+import "../Workshops/Workshops.css";
 import { useMediaQuery } from '@mui/material';
 import { useFirebase } from '../../hooks/useFirebase';
 const Passes = () => {

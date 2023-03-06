@@ -1,6 +1,7 @@
 import React from "react";
 import { useEffect } from "react";
 import "./Workshops.css";
+import "../Events/Events.css"
 import { urlEndpoint } from "../../config";
 import { useSelector } from "react-redux";
 import { useFirebase } from "../../hooks/useFirebase";
