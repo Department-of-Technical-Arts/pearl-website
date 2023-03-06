@@ -167,7 +167,7 @@ const Imagegrid = () => {
         </div>
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
-          <img src={require("../../images/sponsors/sbi_logo.png")} class="logo-image"></img>
+          <img src={require("../../images/sponsors/sbi_logo.png")} class="asus-image"></img>
 
           </div>
         </div>
@@ -463,7 +463,7 @@ const Imagegrid = () => {
         
       </div>
 
-      <div class="container-grid-2_items">
+      <div class="container-grid-spons">
         <div class="spons-container w-1 h-1">
           <div class="sponsspons-item">
             <img src={require("../../images/sponsors/top-og.jpg")} class="asus-image"></img>
@@ -474,6 +474,11 @@ const Imagegrid = () => {
             <img src={require("../../images/sponsors/innova-hospitals.png")} class="asus-image"></img>
           </div>
         </div>
+        <div class="spons-container w-1 h-1">
+          <div class="spons-item">
+          <img src={require("../../images/sponsors/jio.webp")} class="logo-image"></img>
+          </div>
+        </div> 
         
       </div>
 
