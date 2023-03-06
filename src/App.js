@@ -16,17 +16,19 @@ const App = () => {
     <div>
       <div className="App">
         <NavbarMain />
-        <Routes>
-          <Route path="/" element={<Suspense fallback={<h1>Loading...</h1>}><Landing /></Suspense>} />
-          <Route path="passes" element={<Suspense fallback={<h1>Loading...</h1>}><Passes /></Suspense>} />
-          <Route path="gallery" element={<Suspense fallback={<h1>Loading...</h1>}><Gallery /></Suspense>} />
-          <Route path="sponsors" element={<Suspense fallback={<h1>Loading...</h1>}><Sponsors /></Suspense>} />
-          <Route path="events" element={<Suspense fallback={<h1>Loading...</h1>}><EventPage  /></Suspense>} />
-          <Route path="accommodations" element={<Suspense fallback={<h1>Loading...</h1>}><Workshops /></Suspense>} />
-          <Route path="proshows" element={<Suspense fallback={<h1>Loading...</h1>}><ProShows /></Suspense>} />
-          <Route path="404" element={<P404page />} />
-          <Route path="*" element={<P404page />} />
-        </Routes>
+        <Suspense fallback={<h1>Loading...</h1>}>
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="passes" element={<Passes />} />
+            <Route path="gallery" element={<Gallery />} />
+            <Route path="sponsors" element={<Sponsors />} />
+            <Route path="events" element={<EventPage  />} />
+            <Route path="accommodations" element={<Workshops />} />
+            <Route path="proshows" element={<ProShows />} />
+            <Route path="404" element={<P404page />} />
+            <Route path="*" element={<P404page />} />
+          </Routes>
+        </Suspense>
       </div>
     </div>
   );
