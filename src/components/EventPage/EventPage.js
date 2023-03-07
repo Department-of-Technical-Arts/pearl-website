@@ -276,11 +276,11 @@ const EventPage = ({setPage}) => {
              <Container component={"div"} sx={{width:"100%", mt:-8, mr:13,}}>
               <Typography fontFamily={"Poppins"} flexGrow={1}></Typography>
               <Box component={"div"} sx={{display:"flex", flexDirection:"row"}}>
-                <Typography fontFamily={"Poppins"} textAlign={"left"} ml={7} mb={2} sx={{cursor:"pointer", }}  variant="h4" onClick={()=>setDrawerShown(true)}>
+                <Typography fontFamily={"Poppins"} textAlign={"left"} mb={2} sx={{cursor:"pointer", ml:{xs:-4, sm:7}}}  variant="h4" onClick={()=>setDrawerShown(true)}>
                   <FilterAltIcon sx={{mx:"none", my:"auto"}} fontSize="larger" />Filter
                 </Typography> 
                 <Typography flexGrow={1}/>
-                <Typography fontFamily={"Poppins"} textAlign={"left"} sx={{cursor:"pointer", }} variant="h4" onClick={sortHandler}>
+                <Typography fontFamily={"Poppins"} textAlign={"left"} sx={{cursor:"pointer",  mr:{xs:-4, sm:0}}} variant="h4" onClick={sortHandler}>
                   <Sort sx={{my:"auto"}} fontSize="larger"/>{"   "}Sort {value==1 ? "A-Z":"Z-A"}
                 </Typography>
               </Box>
