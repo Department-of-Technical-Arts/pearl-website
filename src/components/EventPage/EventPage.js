@@ -9,7 +9,7 @@ import useMixpanel from "../../hooks/useMixpanel";
 import EventCard from "../EventCard";
 
 
-const EventPage = () => {
+const EventPage = ({setPage}) => {
   const nullFilter = {
     "competitions":true,
     "workshops":true,
@@ -18,14 +18,14 @@ const EventPage = () => {
     "headliner":false
   }
 
-  const nullGenreFilter = {"Art":true, "Dramatics":true, "Music":true, "VFx":true, "Graphic Design":true, "Quizzes":true, "Comedy":true, "Cooking":true, "Language":true, "Movie":true, "Photography":true, "Fashion":true, "Gaming":true, "Journalism":true}
+  const nullGenreFilter = {"Art":true, "Dance":true, "Dramatics":true, "Music":true, "VFx":true, "Graphic Design":true, "Quizzes":true, "Comedy":true, "Cooking":true, "Language":true, "Movie":true, "Photography":true, "Fashion":true, "Gaming":true, "Journalism":true}
 
 
   //MARK: STATE VARIABLES
   const [value, setValue] = useState(1);
   const [drawerShown, setDrawerShown] = useState(false);
   const [filter, setFilter] = useState(nullFilter)
-  const [genreFilterShown, setGenreFilterShown] = useState({"Art":false, "Dramatics":false, "Music":false, "VFx":false, "Graphic Design":false, "Quizzes":false, "Comedy":false, "Cooking":false, "Language":false, "Movie":false, "Photography":false, "Fashion":false, "Gaming":false, "Journalism":false})
+  const [genreFilterShown, setGenreFilterShown] = useState({"Art":false, "Dance": false,  "Dramatics":false, "Music":false, "VFx":false, "Graphic Design":false, "Quizzes":false, "Comedy":false, "Cooking":false, "Language":false, "Movie":false, "Photography":false, "Fashion":false, "Gaming":false, "Journalism":false})
   const [genreFilterApplied, setGenreFilterApplied] = useState(false);
   const [events, setEvents] = useState([])
 
@@ -41,7 +41,9 @@ const EventPage = () => {
   useEffect(() => {
     if(loaded){
       addEvents();
+      setPage(true);
     }
+    setPage(true);
   }, [loaded]);
 
   const addEvents = (filter=nullFilter) =>{
@@ -288,7 +290,7 @@ const EventPage = () => {
               events.map(
                 (eachEvent, index) => {
                   if (loaded) {
-                    return (<EventCard genre={eachEvent.genre} link={"https://"+eachEvent.details} name={eachEvent.name} price={eachEvent.price} image={eachEvent.image_url}/>)
+                    return (<EventCard genre={eachEvent.genre} link={"https://"+eachEvent.details} name={eachEvent.name} price={eachEvent.price} image={eachEvent.image_url} short={eachEvent.short}/>)
                   }
                 }
               )

@@ -25,7 +25,11 @@
   color: white;
   /* position: fixed; */
 }
-
+.logoimg{
+  max-height: 8.5rem;
+  max-width: 8.5rem;
+  object-fit: contain;
+}
 .navItem {
   color: white;
 }

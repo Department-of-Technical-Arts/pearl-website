@@ -2,7 +2,6 @@ import React, { useEffect, useRef, useState } from "react";
 import "./Landing.css";
 import bits from "./bits-img.png";
 import { useNavigate } from "react-router-dom";
-import Standout from "../Standout/Standout";
 import { useScroll } from "framer-motion";
 import { Navbar, Button } from "react-bootstrap";
 import {

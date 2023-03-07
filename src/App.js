@@ -3,7 +3,7 @@ import NavbarMain from "./components/NavbarNew/NavbarNew";
 import { Routes, Route } from "react-router-dom";
 import P404page from "./components/Contest/404page";
 import './fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf';
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 const App = () => {
   const Landing = lazy(()=> import('./components/Landing/Landing'))
   const Passes = lazy(()=> import("./components/Events/Passes"))
@@ -12,17 +12,18 @@ const App = () => {
   const Workshops = lazy(()=>import("./components/Workshops/Workshops"))
   const ProShows = lazy(()=>import("./components/Proshows/Proshows")) 
   const Gallery = lazy(()=>import("./components/Gallery/Gallery"))
+  const [page, setPage] = useState(null)
   return (
     <div>
       <div className="App">
-        <NavbarMain />
+        <NavbarMain page={page} />
         <Suspense fallback={<h1>Loading...</h1>}>
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="passes" element={<Passes />} />
             <Route path="gallery" element={<Gallery />} />
             <Route path="sponsors" element={<Sponsors />} />
-            <Route path="events" element={<EventPage  />} />
+            <Route path="events" element={<EventPage setPage={setPage}  />} />
             <Route path="accommodations" element={<Workshops />} />
             <Route path="proshows" element={<ProShows />} />
             <Route path="404" element={<P404page />} />

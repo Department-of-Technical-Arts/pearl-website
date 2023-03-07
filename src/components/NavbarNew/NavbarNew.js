@@ -5,7 +5,7 @@ import { Navbar, Button } from "react-bootstrap";
 import { LinkContainer } from "react-router-bootstrap";
 import "./NavbarNew.css";
 
-function NavbarMain() {
+function NavbarMain({ page=null}) {
   const [navbg, setNavBg] = useState(false);
   const changeNavBg = () => {
     window.scrollY >= 8 ? setNavBg(true) : setNavBg(false);
@@ -18,7 +18,11 @@ function NavbarMain() {
       window.removeEventListener("scroll", changeNavBg);
     };
   }, []);
-
+  useEffect(()=>{
+    if(page){
+      setNavBg(true)
+    }
+  },[page])
   return (
     <Navbar
       expand="lg"
@@ -40,8 +44,8 @@ function NavbarMain() {
         <div className="wrapper">
           <img
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
-            width="160"
-            height="130"
+            // width="160"
+            // height="130"
             className="d-inline-block align-top logoimg"
           /></div>
         </Navbar.Brand>
