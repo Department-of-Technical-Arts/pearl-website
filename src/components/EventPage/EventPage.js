@@ -273,14 +273,15 @@ const EventPage = ({setPage}) => {
           <div className="content-filter">
             {!drawerShown
              && 
-             <Container component={"div"} sx={{width:"100%", display:"flex", justifyContent:"flex-end", mt:-8}}>
+             <Container component={"div"} sx={{width:"100%", mt:-8, mr:13,}}>
               <Typography fontFamily={"Poppins"} flexGrow={1}></Typography>
-              <Box component={"div"} sx={{flexDirection:"column"}}>
-                <Typography fontFamily={"Poppins"} textAlign={"left"} mb={2}  variant="h5" onClick={()=>setDrawerShown(true)}>
-                  <FilterAltIcon sx={{mx:"none", my:"auto"}} fontSize="large" />Filter
+              <Box component={"div"} sx={{display:"flex", flexDirection:"row"}}>
+                <Typography fontFamily={"Poppins"} textAlign={"left"} ml={7} mb={2} sx={{cursor:"pointer", }}  variant="h4" onClick={()=>setDrawerShown(true)}>
+                  <FilterAltIcon sx={{mx:"none", my:"auto"}} fontSize="larger" />Filter
                 </Typography> 
-                <Typography fontFamily={"Poppins"} textAlign={"left"} variant="h5" onClick={sortHandler}>
-                  <Sort sx={{my:"auto"}} />{"   "}Sort {value==1 ? "A-Z":"Z-A"}
+                <Typography flexGrow={1}/>
+                <Typography fontFamily={"Poppins"} textAlign={"left"} sx={{cursor:"pointer", }} variant="h4" onClick={sortHandler}>
+                  <Sort sx={{my:"auto"}} fontSize="larger"/>{"   "}Sort {value==1 ? "A-Z":"Z-A"}
                 </Typography>
               </Box>
              </Container>}
