@@ -9,6 +9,13 @@ import currProshowsImages from "../../images/events-photos/currproshows-images";
 
 const Proshows = () => {
   const proShowsNames = [
+    "Farhan Akhtar",
+    "Anubhav Singh Bassi",
+    "Amit Trivedi",
+    "Nucleya",
+    "Abish Mathew",
+    "Vishal And Shekhar",
+    "Ritviz",
     "Anand Bhaskar Collective",
     "Arjun Kanungo",
     "Samay Raina",
@@ -21,7 +28,7 @@ const Proshows = () => {
     "Pineapple Express",
   ];
   useEffect(() => {
-    document.title = "PROSHOWS - ATMOS";
+    document.title = "PROSHOWS - PEARL 2023";
   }, []);
 
   return (

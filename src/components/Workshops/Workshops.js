@@ -11,7 +11,7 @@ const Workshops = () => {
   const isMobile = useMediaQuery('(max-width: 500px)','(max-height: 480px)');
   const [competitions, workshops, loaded, talks, accommodations] = useFirebase();
   useEffect(() => {
-    document.title = "ACCOMMODATIONS - PEARL";
+    document.title = "ACCOMMODATIONS - PEARL 2023";
   }, []);
 
   return (

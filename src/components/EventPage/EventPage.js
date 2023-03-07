@@ -37,11 +37,15 @@ const EventPage = ({setPage}) => {
 
   const [allEvents, setAllEvents] =useState([]);
 
+  useEffect(()=>{
+    setPage(true);
+    document.title = "EVENTS - PEARL 2023";
+  },[])
+
   // Load The Page
   useEffect(() => {
     if(loaded){
       addEvents();
-      setPage(true);
     }
     setPage(true);
   }, [loaded]);

@@ -7,7 +7,7 @@ const Passes = () => {
     const isMobile = useMediaQuery('(max-width: 500px)','(max-height: 480px)');
     const [competitions, workshops, loaded, talks, accommodations, games, passes] = useFirebase();
     useEffect(() => {
-        document.title = "Passes - PEARL 2023"
+        document.title = "PASSES - PEARL 2023"
     }, []);
 
     return(

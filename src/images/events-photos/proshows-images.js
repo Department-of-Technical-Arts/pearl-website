@@ -1,7 +1,13 @@
 const proshowsImages = [
+  "/events-photos/Farhan-01-min.jpg",
+  "/events-photos/bassi.jpg",
+  "/events-photos/amitT.jpg",
+  "/events-photos/Nucleya.jpg",
+  "/events-photos/ABish.jpg",
+  "/events-photos/vishalshekhar.jpg",
+  "/events-photos/ritviz.webp",
   "/events-photos/anandbhaskar-cover.png",
   "/events-photos/Arjun-cover.png",
-  
   "/events-photos/Samay-cover.jpg",
   "/events-photos/pro-show_cover.JPG",
   "/events-photos/nishantsuri_cover.JPG",
