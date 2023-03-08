@@ -3,7 +3,6 @@ import screenfull from "screenfull";
 import YouTube from "react-youtube";  
 import DeviceDetector from "device-detector-js";  
 import PropTypes from "prop-types";  
-import { makeStyles } from "@mui/styles";  
 export default function YTPlayer(props) {  
  const dd = new DeviceDetector();  
  const mobile = dd.usesMobileBrowser();  

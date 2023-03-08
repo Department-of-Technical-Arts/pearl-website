@@ -2,7 +2,7 @@ import { Card, CardActions, CardContent, CardMedia, Typography } from '@mui/mate
 import React from 'react';
 import { Button } from 'react-bootstrap';
 
-const EventCard = (props) => {
+const TalksCard = (props) => {
     return (
         <Card elevation={10} sx={{ mx:{xs:"none", sm:2}, borderRadius:3, mb:10, width: 300,  }}>
             <CardMedia 
@@ -11,17 +11,11 @@ const EventCard = (props) => {
                 title={props.name}
             />
             <CardContent>
-                <Typography fontFamily={"Poppins"}  textAlign={"left"} gutterBottom sx={{minHeight:80}} variant="h5" component="div">
+                <Typography fontFamily={"Poppins"}  textAlign={"left"} gutterBottom sx={{minHeight:40}} variant="h5" component="div">
                     {props.name}
                 </Typography>
-                <Typography fontFamily={"Poppins"}  textAlign={"left"} gutterBottom sx={{maxHeight:40}} variant="h7" component="div">
-                    {props.short}
-                </Typography>
-                <Typography mb={-2} fontWeight={900} textAlign={"left"} variant="h5" color="text.secondary">
-                    {props.price}
-                </Typography>
             </CardContent>
-            <CardActions>
+            {/* <CardActions>
                 <Button target='_blank' style={{
                     fontFamily:"Poppins",
                     borderColor:"#f8e5e8",
@@ -29,9 +23,9 @@ const EventCard = (props) => {
                 }}  href={props.link} size="small">Register</Button>
                 <Typography flexGrow={1}/>
                 <Typography fontFamily={"Poppins"}>Genre - {props.genre}</Typography>
-            </CardActions>
+            </CardActions> */}
         </Card>
     );
 }
 
-export default EventCard;
+export default TalksCard;

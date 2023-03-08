@@ -3,7 +3,7 @@ import "./Landing.css";
 import bits from "./bits-img.png";
 import { useNavigate } from "react-router-dom";
 import { useScroll } from "framer-motion";
-import { Navbar, Button } from "react-bootstrap";
+import { Navbar, Button} from "react-bootstrap";
 import {
   Animator,
   batch,
@@ -22,6 +22,7 @@ import { Box, height } from "@mui/system";
 import { FacebookRounded, Instagram, Mail, YoutubeSearchedForRounded } from "@mui/icons-material";
 import { IoLogoYoutube } from "react-icons/io5";
 import YTPlayer from "../YoutubePlayer/YoutubePlayer";
+import { LinkContainer } from "react-router-bootstrap";
 
 const Landing = () => {
   const [player, setPlayer] = React.useState(null);
@@ -281,6 +282,30 @@ const Landing = () => {
               height:250,
             }}
           />
+          <Button
+            href="/Gallery" 
+            style={{
+              width:"max-content",
+              margin:"auto",
+              height:"5%",
+
+              background:"none"
+            }}
+            >Gallery
+        </Button>
+        
+        <Button 
+          
+            href="/Sponsors" 
+            style={{
+              width:"max-content",
+              margin:"auto",
+              height:"5%",
+              background:"none"
+            }}
+            >Sponsors
+        </Button>
+
           <Typography flexGrow={1}/>
           {/* <Typography sx={{
             width:{

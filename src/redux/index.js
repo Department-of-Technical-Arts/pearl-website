@@ -1,5 +1,4 @@
 import { configureStore, createSlice } from "@reduxjs/toolkit"
-import Papa from "papaparse"
 
 const initialState = {
     competitions: [],

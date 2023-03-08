@@ -46,6 +46,7 @@ function NavbarMain({ page=null}) {
             src={require(`../../assets-pearl/Pearl_logo2023.png`)}
             // width="160"
             // height="130"
+            alt="PEARL 2023"
             className="d-inline-block align-top logoimg"
           /></div>
         </Navbar.Brand>
@@ -67,6 +68,17 @@ function NavbarMain({ page=null}) {
                 }}
               >
                 EVENTS
+              </Button>
+            </LinkContainer>
+            <LinkContainer to="/talks">
+              <Button
+                variant="custom"
+                onClick={() => {
+                  setExpanded(false);
+                  setNavBg(false);
+                }}
+              >
+                TALKS
               </Button>
             </LinkContainer>
             <LinkContainer to="/passes">
@@ -102,6 +114,7 @@ function NavbarMain({ page=null}) {
                 ACCOMODATIONS
               </Button>
             </LinkContainer>
+
             {/* <LinkContainer to="/Competitions">
               <Button
                 variant="custom"
@@ -135,7 +148,7 @@ function NavbarMain({ page=null}) {
                 TALKS
               </Button>
             </LinkContainer> */}
-            <LinkContainer to="/Sponsors">
+            {/* <LinkContainer to="/Sponsors">
               <Button
                 variant="custom"
                 onClick={() => {
@@ -145,8 +158,8 @@ function NavbarMain({ page=null}) {
               >
                 SPONSORS
               </Button>
-            </LinkContainer>
-            <LinkContainer to="/Gallery">
+            </LinkContainer> */}
+            {/* <LinkContainer to="/Gallery">
               <Button
                 variant="custom"
                 onClick={() => {
@@ -156,18 +169,8 @@ function NavbarMain({ page=null}) {
               >
                 GALLERY
               </Button>
-            </LinkContainer>
-            {/* <LinkContainer to="/events">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                REGISTRATIONS
-              </Button>
             </LinkContainer> */}
+            
             
             
             

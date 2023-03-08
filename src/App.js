@@ -4,6 +4,7 @@ import { Routes, Route } from "react-router-dom";
 import P404page from "./components/Contest/404page";
 import './fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf';
 import { lazy, Suspense, useState } from "react";
+import Talks from "./components/Talks/Talks";
 const App = () => {
   const Landing = lazy(()=> import('./components/Landing/Landing'))
   const Passes = lazy(()=> import("./components/Events/Passes"))
@@ -28,6 +29,7 @@ const App = () => {
             <Route path="proshows" element={<ProShows />} />
             <Route path="404" element={<P404page />} />
             <Route path="*" element={<P404page />} />
+            <Route path="talks" element={<Talks/>} />
           </Routes>
         </Suspense>
       </div>
