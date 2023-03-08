@@ -37,7 +37,6 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  animation: 1s ease-out 0s 1 zoomIn2;
   background-attachment: fixed;
 }
 
