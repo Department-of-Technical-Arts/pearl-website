@@ -6,18 +6,18 @@ import { LinkContainer } from "react-router-bootstrap";
 import "./NavbarNew.css";
 
 function NavbarMain({ page=null}) {
-  const [navbg, setNavBg] = useState(false);
-  const changeNavBg = () => {
-    window.scrollY >= 8 ? setNavBg(true) : setNavBg(false);
-  };
+  const [navbg, setNavBg] = useState(true);
+  // const changeNavBg = () => {
+  //   window.scrollY >= 8 ? setNavBg(true) : setNavBg(false);
+  // };
   const [expanded, setExpanded] = useState(false);
 
-  useEffect(() => {
-    window.addEventListener("scroll", changeNavBg);
-    return () => {
-      window.removeEventListener("scroll", changeNavBg);
-    };
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", changeNavBg);
+  //   return () => {
+  //     window.removeEventListener("scroll", changeNavBg);
+  //   };
+  // }, []);
   useEffect(()=>{
     if(page){
       setNavBg(true)
@@ -31,7 +31,8 @@ function NavbarMain({ page=null}) {
       variant="light"
       // bg={navbg ? "white" : ""}
       bsPrefix={
-        navbg ? " navbar navbar-expand-lg add" : "navbar navbar-expand-lg"
+        // navbg ? " navbar navbar-expand-lg add" : "navbar navbar-expand-lg"
+        " navbar navbar-expand-lg add"
       }
       expanded={expanded}
       style={{ 
