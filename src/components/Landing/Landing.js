@@ -19,10 +19,9 @@ import { Parallax, ParallaxProvider } from "react-scroll-parallax";
 import YouTube from "react-youtube";
 import { Container, Icon, Link, Typography } from "@mui/material";
 import { Box, height } from "@mui/system";
-import { FacebookRounded, Instagram, Mail, YoutubeSearchedForRounded } from "@mui/icons-material";
-import { IoLogoYoutube } from "react-icons/io5";
 import YTPlayer from "../YoutubePlayer/YoutubePlayer";
 import { LinkContainer } from "react-router-bootstrap";
+import Footer from "./Footer";
 
 const Landing = () => {
   const [player, setPlayer] = React.useState(null);
@@ -253,112 +252,7 @@ const Landing = () => {
           </div>
           </Parallax>
         </div>
-        <Container 
-          component={"div"}
-          sx={{
-            mx:{
-              sm:"auto",
-              md:0
-            },
-            bottom:0,
-            minWidth:"100vw",
-            minHeight:250,
-            backgroundColor:"rgb(230,105,30)",
-            display:"flex",
-            flexDirection:{
-              xs:"column-reverse",
-              sm:"column-reverse",
-              md:"row",
-            }
-          }}>
-          <Container
-            sx={{
-              px:0,
-              ml:0,
-              backgroundImage:`url(${bits})`,
-              backgroundPosition:"center",
-              backgroundSize:"contain",
-              backgroundRepeat:"no-repeat",
-              height:250,
-            }}
-          />
-          <Button
-            href="/Gallery" 
-            style={{
-              width:"max-content",
-              margin:"auto",
-              height:"5%",
-
-              background:"none"
-            }}
-            >Gallery
-        </Button>
-        
-        <Button 
-          
-            href="/Sponsors" 
-            style={{
-              width:"max-content",
-              margin:"auto",
-              height:"5%",
-              background:"none"
-            }}
-            >Sponsors
-        </Button>
-
-          <Typography flexGrow={1}/>
-          {/* <Typography sx={{
-            width:{
-              sm:300,
-              md:800,
-            },
-            mx:{
-              sm:"auto",
-              md:0
-            },
-            my:{
-              sm:4,
-              md:"auto",
-            },
-            color:"white",
-          }}
-            fontFamily={"Poppins"}
-          >
-            Pearl is our annual national cultural fest. Incepted in 2009 as an intra-college
-            festival, a year after the foundation, the fest grew into a national level college
-            cultural fest with participation from more than 50 colleges
-            across India.
-          </Typography> */}
-          <Container sx={{
-            display:"flex",
-            flexDirection:"column",
-            alignItems:"center",
-            justifyContent:"space-around",
-            color:"white",
-            my:"auto",
-            mt:{xs:3,
-              sm:3,md:"auto"},
-          }}>
-            <Typography sx={{color:"white", mb:"none", textAlign:"left"}} fontSize={"xx-large"} fontFamily={"Poppins"}>Let's Connect</Typography>
-            <Container sx={{
-            display:"flex",
-            // flexDirection:{
-            //   xs:"column",
-            //   sm:"row",
-            // },
-            justifyContent:"center",
-            alignItems:"center",
-            gap:{xs:5,sm:10},
-            color:"white",
-            mb:5,
-          }}>
-              <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.facebook.com/bitspearl/"}><FacebookRounded /></Link></Typography>
-              <Typography sx={{color:"white"}} fontSize={"xx-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.instagram.com/pearl.bitsh/?hl=en"}><Instagram /></Link></Typography>
-              <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"https://www.youtube.com/@pearlbitspilanihyderabad7969"}><IoLogoYoutube /></Link></Typography>
-              <Typography sx={{color:"white"}} fontSize={"x-large"}><Link sx={{color:"white"}} target='_blank' href={"mailto:pearl@hyderabad.bits-pilani.ac.in"}><Mail /></Link></Typography>
-            </Container>
-          </Container>
-        </Container>
+        <Footer/>
       </ParallaxProvider>
     </div>
   );
