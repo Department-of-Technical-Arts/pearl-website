@@ -8,6 +8,12 @@ import TalksCard from "./TalkCard";
 function Talks() {
   const [competitions, workshops, loaded, talks] = useFirebase();
   let talksNames = [
+    "Prajakta Koli",
+    "Vicky Kaushal",
+    "Be YouNick",
+    "Shristi Srivastava",
+    "Shashi Tharoor",
+    "General Bikram Singh (Retd.)",
     "Nidhi Narwal",
     "Kiran Bedi",
     "Bharat Karnad",
