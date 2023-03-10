@@ -16,10 +16,8 @@ function Talks() {
     "Vicky Kaushal",
     "Be YouNick",
     "Shristi Srivastava",
-    
     "General Bikram Singh (Retd.)",
     "Nidhi Narwal",
-    
     "Bharat Karnad",
     "Warina Hussain",
     "Dr V Anantha Nageswaran",
@@ -40,7 +38,9 @@ function Talks() {
           <div className="content-talks">
             <h1>TALKS</h1>
           </div>
+          
           <div className="talks-container">
+          <h4 className="talks-heading">PREVIOUS SPEAKERS</h4>
           <div className="card-container-talks">
             {loaded ? (
               Object.entries(talks).map(
@@ -57,8 +57,8 @@ function Talks() {
               <></>
             )}
           </div>
-          <h4 className="talks-heading">PREVIOUS SPEAKERS</h4>
-            {
+          {/* <h4 className="talks-heading">PREVIOUS SPEAKERS</h4> */}
+            {/* {
               <div className="prev-talks">
                 {talksNames.map((prevTalk, index) => {
                   return (
@@ -75,7 +75,7 @@ function Talks() {
                   );
                 })}
               </div>
-            }
+            } */}
         </div>
         </div>
       </div>

@@ -13,7 +13,6 @@ const EventPage = ({setPage}) => {
   const nullFilter = {
     "competitions":true,
     "workshops":true,
-    "talks":true,
     "games":true,
     "headliner":false
   }
@@ -31,7 +30,7 @@ const EventPage = ({setPage}) => {
 
 
   //MARK: Custom HOOKS VARIABLES
-  const [competitions, workshops, loaded, talks, acc, games] = useFirebase();
+  const [competitions, workshops, loaded, xx, xxx, games] = useFirebase();
   const { eventClicked } = useMixpanel()
 
 
@@ -63,11 +62,6 @@ const EventPage = ({setPage}) => {
         temp.push(eachWorkshop);
       })
     }
-    if (filter.talks){
-      Object.entries(talks).forEach(([name, eachTalk])=>{
-        temp.push(eachTalk);
-      })
-    }
     if (filter.games){
       Object.entries(games).forEach(([name, eachGame])=>{
         temp.push(eachGame);
@@ -94,7 +88,6 @@ const EventPage = ({setPage}) => {
     const newFilter = {
       "competitions":true,
       "workshops":true,
-      "talks":true,
       "games":true,
       "headliner":false
     };
@@ -121,7 +114,6 @@ const EventPage = ({setPage}) => {
     const newFilter = {
       "competitions":true,
       "workshops":true,
-      "talks":true,
       "games":true,
       "headliner":false
     };
@@ -132,11 +124,10 @@ const EventPage = ({setPage}) => {
         newFilter[name]=filter[name];
       }
     })
-    if (newFilter.competitions==false && newFilter.talks==false && newFilter.workshops==false && newFilter.games==false){
+    if (newFilter.competitions==false && newFilter.workshops==false && newFilter.games==false){
       const nfilter = {
         "competitions":true,
         "workshops":true,
-        "talks":true,
         "games":true,
         "headliner":false
       };
@@ -236,12 +227,6 @@ const EventPage = ({setPage}) => {
                           inputProps={{ 'aria-label': 'controlled' }}
                           
                         />} label="Workshops" />
-              <FormControlLabel control={<Checkbox
-                          checked={filter.talks}
-                          onChange={()=>handleFilter("talks")}
-                          inputProps={{ 'aria-label': 'controlled' }}
-                          
-                        />} label="Talks" />
               <FormControlLabel control={<Checkbox
                           checked={filter.headliner}
                           onChange={()=>handleFilter("headliner")}
