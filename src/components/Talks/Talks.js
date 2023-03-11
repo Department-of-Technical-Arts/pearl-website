@@ -40,7 +40,7 @@ function Talks() {
           </div>
           
           <div className="talks-container">
-          <h4 className="talks-heading">PREVIOUS SPEAKERS</h4>
+          <h4 className="talks-heading">PREVIOUS TALKS</h4>
           <div className="card-container-talks">
             {loaded ? (
               Object.entries(talks).map(
