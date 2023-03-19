@@ -280,7 +280,7 @@ const EventPage = ({setPage}) => {
               events.map(
                 (eachEvent, index) => {
                   if (loaded) {
-                    return (<EventCard prize={eachEvent.prize} genre={eachEvent.genre} link={"https://"+eachEvent.details} name={eachEvent.name} price={eachEvent.price} image={eachEvent.image_url} short={eachEvent.short}/>)
+                    return (<EventCard prize={eachEvent.prize} genre={eachEvent.genre} link={ eachEvent.details.startsWith("https") ? eachEvent.details : "https://" +  eachEvent.details} name={eachEvent.name} price={eachEvent.price} image={eachEvent.image_url} short={eachEvent.short}/>)
                   }
                 }
               )
