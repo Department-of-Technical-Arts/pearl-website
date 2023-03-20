@@ -6,16 +6,17 @@ const EventCard = (props) => {
     console.log(props)
     return (
         <Card elevation={10} sx={{display:"flex", flexDirection:"column", justifyContent:"space-between", mx:{xs:"none", sm:2}, borderRadius:3, mb:10, width: 300,  }}>
-            <CardMedia 
-                sx={{ height: 300 }}
-                image={props.image}
-                title={props.name}
-            />
-            <CardContent >
-                <Typography fontFamily={"Poppins"}  textAlign={"left"} gutterBottom sx={{minHeight:80}} variant="h5" component="div">
+            <CardContent sx={{ pt:0, px:0, display:"flex", flexDirection:"column", justifyContent:"space-around" }}>
+                <CardMedia 
+                    sx={{ height: 300 }}
+                    image={props.image}
+                    title={props.name}
+                />
+            
+                <Typography sx={{pl:1, pt:1}} fontFamily={"Poppins"}  textAlign={"left"}  variant="h5" component="div">
                     {props.name}
                 </Typography>
-                <Typography fontFamily={"Poppins"}  textAlign={"left"} gutterBottom sx={{maxHeight:40}} variant="h7" component="div">
+                <Typography fontFamily={"Poppins"} textAlign={"left"} gutterBottom sx={{pl:1}} variant="h7" component="div">
                     {props.short}
                 </Typography>
             </CardContent>
