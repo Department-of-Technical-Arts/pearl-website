@@ -115,66 +115,6 @@ function NavbarMain({ page=null}) {
                 ACCOMODATIONS
               </Button>
             </LinkContainer>
-
-            {/* <LinkContainer to="/Competitions">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                COMPETITIONS
-              </Button>
-            </LinkContainer>
-            <LinkContainer to="/Workshops">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                WORKSHOPS
-              </Button>
-            </LinkContainer>
-            <LinkContainer to="/talks">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                TALKS
-              </Button>
-            </LinkContainer> */}
-            {/* <LinkContainer to="/Sponsors">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                SPONSORS
-              </Button>
-            </LinkContainer> */}
-            {/* <LinkContainer to="/Gallery">
-              <Button
-                variant="custom"
-                onClick={() => {
-                  setExpanded(false);
-                  setNavBg(false);
-                }}
-              >
-                GALLERY
-              </Button>
-            </LinkContainer> */}
-            
-            
-            
-            
           </Nav>
         </Navbar.Collapse>
       </Container>

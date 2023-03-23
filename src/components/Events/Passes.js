@@ -29,16 +29,13 @@ const Passes = () => {
                                 )
                             })
                         } */}
-              <div className='card-container' >
-              { loaded && Object.entries(passes).map(([name, eachPass]) => {
+              { loaded && passes ? <div className='card-container' > {Object.entries(passes).map(([name, eachPass]) => {
                   return <a key={name} href={"https://"+eachPass.details}><div className='hover-cards-passes' style={{ backgroundImage: `url("/Pearl_logo2023.png")`}}><p className='passes-name' >{eachPass.name}</p><p className='passes-prize' >₹ {eachPass.price}</p><p className='passes-buy' >{!isMobile ? <>CLICK</> : <>TAP</>} TO BUY</p></div></a>
-              })}
-              {/* <a href="/competitions"><div className='hover-cards-one' ><p>Competitions</p></div></a>
-              <a href="/workshops"><div className='hover-cards-two'><p>workshops</p></div></a>
-              <a href="/talks"> <div className='hover-cards-three'><p>talks</p></div></a>
-              <a href="/proshows"><div className='hover-cards-four'> <p>pro-shows</p></div></a>
-              <a href="/prefest"><div className='hover-cards-four' style={{ backgroundImage: `url("/events-photos/cubing-cover.jpeg")`}}> <p>pre-fest</p></div></a> */}
-          </div>
+              })} </div> : <div className="content-workshops">
+            <h3>There are no passes yet. Please visit <a href="https://instagram.com/pearl.bitsh">Pearl 2023 Instagram Page</a> for more details</h3>
+          </div>}
+              
+          
             {/* {loaded ? (
               Object.entries(accommodations).map(([name, eachAccomodation]) => {
                 // if (eachWorkshop.image_url)
