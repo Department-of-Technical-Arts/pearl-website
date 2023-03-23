@@ -52,15 +52,15 @@ const EventPage = ({setPage}) => {
   const addEvents = (filter=nullFilter) =>{
     const temp = [];
     if (filter.competitions){
-      Object.entries(competitions).forEach(([name, eachEvent])=>{
+      competitions && Object.entries(competitions).forEach(([name, eachEvent])=>{
         temp.push(eachEvent);
         
       })
     }
     if (filter.workshops){
-      Object.entries(workshops).forEach(([name, eachWorkshop])=>{
+      workshops && Object.entries(workshops).forEach(([name, eachWorkshop])=>{
         temp.push(eachWorkshop);
-      })
+      });
     }
     if (filter.games){
       Object.entries(games).forEach(([name, eachGame])=>{
