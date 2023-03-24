@@ -9,7 +9,7 @@ const EventCard = (props) => {
             <CardContent sx={{ pt:0, px:0, display:"flex", flexDirection:"column", justifyContent:"space-around" }}>
                 <CardMedia 
                     sx={{ height: 300 }}
-                    image={props.image}
+                    image={props.image + "-/preview/938x432/-/quality/smart/-/format/auto/"}
                     title={props.name}
                 />
             

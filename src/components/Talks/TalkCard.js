@@ -7,7 +7,7 @@ const TalksCard = (props) => {
         <Card elevation={10} sx={{ mx:{xs:"none", sm:2}, borderRadius:3, mb:10, width: 300,  }}>
             <CardMedia 
                 sx={{ height: 300 }}
-                image={props.image}
+                image={props.image + "-/preview/938x432/-/quality/smart/-/format/auto/"}
                 title={props.name}
             />
             <CardContent>
