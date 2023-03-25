@@ -1,7 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getDatabase } from "firebase/database"
 import { getStorage, ref} from "firebase/storage"
-
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -9,13 +8,13 @@ import { getStorage, ref} from "firebase/storage"
 
 function StartFirebase(){
     const firebaseConfig = {
-        apiKey: "AIzaSyD3br-ZmQ5azP-5r9H-0RxMvgm8iiOxyos",
-        authDomain: "pearl-admin-ecc9b.firebaseapp.com",
-        databaseURL: "https://pearl-admin-ecc9b-default-rtdb.asia-southeast1.firebasedatabase.app",
-        projectId: "pearl-admin-ecc9b",
-        storageBucket: "pearl-admin-ecc9b.appspot.com", 
-        messagingSenderId: "784778703947",
-        appId: "1:784778703947:web:a9f9b25a6e74dd838349ce"
+        apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+        authDomain: process.env.REACT_APP_AUTH_DOMAIN,
+        databaseURL: process.env.REACT_APP_DATABASE_URL,
+        projectId: process.env.REACT_APP_PROJECT_ID,
+        storageBucket: process.env.REACT_APP_STORAGE_BUCKET, 
+        messagingSenderId: process.env.REACT_APP_MESSAGING_ID,
+        appId: process.env.REACT_APP_APP_ID
       };
     const app = initializeApp(firebaseConfig);
     const storageRef = ref;

@@ -13,7 +13,6 @@
         "@testing-library/user-event": "^13.5.0",
         "bootstrap": "^5.2.2",
         "device-detector-js": "^3.0.3",
-        "dotenv": "^16.0.3",
         "fa-icons": "^0.2.0",
         "firebase": "^9.17.1",
         "framer-motion": "^7.5.1",

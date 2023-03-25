@@ -3,7 +3,6 @@ import React from 'react';
 import { Button } from 'react-bootstrap';
 
 const EventCard = (props) => {
-    console.log(props)
     return (
         <Card elevation={10} sx={{display:"flex", flexDirection:"column", justifyContent:"space-between", mx:{xs:"none", sm:2}, borderRadius:3, mb:10, width: 300,  }}>
             <CardContent sx={{ pt:0, px:0, display:"flex", flexDirection:"column", justifyContent:"space-around" }}>
