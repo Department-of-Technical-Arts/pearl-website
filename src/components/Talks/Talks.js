@@ -45,7 +45,6 @@ function Talks() {
                 Object.entries(currTalks).map(
                   ([name, eachTalk], index) => {
                     if (loaded) {
-                      console.log(eachTalk)
                       return (<TalksCard key={name} link={eachTalk.details} desc={eachTalk.short} date={eachTalk.day} time={eachTalk.time} name={eachTalk.name} image={eachTalk.image_url} />
                       );
                     }
