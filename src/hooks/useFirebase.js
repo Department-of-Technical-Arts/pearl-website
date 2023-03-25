@@ -6,7 +6,8 @@ export const useFirebase = ()=>{
     const [database, _] = StartFirebase()
     const [competitions, setCompetitions] = useState()
     const [workshops, setWorkshops] = useState()
-    const [talks, setTalks] = useState();
+    const [prevTalks, setPrevTalks] = useState();
+    const [currTalks, setCurrTalks] = useState();
     const [games, setGames] = useState();
     const [passes, setPasses] = useState()
     const [accommodations, setAccommodations] = useState()
@@ -18,14 +19,12 @@ export const useFirebase = ()=>{
         if (snapshot.exists()) {
           setCompetitions(snapshot.val().Competitions);
           setWorkshops(snapshot.val().Workshops);
-          setTalks(snapshot.val().Talks)
+          setPrevTalks(snapshot.val().Talks);
           setAccommodations(snapshot.val().Accommodations)
           setGames(snapshot.val().Games)
           setPasses(snapshot.val().Passes)
+          setCurrTalks(snapshot.val().CurrTalks);
           setLoaded(true);
-        //   dispatch(Actions.initializeCompetitions(snapshot.val().Competitions));
-          console.log(snapshot.val().Competitions)
-        //   dispatch(Actions.initializeWorkshops(snapshot.val().Workshops));
         } else {
           console.log("No data available");
         }
@@ -33,5 +32,5 @@ export const useFirebase = ()=>{
         console.error(error);
       });},[])
   
-      return [competitions, workshops, loaded, talks, accommodations, games, passes]
+      return [competitions, workshops, loaded, prevTalks, accommodations, games, passes, currTalks]
   }
