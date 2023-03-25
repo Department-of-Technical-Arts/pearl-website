@@ -4,7 +4,6 @@ import { Routes, Route } from "react-router-dom";
 import P404page from "./components/Contest/404page";
 import './fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf';
 import { lazy, Suspense, useState } from "react";
-import Talks from "./components/Talks/Talks";
 const App = () => {
   const Landing = lazy(()=> import('./components/Landing/Landing'))
   const Passes = lazy(()=> import("./components/Events/Passes"))
@@ -13,6 +12,7 @@ const App = () => {
   const Workshops = lazy(()=>import("./components/Workshops/Workshops"))
   const ProShows = lazy(()=>import("./components/Proshows/Proshows")) 
   const Gallery = lazy(()=>import("./components/Gallery/Gallery"))
+  const Talks = lazy(()=>import("./components/Talks/Talks"))
   const [page, setPage] = useState(null)
   return (
     <div>
