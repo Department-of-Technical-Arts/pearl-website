@@ -333,11 +333,7 @@ const EventPage = ({ setPage }) => {
 					</div>
 					<div className="content-filter">
 						{!drawerShown && (
-							<Container
-								component={"div"}
-								sx={{ width: "100%", mt: -8, mr: 13 }}
-							>
-								<Typography fontFamily={"Poppins"} flexGrow={1}></Typography>
+							<Container component={"div"} sx={{ mr: 13 }}>
 								<Box
 									component={"div"}
 									sx={{ display: "flex", flexDirection: "row" }}

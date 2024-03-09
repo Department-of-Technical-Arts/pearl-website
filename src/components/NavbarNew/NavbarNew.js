@@ -3,7 +3,8 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 import "./NavbarNew.css";
-import { Box, Button } from "@mui/material";
+import { Box, Button, useMediaQuery } from "@mui/material";
+import { Link } from "react-router-dom";
 
 function NavbarMain({ page = null }) {
 	const styles = {
@@ -17,10 +18,11 @@ function NavbarMain({ page = null }) {
 			color: "initial",
 		},
 	};
+	const isMobile = useMediaQuery("(max-width: 480px)", "(max-width: 480px)");
 	return (
 		<Box
 			sx={{
-				position: "absolute",
+				position: "fixed",
 				width: "100vw",
 				display: "flex",
 				justifyContent: "center",
@@ -31,24 +33,42 @@ function NavbarMain({ page = null }) {
 				height: "100px",
 			}}
 		>
-			<Button sx={styles} variant={"text"} href="/">
-				Home
+			<Button sx={styles} variant={"text"}>
+				<Link to="/" style={styles} variant={"text"}>
+					Home
+				</Link>
 			</Button>
-			<Button sx={styles} variant={"text"} href="/events">
-				Events
+			<Button sx={styles} variant={"text"}>
+				<Link to="/events" style={styles} variant={"text"}>
+					Events
+				</Link>
 			</Button>
-			<Button sx={styles} variant={"text"} href="/gallery">
-				Gallery
+			<Button sx={styles} variant={"text"}>
+				<Link to="/gallery" style={styles} variant={"text"}>
+					Gallery
+				</Link>
 			</Button>
-			<Button sx={styles} variant={"text"} href="/passes">
-				Passes
+			<Button sx={styles} variant={"text"}>
+				<Link to="/passes" style={styles} variant={"text"}>
+					Passes
+				</Link>
 			</Button>
-			<Button sx={styles} variant={"text"} href="/proshows">
-				ProShows
-			</Button>
-			<Button sx={styles} variant={"text"} href="/sponsors">
-				Sponsors
-			</Button>
+			{!isMobile ? (
+				<>
+					<Button sx={styles} variant={"text"}>
+						<Link to="/proshows" style={styles} variant={"text"}>
+							ProShows
+						</Link>
+					</Button>
+					<Button sx={styles} variant={"text"}>
+						<Link to="/sponsors" style={styles} variant={"text"}>
+							Sponsors
+						</Link>
+					</Button>
+				</>
+			) : (
+				<></>
+			)}
 		</Box>
 	);
 }

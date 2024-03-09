@@ -127,22 +127,26 @@ const Landing = () => {
 						muted
 						playsInline
 						controls={false}
+						loop={false}
 						style={{
 							position: "absolute",
 							width: "100vw",
-							height: "100vh",
-							left: "0",
-							top: "0",
-							objectFit: "cover",
+							height: "20vh",
+							left: "50%",
+							top: "40%",
+							transform: "translate(-50%, -50%)",
+							objectFit: "contain",
 						}}
 						typeof="video/mov"
 						onEnded={() => {
 							setPlayedOnce(true);
 							videoRef.current.play();
+							// Scroll down by 100px
+							// window.scrollBy(0, 1000);
 						}}
 					/>
 					{/* {playedOnce && ( */}
-					<img
+					{/* <img
 						src={
 							"https://framerusercontent.com/images/kiEL6dki4OJHFJLi6f1aJVWJK0.png?scale-down-to=512"
 						}
@@ -150,9 +154,15 @@ const Landing = () => {
 							objectFit: "cover",
 						}}
 						className="landing-artists"
-					/>
+					/> */}
 					{/* )} */}
 				</div>
+				<Box
+					sx={{
+						width: "100vw",
+						height: "100vh",
+					}}
+				></Box>
 				{/* <div className="landing-container" ref={elementRef}>
 					<div className="landing-desc-container">
 						<p className="landing-desc">
