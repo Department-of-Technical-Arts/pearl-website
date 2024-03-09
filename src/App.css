@@ -1,7 +1,7 @@
 @font-face {
   font-family: "TAN-Pearl";
   src: local("TAN-Pearl"),
-   url("./fonts/tan-pearl/TAN_-_PEARL/TAN-PEARL.ttf") format("truetype");
+   url("./fonts/galgo/Galgo.ttf") format("truetype");
   font-weight: bold;
   }
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');

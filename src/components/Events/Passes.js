@@ -1,25 +1,33 @@
-import {React, useEffect} from 'react' ;
-import "./Events.css"
+import { React, useEffect } from "react";
+import "./Events.css";
 import "../Workshops/Workshops.css";
-import { useMediaQuery } from '@mui/material';
-import { useFirebase } from '../../hooks/useFirebase';
+import { useMediaQuery } from "@mui/material";
+import { useFirebase } from "../../hooks/useFirebase";
 const Passes = () => {
-    const isMobile = useMediaQuery('(max-width: 500px)','(max-height: 480px)');
-    const [competitions, workshops, loaded, talks, accommodations, games, passes] = useFirebase();
-    useEffect(() => {
-        document.title = "PASSES - PEARL 2023"
-    }, []);
+	const isMobile = useMediaQuery("(max-width: 500px)", "(max-height: 480px)");
+	const [
+		competitions,
+		workshops,
+		loaded,
+		talks,
+		accommodations,
+		games,
+		passes,
+	] = useFirebase();
+	useEffect(() => {
+		document.title = "PASSES - PEARL 2024";
+	}, []);
 
-    return(
-        <div>
-      <div className="background-container-workshops">
-        <div className="background-workshops">
-          <div className="content-workshops">
-            <h1>PASSES</h1>
-          </div>
-          <div className="image-workshops"></div>
-          {/* <div className="card-container-workshops"> */}
-            {/* {
+	return (
+		<div>
+			<div className="background-container-workshops">
+				<div className="background-workshops">
+					<div className="content-workshops">
+						<h1>PASSES</h1>
+					</div>
+					<div className="image-workshops"></div>
+					{/* <div className="card-container-workshops"> */}
+					{/* {
                             workshops.map((eachWorkshop)=>{
                                 if (eachWorkshop.IMAGEURL)
                                 return(
@@ -29,14 +37,39 @@ const Passes = () => {
                                 )
                             })
                         } */}
-              { loaded && passes ? <div className='card-container' > {Object.entries(passes).map(([name, eachPass]) => {
-                  return <a key={name} href={"https://"+eachPass.details}><div className='hover-cards-passes' style={{ backgroundImage: `url("/Pearl_logo2023.png")`}}><p className='passes-name' >{eachPass.name}</p><p className='passes-prize' >₹ {eachPass.price}</p><p className='passes-buy' >{!isMobile ? <>CLICK</> : <>TAP</>} TO BUY</p></div></a>
-              })} </div> : <div className="content-workshops">
-            <h3>There are no passes yet. Please visit <a href="https://instagram.com/pearl.bitsh">Pearl 2023 Instagram Page</a> for more details</h3>
-          </div>}
-              
-          
-            {/* {loaded ? (
+					{loaded && passes ? (
+						<div className="card-container">
+							{" "}
+							{Object.entries(passes).map(([name, eachPass]) => {
+								return (
+									<a key={name} href={"https://" + eachPass.details}>
+										<div
+											className="hover-cards-passes"
+											style={{ backgroundImage: `url("/Pearl_logo2023.png")` }}
+										>
+											<p className="passes-name">{eachPass.name}</p>
+											<p className="passes-prize">₹ {eachPass.price}</p>
+											<p className="passes-buy">
+												{!isMobile ? <>CLICK</> : <>TAP</>} TO BUY
+											</p>
+										</div>
+									</a>
+								);
+							})}{" "}
+						</div>
+					) : (
+						<div className="content-workshops">
+							<h3>
+								There are no passes yet. Please visit{" "}
+								<a href="https://instagram.com/pearl.bitsh">
+									Pearl 2024 Instagram Page
+								</a>{" "}
+								for more details
+							</h3>
+						</div>
+					)}
+
+					{/* {loaded ? (
               Object.entries(accommodations).map(([name, eachAccomodation]) => {
                 // if (eachWorkshop.image_url)
                     
@@ -61,12 +94,11 @@ const Passes = () => {
             ) : (
               <></>
             )} */}
-          {/* </div> */}
-        </div>
-      </div>
-    </div>
-    )
-}
+					{/* </div> */}
+				</div>
+			</div>
+		</div>
+	);
+};
 
-
-export default Passes ;
+export default Passes;

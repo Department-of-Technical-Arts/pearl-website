@@ -6,10 +6,9 @@ body {
   /* background-repeat: no-repeat; */
 }
 .background-container-competitions {
-  position: relative;
-  height: 100vh;
-  width: 100vw;
-  overflow: auto;
+  min-height: 100vh;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .background-competitions {
@@ -17,8 +16,12 @@ body {
   left: 0;
   height: 100%;
   width: 100%;
-  overflow: visible;
-  background-color: #f7d1de;
+  overflow: scroll;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(250,210,170);
 }
 
 .image-competitions {
@@ -30,37 +33,36 @@ body {
   background-repeat: no-repeat;
   background-position: center;
   height: 100%;
-  width: 100%;
+  width: 100vw;
   overflow: hidden;
   animation: 2s ease-out 0s 1 zoomOut;
   background-attachment: fixed;
+  z-index: 0;
 }
 
 .content-competitions {
-  position: relative;
   height: 20vh;
-  width: 30vw;
-  top: 35%;
-  left: 50%;
+  margin-top: 200px;
+  z-index: 100;
+  text-align: center;
   /* animation: 2s ease-out 0s 1 fadeIn; */
 }
 .content-filter {
-  position: relative;
   width: 80vw;
   top: 35%;
   left: 10%;
+  z-index: 1;
   /* animation: 2s ease-out 0s 1 fadeIn; */
 }
 .content-competitions h1 {
-  position: absolute;
   font-family: "Poppins";
   font-style: normal;
-  font-size: 5vw;
+  font-size: 70px;
   font-weight: 1000;
   height: 20vh;
   color: white;
   mix-blend-mode: difference;
-  transform: translate(-50%, -50%);
+  
 }
 /* .content-competitions h4 {
   display: flex;
@@ -76,7 +78,6 @@ body {
 } */
 
 .card-container-competitions {
-  position: absolute;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
@@ -86,10 +87,11 @@ body {
   flex-flow: wrap;
   padding: 0 15%;
   flex: 0 1 auto;
+  z-index: 100;
 }
 
 .hover-cards-competitions {
-  background-color: #f7d1de;
+  background-color: rgb(250,210,170);
   position: relative;
   height: 250px;
   width: 250px;

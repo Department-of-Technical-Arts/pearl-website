@@ -2,9 +2,10 @@
 body {
   min-height: 100%;
   background-size: cover;
-  background-color: #f8e5e8;
+  background-color: rgb(250,210,170);
   /* background-size: auto 100%; */
   background-repeat: no-repeat;
+  overflow-x: hidden;
 }
 .background-container-talks {
   position: relative;

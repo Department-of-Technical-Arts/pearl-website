@@ -12,8 +12,25 @@
   width: 100%;
 }
 .landing-container {
-  height: 70vh;
+  height: 100vh;
   width: 100%;
+  overflow: hidden;
+}
+.landing-artists{
+  position: absolute;
+  top: calc(100vh - 40vh);
+  left: 50%;
+  transform: translate(-50%, 0%);
+  height: 40vh;
+  animation: landing-artists 1s ease-out 0s 1 forwards;
+}
+@keyframes landing-artists {
+  0% {
+    top: 100vh;
+  }
+  100% {
+    top: calc(100vh - 40vh);
+  }
 }
 .bg {
   position: absolute;
@@ -22,7 +39,7 @@
   height: 100%;
   width: 100%;
   position: fixed;
-  background-image: url(../../assets-pearl/website_landing-01.png);
+  background-image: url(../../assets-pearl/pearl-draft-bg.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
