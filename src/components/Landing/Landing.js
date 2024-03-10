@@ -120,31 +120,46 @@ const Landing = () => {
 			<div className="bg"></div>
 			<ParallaxProvider>
 				<div className="landing-container">
-					<video
-						src={"https://atoms-video.vercel.app/trimed%20reveal.mov"}
-						autoPlay={true}
-						ref={videoRef}
-						muted
-						playsInline
-						controls={false}
-						loop={false}
-						style={{
-							position: "absolute",
-							width: "100vw",
-							height: "20vh",
-							left: "50%",
-							top: "40%",
-							transform: "translate(-50%, -50%)",
-							objectFit: "contain",
-						}}
-						typeof="video/mov"
-						onEnded={() => {
-							setPlayedOnce(true);
-							videoRef.current.play();
-							// Scroll down by 100px
-							// window.scrollBy(0, 1000);
-						}}
-					/>
+					{!playedOnce ? (
+						<video
+							src={"https://atoms-video.vercel.app/trimed%20reveal.mov"}
+							autoPlay={true}
+							ref={videoRef}
+							muted
+							playsInline
+							controls={false}
+							loop={false}
+							style={{
+								position: "absolute",
+								width: "100vw",
+								height: "100vh",
+								left: "0%",
+								top: "0%",
+								// transform: "translate(-50%, -50%)",
+								objectFit: "contain",
+							}}
+							typeof="video/mov"
+							onEnded={() => {
+								setPlayedOnce(true);
+								videoRef.current.play();
+								// Scroll down by 100px
+								// window.scrollBy(0, 1000);
+							}}
+						/>
+					) : (
+						<img
+							style={{
+								position: "absolute",
+								width: "100vw",
+								height: "20vh",
+								left: "50%",
+								top: "40%",
+								transform: "translate(-50%, -50%)",
+								objectFit: "contain",
+							}}
+							src="/pearl.png"
+						></img>
+					)}
 					{/* {playedOnce && ( */}
 					{/* <img
 						src={

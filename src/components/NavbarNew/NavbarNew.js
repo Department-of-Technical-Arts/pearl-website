@@ -43,16 +43,6 @@ function NavbarMain({ page = null }) {
 					Events
 				</Link>
 			</Button>
-			<Button sx={styles} variant={"text"}>
-				<Link to="/gallery" style={styles} variant={"text"}>
-					Gallery
-				</Link>
-			</Button>
-			<Button sx={styles} variant={"text"}>
-				<Link to="/passes" style={styles} variant={"text"}>
-					Passes
-				</Link>
-			</Button>
 			{!isMobile ? (
 				<>
 					<Button sx={styles} variant={"text"}>
@@ -69,6 +59,16 @@ function NavbarMain({ page = null }) {
 			) : (
 				<></>
 			)}
+			<Button sx={styles} variant={"text"}>
+				<Link to="/passes" style={styles} variant={"text"}>
+					Passes
+				</Link>
+			</Button>
+			<Button sx={styles} variant={"text"}>
+				<Link to="/gallery" style={styles} variant={"text"}>
+					Gallery
+				</Link>
+			</Button>
 		</Box>
 	);
 }
