@@ -1,2 +1,2 @@
-# pearl-website
-Official repo for the cultural fest - 'Pearl' of Bits Pilani Hyderabad Campus
+# Pearl Website
+Official repository for the cultural fest - 'Pearl' of Bits Pilani Hyderabad Campus
