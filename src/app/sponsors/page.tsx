@@ -24,7 +24,7 @@ export default function SponsorsPage() {
 
                         <div className="justify-center w-full grid md:grid-cols-3 p-10 align-middle">
                             {sponsors.map((sponsor, index) => (
-                                <div className='m-2'>
+                                <div className='m-2' key={index}>
                                     <Image
                                         key={index}
                                         alt="Sponsor"
