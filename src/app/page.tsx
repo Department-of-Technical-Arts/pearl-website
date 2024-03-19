@@ -33,6 +33,7 @@ export default function Home() {
 					<MountainIcon className="h-6 w-6" />
 					<span className="sr-only">Pearl '24</span>
 				</Link>
+
 				<nav className="ml-auto flex gap-4 sm:gap-6">
 					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
 						Events
@@ -67,8 +68,8 @@ export default function Home() {
 						</div>
 						<Image
 							src={"/hyd.png"}
-							width={300}
-							height={300}
+							width={3000}
+							height={3000}
 							alt="bg-hyd"
 							className="w-full" />
 					</div>
@@ -89,7 +90,7 @@ export default function Home() {
 								{
 									lineup.map((artist, index) => (
 										<div className="flex items-center space-x-4">
-											<img
+											<Image
 												alt="Artist"
 												className="rounded-lg overflow-hidden aspect-square object-cover object-center"
 												height="100"
