@@ -12,11 +12,17 @@ export default function Home() {
 			<Navbar />
 
 			<main className="flex-1">
-				<section className="w-full py-6 md:py-12 lg:py-24 xl:py-32">
+				<section className="w-full">
 					<div className="px-4 flex flex-col items-center justify-center space-y-2 text-center">
 						<div className="space-y-2">
-							<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-mono">Pearl 2024</h1>
-							<h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl font-mono">Streets of Hyderabad</h1>
+							<Image
+								src={"/logo-h.png"}
+								width={400}
+								height={400}
+								alt="logo"
+								className="mx-auto" />
+							{/* <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-mono">Pearl 2024</h1>
+							<h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl font-mono">Streets of Hyderabad</h1> */}
 							<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								The annual cultural fest of BITS Pilani, Hyderabad Campus, that grew into a national level college cultural fest.
 							</p>

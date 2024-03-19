@@ -6,14 +6,14 @@ type Props = {}
 
 export default function Navbar({ }: Props) {
     return (
-        <header className="px-4 lg:px-6 md:h-24 h-3/4 flex items-center w-full justify-center">
+        <header className="px-4 lg:px-6 h-24 flex items-center w-full justify-center">
             <Link className="flex items-center justify-center" href="/">
                 <Image
                     src={"/logo.png"}
                     width={3000}
                     height={3000}
                     alt="logo"
-                    className="md:w-24 md:h-24 h-3/4" />
+                    className="hidden md:block w-24 h-24" />
                 <span className="sr-only">Pearl 2024</span>
             </Link>
 
