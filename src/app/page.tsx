@@ -31,7 +31,7 @@ export default function Home() {
 			<header className="px-4 lg:px-6 h-14 flex items-center">
 				<Link className="flex items-center justify-center" href="#">
 					<MountainIcon className="h-6 w-6" />
-					<span className="sr-only">Pearl '24</span>
+					<span className="sr-only">Pearl 2024</span>
 				</Link>
 
 				<nav className="ml-auto flex gap-4 sm:gap-6">
@@ -89,7 +89,7 @@ export default function Home() {
 							<div className="grid gap-4">
 								{
 									lineup.map((artist, index) => (
-										<div className="flex items-center space-x-4">
+										<div key={index} className="flex items-center space-x-4">
 											<Image
 												alt="Artist"
 												className="rounded-lg overflow-hidden aspect-square object-cover object-center"
@@ -117,7 +117,7 @@ export default function Home() {
 
 						<div className="justify-center w-full grid md:grid-cols-3 my-10 align-middle">
 							{aftermovies.map((aftermovie, index) => (
-								<div className="justify-center items-center m-4">
+								<div key={index} className="justify-center items-center m-4">
 									<p className="text-6xl text-stone-900 text-center m-2">{aftermovie.year}</p>
 
 									<div key={index} className="w-full">
