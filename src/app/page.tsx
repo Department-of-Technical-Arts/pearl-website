@@ -28,27 +28,29 @@ function MountainIcon(props: any) {
 export default function Home() {
 	return (
 		<div className="flex flex-col min-h-[100dvh]">
-			<header className="px-4 lg:px-6 h-14 flex items-center">
+			<header className="px-4 lg:px-6 h-24 flex items-center w-full justify-center">
 				<Link className="flex items-center justify-center" href="#">
-					<MountainIcon className="h-6 w-6" />
+					<Image
+						src={"/logo.png"}
+						width={3000}
+						height={3000}
+						alt="logo"
+						className="w-24 h-24" />
 					<span className="sr-only">Pearl 2024</span>
 				</Link>
 
-				<nav className="ml-auto flex gap-4 sm:gap-6">
+				<nav className="hidden md:flex ml-auto gap-4 sm:gap-6">
 					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
 						Events
 					</Link>
 					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
 						Sponsors
 					</Link>
-					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-						Get Your Pass!
-					</Link>
 				</nav>
 			</header>
 
 			<main className="flex-1">
-				<section className="w-full md:h-screen py-6 md:py-12 lg:py-24 xl:py-32">
+				<section className="w-full py-6 md:py-12 lg:py-24 xl:py-32">
 					<div className="px-4 flex flex-col items-center justify-center space-y-2 text-center">
 						<div className="space-y-2">
 							<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Pearl 2024</h1>
@@ -58,13 +60,7 @@ export default function Home() {
 						</div>
 
 						<div className="mx-auto max-w-sm space-y-2">
-							<form className="flex space-x-2">
-								<Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
-								<Button type="submit">Sign Up</Button>
-							</form>
-							<p className="text-xs text-gray-500">
-								Sign up to get notified when tickets go on sale.
-							</p>
+							<Button className="m-2">Get Your Pass!</Button>
 						</div>
 						<Image
 							src={"/hyd.png"}
@@ -75,7 +71,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				<section className="w-full py-12 md:py-24 lg:py-32 bg-yellow-400">
+				{lineup.length > 0 && <section className="w-full py-12 md:py-24 lg:py-32 bg-amber-400">
 					<div className="px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
 						<div className="space-y-2">
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -107,7 +103,7 @@ export default function Home() {
 							</div>
 						</div>
 					</div>
-				</section>
+				</section>}
 
 				<section className="w-full py-12 md:py-24 lg:py-32 bg-yellow-300">
 					<div className="flex flex-col">
