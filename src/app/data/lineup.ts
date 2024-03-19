@@ -4,7 +4,7 @@ export const lineup: {
     image: string;
 }[] = [
         {
-            name: "Artist 1",
+            name: "Nucleya",
             time: "12:00 PM",
             image: "/next.svg"
         }

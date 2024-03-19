@@ -13,34 +13,33 @@ export default function Home() {
 
 			<main className="flex-1">
 				<section className="w-full">
-					<div className="px-4 flex flex-col items-center justify-center space-y-2 text-center">
-						<div className="space-y-2">
+					<div className="px-4 sm:flex-col md:grid md:grid-cols-2 items-center justify-center space-y-2 text-center ">
+						<div className="">
 							<Image
 								src={"/logo-h.png"}
-								width={400}
-								height={400}
+								width={700}
+								height={700}
 								alt="logo"
 								className="mx-auto" />
-							{/* <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl font-mono">Pearl 2024</h1>
-							<h1 className="text-2xl font-bold tracking-tighter sm:text-3xl md:text-4xl font-mono">Streets of Hyderabad</h1> */}
-							<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-								The annual cultural fest of BITS Pilani, Hyderabad Campus, that grew into a national level college cultural fest.
-							</p>
+
 						</div>
 
 						<div className="mx-auto max-w-sm space-y-2">
-							<Button className="m-2">Get Your Pass!</Button>
+							<p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+								The annual cultural fest of BITS Pilani, Hyderabad Campus, that grew into a national level college cultural fest with participation from more than 50 colleges across India..
+							</p>
+							<Button className="m-2 z-20 font-bold">Get Your Pass!</Button>
 						</div>
-						<Image
-							src={"/hyd.png"}
-							width={3000}
-							height={3000}
-							alt="bg-hyd"
-							className="w-full" />
 					</div>
+					<Image
+						src={"/hyd.png"}
+						width={3000}
+						height={3000}
+						alt="bg-hyd"
+						className="w-full -translate-y-48 z-[-2] relative blur-[3px]" />
 				</section>
 
-				{lineup.length > 0 && <section className="w-full py-12 md:py-24 lg:py-32">
+				{lineup.length > 0 && <section className="w-full">
 					<div className="px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
 						<div className="space-y-2">
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
