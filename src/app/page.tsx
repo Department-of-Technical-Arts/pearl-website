@@ -4,6 +4,7 @@ import { Input } from "./ui/input";
 import { lineup } from "./data/lineup";
 import { aftermovies } from "./data/aftermovies";
 import Image from "next/image";
+import Navbar from "./ui/navbar";
 
 function MountainIcon(props: any) {
 	return (
@@ -28,26 +29,7 @@ function MountainIcon(props: any) {
 export default function Home() {
 	return (
 		<div className="flex flex-col min-h-[100dvh]">
-			<header className="px-4 lg:px-6 h-24 flex items-center w-full justify-center">
-				<Link className="flex items-center justify-center" href="#">
-					<Image
-						src={"/logo.png"}
-						width={3000}
-						height={3000}
-						alt="logo"
-						className="w-24 h-24" />
-					<span className="sr-only">Pearl 2024</span>
-				</Link>
-
-				<nav className="hidden md:flex ml-auto gap-4 sm:gap-6">
-					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-						Events
-					</Link>
-					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
-						Sponsors
-					</Link>
-				</nav>
-			</header>
+			<Navbar />
 
 			<main className="flex-1">
 				<section className="w-full py-6 md:py-12 lg:py-24 xl:py-32">
