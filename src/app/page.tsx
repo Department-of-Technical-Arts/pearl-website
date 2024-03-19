@@ -1,113 +1,142 @@
+import Link from "next/link";
+import { Button } from "./ui/button";
+import { Input } from "./ui/input";
+import { lineup } from "./data/lineup";
+import { aftermovies } from "./data/aftermovies";
 import Image from "next/image";
 
+function MountainIcon(props: any) {
+	return (
+		<svg
+			{...props}
+			xmlns="http://www.w3.org/2000/svg"
+			width="24"
+			height="24"
+			viewBox="0 0 24 24"
+			fill="none"
+			stroke="currentColor"
+			strokeWidth="2"
+			strokeLinecap="round"
+			strokeLinejoin="round"
+		>
+			<path d="m8 3 4 8 5-5 5 15H2L8 3z" />
+		</svg>
+	)
+}
+
+
 export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+	return (
+		<div className="flex flex-col min-h-[100dvh]">
+			<header className="px-4 lg:px-6 h-14 flex items-center">
+				<Link className="flex items-center justify-center" href="#">
+					<MountainIcon className="h-6 w-6" />
+					<span className="sr-only">Pearl '24</span>
+				</Link>
+				<nav className="ml-auto flex gap-4 sm:gap-6">
+					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+						Events
+					</Link>
+					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+						Sponsors
+					</Link>
+					<Link className="text-sm font-medium hover:underline underline-offset-4" href="#">
+						Get Your Pass!
+					</Link>
+				</nav>
+			</header>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+			<main className="flex-1">
+				<section className="w-full md:h-screen py-6 md:py-12 lg:py-24 xl:py-32">
+					<div className="px-4 flex flex-col items-center justify-center space-y-2 text-center">
+						<div className="space-y-2">
+							<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl">Pearl 2024</h1>
+							<p className="mx-auto max-w-[700px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+								The annual cultural fest of BITS Pilani, Hyderabad Campus, that grew into a national level college cultural fest with participation from more than 50 colleges across India.
+							</p>
+						</div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+						<div className="mx-auto max-w-sm space-y-2">
+							<form className="flex space-x-2">
+								<Input className="max-w-lg flex-1" placeholder="Enter your email" type="email" />
+								<Button type="submit">Sign Up</Button>
+							</form>
+							<p className="text-xs text-gray-500">
+								Sign up to get notified when tickets go on sale.
+							</p>
+						</div>
+						<Image
+							src={"/hyd.png"}
+							width={300}
+							height={300}
+							alt="bg-hyd"
+							className="w-full" />
+					</div>
+				</section>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+				<section className="w-full py-12 md:py-24 lg:py-32 bg-yellow-400">
+					<div className="px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
+						<div className="space-y-2">
+							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+								Lineup Announcement
+							</h2>
+							<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+								Check out the amazing artists who will be performing at the festival.
+							</p>
+						</div>
+						<div className="mx-auto w-full max-w-2xl space-y-4">
+							<div className="grid gap-4">
+								{
+									lineup.map((artist, index) => (
+										<div className="flex items-center space-x-4">
+											<img
+												alt="Artist"
+												className="rounded-lg overflow-hidden aspect-square object-cover object-center"
+												height="100"
+												src={artist.image}
+												width="100"
+											/>
+											<div className="space-y-1">
+												<h3 className="text-xl font-bold">{artist.name}</h3>
+												<p className="text-sm text-gray-500">{artist.time}</p>
+											</div>
+										</div>
+									))
+								}
+							</div>
+						</div>
+					</div>
+				</section>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+				<section className="w-full py-12 md:py-24 lg:py-32 bg-yellow-300">
+					<div className="flex flex-col">
+						<h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+							Aftermovies
+						</h2>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+						<div className="justify-center w-full grid md:grid-cols-3 my-10 align-middle">
+							{aftermovies.map((aftermovie, index) => (
+								<div className="justify-center items-center m-4">
+									<p className="text-6xl text-stone-900 text-center m-2">{aftermovie.year}</p>
+
+									<div key={index} className="w-full">
+										<iframe
+											allow="fullscreen; accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+											allowFullScreen
+											className="rounded-lg w-full h-64"
+											src={aftermovie.url}
+										/>
+									</div>
+								</div>
+							))}
+						</div>
+					</div>
+				</section>
+			</main>
+
+			<footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
+				<p className="text-xs text-gray-500">© 2024 Pearl BITS Pilani, Hyderabad Campus. All rights reserved.</p>
+			</footer>
+		</div >
+	);
 }
