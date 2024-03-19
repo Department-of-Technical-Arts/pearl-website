@@ -3,6 +3,7 @@ import { lineup } from "./data/lineup";
 import { aftermovies } from "./data/aftermovies";
 import Image from "next/image";
 import Navbar from "./ui/navbar";
+import Link from "next/link";
 
 
 export default function Home() {
@@ -62,8 +63,12 @@ export default function Home() {
 										</div>
 									))
 								}
+
 							</div>
 						</div>
+					</div>
+					<div className="flex justify-center items-center my-2">
+						<Link href="/lineups"><Button className="m-2">View our Previous Lineups!</Button></Link>
 					</div>
 				</section>}
 

@@ -22,6 +22,10 @@ export default function Navbar({ }: Props) {
                     Events
                 </Link>
 
+                <Link className="text-sm font-medium hover:underline underline-offset-4" href="/lineups">
+                    Pro Shows
+                </Link>
+
                 <Link className="text-sm font-medium hover:underline underline-offset-4" href="/sponsors">
                     Sponsors
                 </Link>
