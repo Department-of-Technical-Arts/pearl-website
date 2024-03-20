@@ -53,7 +53,7 @@ export default function Home() {
 						</div>
 
 						<div className="mx-auto max-w-lg space-y-2">
-							<p className="mx-auto max-w-[1300px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							<p className="mx-auto max-w-[1300px] text-[#823732] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								The annual cultural fest of BITS Pilani, Hyderabad Campus, that
 								grew into a national level college cultural fest with
 								participation from more than 50 colleges across India..
@@ -88,7 +88,7 @@ export default function Home() {
 								>
 									Lineup Announcement
 								</h2>
-								<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+								<p className="mx-auto max-w-[600px] text-[#e6c8a5] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 									Check out the amazing artists who will be performing at the
 									festival!
 								</p>
@@ -97,7 +97,7 @@ export default function Home() {
 						<Image
 							alt="Artist Lineup"
 							src={"/artist_lineup.png"}
-							className="w-full  object-contain z-[-1]"
+							className="w-full object-contain z-[-1] "
 							width={3000}
 							height={3000}
 						/>
