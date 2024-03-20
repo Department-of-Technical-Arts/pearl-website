@@ -83,8 +83,8 @@ export default async function Events({
 					</div>
 				</section>
 				<section className="w-full py-12 md:py-24 lg:py-32 ">
-					<div className=" px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
-						<div className="space-y-2">
+					<div className="px-4 md:px-6  items-center gap-6 text-center flex flex-col sm:flex-row justify-center ">
+						<div className="space-y-2 w-1/2">
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
 								Featured Events
 							</h2>
@@ -92,27 +92,45 @@ export default async function Events({
 								Check out our highlighted events and mark your calendars.
 							</p>
 						</div>
-						<div className="mx-auto w-full max-w-2xl space-y-4">
-							<div className="grid gap-4">
-								<Card>
-									<CardContent className="flex items-center space-x-4">
-										<img
-											alt="Event"
-											className="rounded-lg overflow-hidden aspect-square object-cover object-center"
-											height="100"
-											src="/next.svg"
-											width="100"
-										/>
-										<div className="space-y-1">
-											<h3 className="text-xl font-bold">
-												Summer Music Festival
-											</h3>
-											<p className="text-sm text-gray-500 ">
-												August 20-22, 2023
-											</p>
-										</div>
-									</CardContent>
-								</Card>
+						<div className="mx-auto w-1/2 max-w-2xl space-y-4">
+							<div className="flex flex-col w-full space-y-4 mt-10">
+								{events
+									.filter((event) => event.headliner)
+									.slice(0, 3)
+									.map((event: any, index) => (
+										<a href={event.details} key={index} target="none">
+											<Card key={index} className="">
+												<CardContent className="p-0 flex flex-col sm:flex-row items-center space-x-4 text-left">
+													<img
+														alt="Event"
+														src={
+															event.image_url +
+															"-/preview/938x432/-/quality/smart/-/format/auto/"
+														}
+														className="rounded-lg overflow-hidden aspect-square object-cover object-center w-full md:w-1/4 md:h-full"
+														height="100"
+														width="100"
+													/>
+													<div className="space-y-1 flex flex-col items-start w-full md:w-3/4">
+														<h3 className="text-2xl font-bold ">
+															{event.name}
+														</h3>
+														<p className="text-sm text-gray-500">
+															{event.short}
+														</p>
+														<p className="text-sm text-gray-500 !mt-3">
+															Registration Fee <b>{event.price}</b>
+														</p>
+														{event.prize !== "none" && (
+															<p className="text-xl text-gray-500 !mt-6">
+																Prize Money <b>{event.prize}</b>
+															</p>
+														)}
+													</div>
+												</CardContent>
+											</Card>
+										</a>
+									))}
 							</div>
 						</div>
 					</div>
@@ -130,7 +148,7 @@ export default async function Events({
 						</div>
 						{/* event card grid section */}
 						<div className="flex flex-col md:flex-row justify-between w-full">
-							<div className="flex flex-col w-full md:w-1/4">
+							<div className="flex flex-col w-full md:w-1/4 sticky top-10">
 								<form
 									className="flex flex-col space-y-2 items-center"
 									action={updateEvents}
@@ -138,7 +156,7 @@ export default async function Events({
 									<label className="text-sm font-bold">
 										Filter by Category
 									</label>
-									<div className="flex flex-col">
+									<div className="grid grid-cols-2 sm:flex sm:flex-col">
 										<label className="flex items-center space-x-2">
 											<CheckBox
 												label="Workshops"
@@ -172,30 +190,32 @@ export default async function Events({
 								</form>
 							</div>
 
-							<div className="flex flex-col w-full md:w-3/4 space-y-4">
+							<div className="flex flex-col w-full md:w-3/4 space-y-4 mt-10">
 								{events.map((event: any, index) => (
 									<a href={event.details} key={index} target="none">
-										<Card key={index}>
-											<CardContent className="p-0 flex items-center space-x-4 text-left">
+										<Card key={index} className="w-3/4">
+											<CardContent className="p-0 flex flex-col sm:flex-row items-center space-x-4 text-left">
 												<img
 													alt="Event"
 													src={
 														event.image_url +
 														"-/preview/938x432/-/quality/smart/-/format/auto/"
 													}
-													className="rounded-lg overflow-hidden aspect-square object-cover object-center md:w-1/4 md:h-full"
+													className="rounded-lg overflow-hidden aspect-square object-cover object-center w-full md:w-1/4 md:h-full"
 													height="100"
 													width="100"
 												/>
-												<div className="space-y-1 flex flex-col items-start md:w-3/4">
-													<h3 className="text-xl font-bold ">{event.name}</h3>
+												<div className="space-y-1 flex flex-col items-start w-full md:w-3/4">
+													<h3 className="text-2xl font-bold ">{event.name}</h3>
 													<p className="text-sm text-gray-500">{event.short}</p>
 													<p className="text-sm text-gray-500 !mt-3">
 														Registration Fee <b>{event.price}</b>
 													</p>
-													<p className="text-sm text-gray-500 !mt-6">
-														Prize Money <b>{event.price}</b>
-													</p>
+													{event.prize !== "none" && (
+														<p className="text-xl text-gray-500 !mt-6">
+															Prize Money <b>{event.prize}</b>
+														</p>
+													)}
 												</div>
 											</CardContent>
 										</Card>
