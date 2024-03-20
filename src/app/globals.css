@@ -8,14 +8,17 @@
     --background-end-rgb: 255, 255, 255; */
     --background-start-rgb: 214, 219, 220;
     --background-end-rgb: 255, 195, 0;
+    --background-hex: #f6c680;
+    --background-end: #c83731;
 }
 
 body {
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(
             to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
+            var(--background-hex),
+            /* rgb(var(--background-end-rgb)) */
+            var(--background-end)
         )
         rgb(var(--background-start-rgb));
 }

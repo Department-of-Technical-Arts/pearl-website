@@ -1,10 +1,9 @@
-import { Button } from "./ui/button";
-import { lineup } from "./data/lineup";
-import { aftermovies } from "./data/aftermovies";
+import { Button } from "@/app/ui/button";
+import { lineup } from "@/data/lineup";
+import { aftermovies } from "@/data/aftermovies";
 import Image from "next/image";
-import Navbar from "./ui/navbar";
+import Navbar from "@/app/ui/navbar";
 import Link from "next/link";
-
 
 export default function Home() {
 	return (
@@ -20,13 +19,15 @@ export default function Home() {
 								width={700}
 								height={700}
 								alt="logo"
-								className="mx-auto" />
-
+								className="mx-auto"
+							/>
 						</div>
 
 						<div className="mx-auto max-w-sm space-y-2">
 							<p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-								The annual cultural fest of BITS Pilani, Hyderabad Campus, that grew into a national level college cultural fest with participation from more than 50 colleges across India..
+								The annual cultural fest of BITS Pilani, Hyderabad Campus, that
+								grew into a national level college cultural fest with
+								participation from more than 50 colleges across India..
 							</p>
 							<Button className="m-2 z-20 font-bold">Get Your Pass!</Button>
 						</div>
@@ -36,23 +37,25 @@ export default function Home() {
 						width={3000}
 						height={3000}
 						alt="bg-hyd"
-						className="w-full -translate-y-48 z-[-2] relative blur-[3px]" />
+						className="w-full -translate-y-48 z-[-2] relative blur-[3px]"
+					/>
 				</section>
 
-				{lineup.length > 0 && <section className="w-full">
-					<div className="px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
-						<div className="space-y-2">
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-								Lineup Announcement
-							</h2>
-							<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-								Check out the amazing artists who will be performing at the festival.
-							</p>
-						</div>
-						<div className="mx-auto w-full max-w-2xl space-y-4">
-							<div className="grid gap-4">
-								{
-									lineup.map((artist, index) => (
+				{lineup.length > 0 && (
+					<section className="w-full">
+						<div className="px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
+							<div className="space-y-2">
+								<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+									Lineup Announcement
+								</h2>
+								<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+									Check out the amazing artists who will be performing at the
+									festival.
+								</p>
+							</div>
+							<div className="mx-auto w-full max-w-2xl space-y-4">
+								<div className="grid gap-4">
+									{lineup.map((artist, index) => (
 										<div key={index} className="flex items-center space-x-4">
 											<Image
 												alt="Artist"
@@ -66,16 +69,17 @@ export default function Home() {
 												<p className="text-sm text-gray-500">{artist.time}</p>
 											</div>
 										</div>
-									))
-								}
-
+									))}
+								</div>
 							</div>
 						</div>
-					</div>
-					<div className="flex justify-center items-center my-2">
-						<Link href="/lineups"><Button className="m-2">View our Previous Lineups!</Button></Link>
-					</div>
-				</section>}
+						<div className="flex justify-center items-center my-2">
+							<Link href="/lineups">
+								<Button className="m-2">View our Previous Lineups!</Button>
+							</Link>
+						</div>
+					</section>
+				)}
 
 				<section className="w-full py-12 md:py-24 lg:py-32">
 					<div className="flex flex-col">
@@ -86,7 +90,9 @@ export default function Home() {
 						<div className="justify-center w-full grid md:grid-cols-3 my-10 align-middle">
 							{aftermovies.map((aftermovie, index) => (
 								<div key={index} className="justify-center items-center m-4">
-									<p className="text-6xl text-stone-900 text-center m-2">{aftermovie.year}</p>
+									<p className="text-6xl text-stone-900 text-center m-2">
+										{aftermovie.year}
+									</p>
 
 									<div key={index} className="w-full">
 										<iframe
@@ -104,8 +110,10 @@ export default function Home() {
 			</main>
 
 			<footer className="bg-white flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-				<p className="text-xs text-gray-500">© 2024 Pearl BITS Pilani, Hyderabad Campus. All rights reserved.</p>
+				<p className="text-xs text-gray-500">
+					© 2024 Pearl BITS Pilani, Hyderabad Campus. All rights reserved.
+				</p>
 			</footer>
-		</div >
+		</div>
 	);
 }
