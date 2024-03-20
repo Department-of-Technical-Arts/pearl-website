@@ -13,6 +13,7 @@ function StartFirebase() {
 		messagingSenderId: process.env.NEXT_PUBLIC_MESSAGING_ID,
 		appId: process.env.NEXT_PUBLIC_APP_ID,
 	};
+	console.log(firebaseConfig);
 	const app = initializeApp(firebaseConfig);
 	const storageRef = ref;
 	return { db: getDatabase(app), storage: getStorage(app), storageRef };
