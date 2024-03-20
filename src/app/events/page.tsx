@@ -7,6 +7,7 @@ import { Input } from "@/app/ui/input";
 import { Button } from "@/app/ui/button";
 import { CardContent, Card } from "@/app/ui/card";
 import Navbar from "../ui/navbar";
+import Footer from "../ui/footer";
 
 export const revalidate = 3600;
 
@@ -35,7 +36,7 @@ export default function Events() {
 						</div>
 					</div>
 				</section>
-				<section className="w-full py-12 md:py-24 lg:py-32 bg-[#f8e597] ">
+				<section className="w-full py-12 md:py-24 lg:py-32 ">
 					<div className=" px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
 						<div className="space-y-2">
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
@@ -104,37 +105,23 @@ export default function Events() {
 						</div>
 					</div>
 				</section>
-				<section id="events" className="w-full py-12 md:py-24 lg:py-32">
-					<div className=" grid items-center gap-6 px-4 md:px-6 lg:grid-cols-[1fr_600px] lg:gap-12">
+				<section
+					id="events"
+					className="w-full py-12 md:py-24 lg:py-32 bg-gray-100"
+				>
+					<div className="px-4 md:px-6 flex flex-col items-center justify-center space-y-2 text-center">
 						<div className="space-y-2">
-							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-								Join the Fun
+							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+								All Events
 							</h2>
-							<p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
-								Experience the best events in town. Get your tickets now!
+							<p className="mx-auto max-w-[600px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
+								Register for our upcoming events and get your tickets now.
 							</p>
-						</div>
-						<div className="mx-auto w-full max-w-2xl space-y-4">
-							<form className="flex space-x-2">
-								<Button type="submit">Purchase Tickets</Button>
-							</form>
 						</div>
 					</div>
 				</section>
 			</main>
-			<footer className="flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-				<p className="text-xs text-gray-500 ">
-					© 2024 Acme Inc. All rights reserved.
-				</p>
-				<nav className="sm:ml-auto flex gap-4 sm:gap-6">
-					<Link className="text-xs hover:underline underline-offset-4" href="#">
-						Terms of Service
-					</Link>
-					<Link className="text-xs hover:underline underline-offset-4" href="#">
-						Privacy
-					</Link>
-				</nav>
-			</footer>
+			<Footer />
 		</div>
 	);
 }

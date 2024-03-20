@@ -4,6 +4,7 @@ import { aftermovies } from "@/data/aftermovies";
 import Image from "next/image";
 import Navbar from "@/app/ui/navbar";
 import Link from "next/link";
+import Footer from "./ui/footer";
 
 export default function Home() {
 	return (
@@ -109,11 +110,7 @@ export default function Home() {
 				</section>
 			</main>
 
-			<footer className="bg-white flex flex-col gap-2 sm:flex-row py-6 w-full shrink-0 items-center px-4 md:px-6 border-t">
-				<p className="text-xs text-gray-500">
-					© 2024 Pearl BITS Pilani, Hyderabad Campus. All rights reserved.
-				</p>
-			</footer>
+			<Footer />
 		</div>
 	);
 }
