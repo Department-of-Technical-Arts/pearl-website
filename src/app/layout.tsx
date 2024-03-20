@@ -8,6 +8,14 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
 	title: "Pearl 2024",
 	description: "Annual Cultural Fest of BITS Pilani, Hyderabad Campus",
+	openGraph: {
+		images: [
+			{
+				url: "/logo-og.png",
+				alt: "Og Image Alt",
+			},
+		],
+	},
 };
 
 export default function RootLayout({
