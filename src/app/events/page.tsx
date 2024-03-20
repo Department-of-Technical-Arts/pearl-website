@@ -84,7 +84,7 @@ export default async function Events({
 				</section>
 				<section className="w-full py-12 md:py-24 lg:py-32 ">
 					<div className="px-4 md:px-6  items-center gap-6 text-center flex flex-col sm:flex-row justify-center ">
-						<div className="space-y-2 w-1/2">
+						<div className="space-y-2 w-full sm:w-1/2">
 							<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
 								Featured Events
 							</h2>
@@ -92,7 +92,7 @@ export default async function Events({
 								Check out our highlighted events and mark your calendars.
 							</p>
 						</div>
-						<div className="mx-auto w-1/2 max-w-2xl space-y-4">
+						<div className="mx-auto w-4/6 sm:w-1/2 max-w-2xl space-y-4">
 							<div className="flex flex-col w-full space-y-4 mt-10">
 								{events
 									.filter((event) => event.headliner)
@@ -148,7 +148,7 @@ export default async function Events({
 						</div>
 						{/* event card grid section */}
 						<div className="flex flex-col md:flex-row justify-between w-full">
-							<div className="flex flex-col w-full md:w-1/4 sticky top-10">
+							<div className="flex flex-col w-full md:w-1/4 top-10">
 								<form
 									className="flex flex-col space-y-2 items-center"
 									action={updateEvents}
@@ -192,9 +192,14 @@ export default async function Events({
 
 							<div className="flex flex-col w-full md:w-3/4 space-y-4 mt-10">
 								{events.map((event: any, index) => (
-									<a href={event.details} key={index} target="none">
-										<Card key={index} className="w-3/4">
-											<CardContent className="p-0 flex flex-col sm:flex-row items-center space-x-4 text-left">
+									<a
+										href={event.details}
+										key={index}
+										target="none"
+										className="flex items-center justify-center"
+									>
+										<Card key={index} className="w-4/6 sm:w-3/4">
+											<CardContent className="p-0 flex flex-col sm:flex-row items-center justify-center space-x-4 text-left">
 												<img
 													alt="Event"
 													src={
