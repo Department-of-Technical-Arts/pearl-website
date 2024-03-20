@@ -64,9 +64,9 @@ export default function Home() {
 								</p>
 							</div>
 							<div className="mx-auto w-full max-w-2xl space-y-4">
-								<div className="grid gap-4">
+								<div className="grid md:grid-cols-2 gap-4">
 									{lineup.map((artist, index) => (
-										<div key={index} className="flex items-center space-x-4">
+										<div key={index} className="flex items-center justify-stretch space-x-4">
 											<Image
 												alt="Artist"
 												className="rounded-lg overflow-hidden aspect-square object-cover object-center"
@@ -74,7 +74,7 @@ export default function Home() {
 												src={artist.image}
 												width="100"
 											/>
-											<div className="space-y-1">
+											<div className="space-y-1 text-left">
 												<h3 className="text-xl font-bold">{artist.name}</h3>
 												<p className="text-sm text-gray-500">{artist.time}</p>
 											</div>

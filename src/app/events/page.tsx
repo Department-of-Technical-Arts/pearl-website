@@ -21,11 +21,12 @@ export default async function Events({
 	};
 }) {
 	let { Workshops, Competitions, Games, Talks } = await getData();
+
 	Workshops = Object.values(Workshops);
 	Competitions = Object.values(Competitions);
 	Games = Object.values(Games);
 	Talks = Object.values(Talks);
-	console.log(Games);
+
 	const filter = searchParams.filter?.split(",");
 	let events = [];
 	if (filter) {
@@ -44,7 +45,7 @@ export default async function Events({
 			...Object.values(Talks),
 		];
 	}
-	// console.log(Workshops, Competitions, Games);
+
 	const checkboxClass =
 		"before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10";
 
@@ -73,7 +74,7 @@ export default async function Events({
 					<div className=" px-4 md:px-6 flex flex-col items-center justify-center space-y-2 text-center">
 						<div className="space-y-2">
 							<h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl text-white">
-								Upcoming Events
+								Events
 							</h1>
 							<p className="mx-auto max-w-[600px] text-black md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed ">
 								Explore our exciting lineup of events happening this Pearl.
@@ -107,7 +108,7 @@ export default async function Events({
 											alt="Event"
 											className="rounded-lg overflow-hidden aspect-square object-cover object-center"
 											height="100"
-											src="/placeholder.svg"
+											src="/next.svg"
 											width="100"
 										/>
 										<div className="space-y-1">
@@ -124,6 +125,7 @@ export default async function Events({
 						</div>
 					</div>
 				</section>
+
 				<section
 					id="events"
 					className="w-full py-12 md:py-24 lg:py-32 bg-gray-100"
@@ -140,7 +142,6 @@ export default async function Events({
 						{/* event card grid section */}
 						<div className="flex flex-col md:flex-row justify-between w-full">
 							<div className="flex flex-col w-full md:w-1/4">
-								{/* <Input placeholder="Search for events" /> */}
 								<form
 									className="flex flex-col space-y-2 items-center"
 									action={updateEvents}
@@ -181,6 +182,7 @@ export default async function Events({
 									<Button type="submit">Apply</Button>
 								</form>
 							</div>
+
 							<div className="flex flex-col w-full md:w-3/4 space-y-4">
 								{events.map((event: any, index) => (
 									<Card key={index}>

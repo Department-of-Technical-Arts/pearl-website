@@ -12,13 +12,16 @@
     --background-end: #c83731;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     color: rgb(var(--foreground-rgb));
     background: linear-gradient(
             to bottom,
             var(--background-hex),
-            /* rgb(var(--background-end-rgb)) */
-            var(--background-end)
+            /* rgb(var(--background-end-rgb)) */ var(--background-end)
         )
         rgb(var(--background-start-rgb));
 }
