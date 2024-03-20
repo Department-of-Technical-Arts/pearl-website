@@ -86,7 +86,7 @@ export default function Home() {
 					</div>
 				</section>
 
-				{lineup.length > 0 && (
+				{/* {lineup.length > 0 && (
 					<section className="w-full relative">
 						<div className="px-4 md:px-6 flex flex-col items-center gap-6 text-center text-[#823732] lg:gap-12 sm:mt-20 ">
 							<div className="space-y-2">
@@ -109,7 +109,7 @@ export default function Home() {
 							height={3000}
 						/>
 					</section>
-				)}
+				)} */}
 
 				<section className="w-full py-12 md:py-24 lg:py-32">
 					<div className="flex flex-col">
