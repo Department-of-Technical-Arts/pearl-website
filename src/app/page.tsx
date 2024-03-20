@@ -80,7 +80,7 @@ export default function Home() {
 				</section>
 
 				{lineup.length > 0 && (
-					<section className="w-full">
+					<section className="w-full relative">
 						<div className="px-4 md:px-6 flex flex-col items-center gap-6 text-center text-[#823732] lg:gap-12 sm:mt-20 ">
 							<div className="space-y-2">
 								<h2
@@ -90,15 +90,17 @@ export default function Home() {
 								</h2>
 								<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 									Check out the amazing artists who will be performing at the
-									festival.
+									festival!
 								</p>
 							</div>
 						</div>
-						<div className="flex justify-center items-center my-2">
-							<Link href="/lineups">
-								<Button className="m-2">View our Previous Lineups!</Button>
-							</Link>
-						</div>
+						<Image
+							alt="Artist Lineup"
+							src={"/artist_lineup.png"}
+							className="w-full  object-contain z-[-1]"
+							width={3000}
+							height={3000}
+						/>
 					</section>
 				)}
 
