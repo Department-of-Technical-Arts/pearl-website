@@ -19,20 +19,41 @@ export default function Home() {
 			<Navbar />
 
 			<main className="flex-1">
-				<section className="w-full">
-					<div className="px-4 sm:flex-col md:grid md:grid-cols-2 items-center justify-center space-y-2 text-center ">
+				<section className="w-full h-[100vh]">
+					<Image
+						src={"/curtains.png"}
+						width={3000}
+						height={3000}
+						alt="pillar"
+						className="absolute animate-curtain top-0 left-0 w-full z-[-3] -translate-y-10 "
+					/>
+					<Image
+						src={"/pillar.png"}
+						width={3000}
+						height={3000}
+						alt="pillar"
+						className="absolute  top-0 left-0 h-full w-[200px] z-[-2] "
+					/>
+					<Image
+						src={"/pillar.png"}
+						width={3000}
+						height={3000}
+						alt="pillar"
+						className="absolute translate-x-full sm:translate-x-0 top-0 right-0  h-full w-[200px] z-[-2] "
+					/>
+					<div className="px-4 sm:flex-col items-center justify-center space-y-2 text-center ">
 						<div className="">
 							<Image
 								src={"/logo-h.png"}
 								width={700}
 								height={700}
 								alt="logo"
-								className="mx-auto"
+								className="mx-auto pt-32"
 							/>
 						</div>
 
-						<div className="mx-auto max-w-sm space-y-2">
-							<p className="mx-auto max-w-[700px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+						<div className="mx-auto max-w-lg space-y-2">
+							<p className="mx-auto max-w-[1300px] text-gray-700 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								The annual cultural fest of BITS Pilani, Hyderabad Campus, that
 								grew into a national level college cultural fest with
 								participation from more than 50 colleges across India..
@@ -40,13 +61,22 @@ export default function Home() {
 							<Button className="m-2 z-20 font-bold">Get Your Pass!</Button>
 						</div>
 					</div>
-					<Image
-						src={"/hyd.png"}
-						width={3000}
-						height={3000}
-						alt="bg-hyd"
-						className="w-full -translate-y-48 z-[-2] relative blur-[3px]"
-					/>
+					<div className="flex flex-col absolute top-full w-full -translate-y-1/2 z-[-2]">
+						<Image
+							src={"/wave.svg"}
+							width={3000}
+							height={1500}
+							alt="bg-hyd"
+							className="w-full z-[-2] relative "
+						/>
+						<Image
+							src={"/wave.svg"}
+							width={3000}
+							height={1500}
+							alt="bg-hyd"
+							className="w-full z-[-2]  relative rotate-180"
+						/>
+					</div>
 				</section>
 
 				{lineup.length > 0 && (

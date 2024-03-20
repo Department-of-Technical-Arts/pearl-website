@@ -10,11 +10,11 @@ type Props = {};
 export default function Navbar({}: Props) {
 	return (
 		<header
-			className={`px-5 lg:px-6 h-24 flex items-center w-full justify-center text-2xl tracking-[0.2rem] text-[#b43232] ${galgo.className}`}
+			className={`px-5 lg:px-6 h-24 flex items-center w-full justify-center text-2xl tracking-[0.2rem] text-white ${galgo.className}`}
 		>
-			<HomeLink />
+			{/* <HomeLink /> */}
 
-			<nav className="flex sm:ml-auto gap-0 sm:gap-2">
+			<nav className="flex gap-0 sm:gap-2">
 				<Link
 					className="sm:hidden p-2 font-extrabold hover:bg-red-600/5 underline-offset-4"
 					href="#"

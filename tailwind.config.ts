@@ -14,6 +14,15 @@ const config: Config = {
 					"conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
 				hyd: "url('/hyd.png')",
 			},
+			keyframes: {
+				curtain: {
+					"0%": { transform: "translateY(-100%)" },
+					"100%": { transform: "translateY(-10%)" },
+				},
+			},
+			animation: {
+				curtain: "curtain 0.5s linear",
+			},
 		},
 		fontFamily: {
 			galgo: ["var(--galgo)"],
