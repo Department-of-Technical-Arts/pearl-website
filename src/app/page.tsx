@@ -7,6 +7,7 @@ import Link from "next/link";
 import Footer from "./ui/footer";
 
 import { Amita } from "next/font/google";
+import { redirect } from "next/navigation";
 
 const amita = Amita({
 	subsets: ["latin"],
@@ -52,14 +53,20 @@ export default function Home() {
 							/>
 						</div>
 
-						<div className="mx-auto max-w-lg space-y-2">
+						<form
+							className="mx-auto max-w-lg space-y-2"
+							action={async () => {
+								"use server";
+								redirect("/events");
+							}}
+						>
 							<p className="mx-auto max-w-[1300px] text-[#823732] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								The annual cultural fest of BITS Pilani, Hyderabad Campus, that
 								grew into a national level college cultural fest with
 								participation from more than 50 colleges across India..
 							</p>
-							<Button className="m-2 z-20 font-bold">Get Your Pass!</Button>
-						</div>
+							<Button className="m-2 z-20 font-bold">Purchase Tickets</Button>
+						</form>
 					</div>
 					<div className="flex flex-col absolute top-full w-full -translate-y-1/2 z-[-2]">
 						<Image
