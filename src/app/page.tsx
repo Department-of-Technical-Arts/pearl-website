@@ -24,22 +24,22 @@ export default function Home() {
 						src={"/curtains.png"}
 						width={3000}
 						height={3000}
-						alt="pillar"
-						className="absolute animate-curtain top-0 left-0 w-full z-[-3] -translate-y-10 "
+						alt="curtain"
+						className="absolute animate-curtain top-0 left-0 w-[110vw] object-cover  sm:w-full z-[-3] sm:-translate-y-10 "
 					/>
 					<Image
 						src={"/pillar.png"}
 						width={3000}
 						height={3000}
 						alt="pillar"
-						className="absolute  top-0 left-0 h-full w-[200px] z-[-2] "
+						className="absolute hidden md:block top-0 left-0 h-full w-[200px] z-[-2] "
 					/>
 					<Image
 						src={"/pillar.png"}
 						width={3000}
 						height={3000}
 						alt="pillar"
-						className="absolute translate-x-full sm:translate-x-0 top-0 right-0  h-full w-[200px] z-[-2] "
+						className="absolute  hidden md:block translate-x-full sm:translate-x-0 top-0 right-0  h-full w-[200px] z-[-2] "
 					/>
 					<div className="px-4 sm:flex-col items-center justify-center space-y-2 text-center ">
 						<div className="">
@@ -67,14 +67,14 @@ export default function Home() {
 							width={3000}
 							height={1500}
 							alt="bg-hyd"
-							className="w-full z-[-2] relative "
+							className="w-[102vw] z-[-2] relative "
 						/>
 						<Image
 							src={"/wave.svg"}
 							width={3000}
 							height={1500}
 							alt="bg-hyd"
-							className="w-full z-[-2]  relative rotate-180"
+							className="w-[102vw] z-[-2]  relative rotate-180"
 						/>
 					</div>
 				</section>
@@ -96,7 +96,10 @@ export default function Home() {
 							<div className="mx-auto w-full max-w-2xl space-y-4">
 								<div className="grid md:grid-cols-2 gap-4">
 									{lineup.map((artist, index) => (
-										<div key={index} className="flex items-center justify-stretch space-x-4">
+										<div
+											key={index}
+											className="flex items-center justify-stretch space-x-4"
+										>
 											<Image
 												alt="Artist"
 												className="rounded-lg overflow-hidden aspect-square object-cover object-center"

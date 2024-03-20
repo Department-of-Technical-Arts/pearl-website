@@ -20,12 +20,11 @@ export default async function Events({
 		[key: string]: string;
 	};
 }) {
-	let { Workshops, Competitions, Games, Talks } = await getData();
+	let { Workshops, Competitions, Games } = await getData();
 
 	Workshops = Object.values(Workshops);
 	Competitions = Object.values(Competitions);
 	Games = Object.values(Games);
-	Talks = Object.values(Talks);
 
 	const filter = searchParams.filter?.split(",");
 	let events = [];
@@ -34,18 +33,11 @@ export default async function Events({
 			if (curr === "workshops") return [...acc, ...Workshops];
 			if (curr === "competitions") return [...acc, ...Competitions];
 			if (curr === "games") return [...acc, ...Games];
-			if (curr === "talks") return [...acc, ...Talks];
 			return acc;
 		}, []);
 	} else {
-		events = [
-			...Object.values(Games),
-			...Object.values(Competitions),
-			...Object.values(Workshops),
-			...Object.values(Talks),
-		];
+		events = [...Competitions, ...Workshops, ...Games];
 	}
-
 	const checkboxClass =
 		"before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10";
 
@@ -182,27 +174,32 @@ export default async function Events({
 
 							<div className="flex flex-col w-full md:w-3/4 space-y-4">
 								{events.map((event: any, index) => (
-									<Card key={index}>
-										<CardContent className="p-0 flex items-center space-x-4 text-left">
-											<img
-												alt="Event"
-												src={
-													event.image_url +
-													"-/preview/938x432/-/quality/smart/-/format/auto/"
-												}
-												className="rounded-lg overflow-hidden aspect-square object-cover object-center md:w-1/4 md:h-full"
-												height="100"
-												width="100"
-											/>
-											<div className="space-y-1 flex flex-col items-start md:w-3/4">
-												<h3 className="text-xl font-bold ">{event.name}</h3>
-												<p className="text-sm text-gray-500">{event.short}</p>
-												<p className="text-sm text-gray-500 !mt-3">
-													Registration Fee <b>{event.price}</b>
-												</p>
-											</div>
-										</CardContent>
-									</Card>
+									<a href={event.details} key={index} target="none">
+										<Card key={index}>
+											<CardContent className="p-0 flex items-center space-x-4 text-left">
+												<img
+													alt="Event"
+													src={
+														event.image_url +
+														"-/preview/938x432/-/quality/smart/-/format/auto/"
+													}
+													className="rounded-lg overflow-hidden aspect-square object-cover object-center md:w-1/4 md:h-full"
+													height="100"
+													width="100"
+												/>
+												<div className="space-y-1 flex flex-col items-start md:w-3/4">
+													<h3 className="text-xl font-bold ">{event.name}</h3>
+													<p className="text-sm text-gray-500">{event.short}</p>
+													<p className="text-sm text-gray-500 !mt-3">
+														Registration Fee <b>{event.price}</b>
+													</p>
+													<p className="text-sm text-gray-500 !mt-6">
+														Prize Money <b>{event.price}</b>
+													</p>
+												</div>
+											</CardContent>
+										</Card>
+									</a>
 								))}
 							</div>
 						</div>
@@ -247,7 +244,7 @@ const CheckBox = ({
 					viewBox="0 0 20 20"
 					fill="currentColor"
 					stroke="currentColor"
-					stroke-width="1"
+					strokeWidth="1"
 				>
 					<path
 						fill-rule="evenodd"
