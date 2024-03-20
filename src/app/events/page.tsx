@@ -180,11 +180,6 @@ export default async function Events({
 
 											<span>Games</span>
 										</label>
-										<label className="flex items-center space-x-2">
-											<CheckBox label="Talks" name="filter[]" value="talks" />
-
-											<span>Talks</span>
-										</label>
 									</div>
 									<Button type="submit">Apply</Button>
 								</form>
