@@ -6,6 +6,13 @@ import Navbar from "@/app/ui/navbar";
 import Link from "next/link";
 import Footer from "./ui/footer";
 
+import { Amita } from "next/font/google";
+
+const amita = Amita({
+	subsets: ["latin"],
+	weight: ["400", "700"],
+});
+
 export default function Home() {
 	return (
 		<div className="flex flex-col min-h-[100dvh]">
@@ -44,9 +51,11 @@ export default function Home() {
 
 				{lineup.length > 0 && (
 					<section className="w-full">
-						<div className="px-4 md:px-6 grid items-center gap-6 text-center lg:grid-cols-[1fr_600px] lg:gap-12">
+						<div className="px-4 md:px-6 flex flex-col items-center gap-6 text-center  lg:gap-12">
 							<div className="space-y-2">
-								<h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+								<h2
+									className={`text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none ${amita.className}`}
+								>
 									Lineup Announcement
 								</h2>
 								<p className="mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">

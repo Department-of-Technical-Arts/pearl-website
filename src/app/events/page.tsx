@@ -8,10 +8,63 @@ import { Button } from "@/app/ui/button";
 import { CardContent, Card } from "@/app/ui/card";
 import Navbar from "../ui/navbar";
 import Footer from "../ui/footer";
+import { getData } from "@/firebase/config";
+import updateEvents from "./updateEvents";
 
 export const revalidate = 3600;
 
-export default function Events() {
+export default async function Events({
+	searchParams,
+}: {
+	searchParams: {
+		[key: string]: string;
+	};
+}) {
+	let { Workshops, Competitions, Games, Talks } = await getData();
+	Workshops = Object.values(Workshops);
+	Competitions = Object.values(Competitions);
+	Games = Object.values(Games);
+	Talks = Object.values(Talks);
+	console.log(Games);
+	const filter = searchParams.filter?.split(",");
+	let events = [];
+	if (filter) {
+		events = filter.reduce((acc: any[], curr) => {
+			if (curr === "workshops") return [...acc, ...Workshops];
+			if (curr === "competitions") return [...acc, ...Competitions];
+			if (curr === "games") return [...acc, ...Games];
+			if (curr === "talks") return [...acc, ...Talks];
+			return acc;
+		}, []);
+	} else {
+		events = [
+			...Object.values(Games),
+			...Object.values(Competitions),
+			...Object.values(Workshops),
+			...Object.values(Talks),
+		];
+	}
+	// console.log(Workshops, Competitions, Games);
+	const checkboxClass =
+		"before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10";
+
+	// const [filter, setFilter] = useState({
+	// 	Workshops: true,
+	// 	Competitions: true,
+	// 	Games: true,
+	// 	Talks: true,
+	// 	search: "",
+	// });
+
+	// const events = useMemo(() => {
+	// 	const allFields = [];
+	// 	if (filter.Workshops && Workshops) allFields.push(...Workshops);
+	// 	if (filter.Competitions && Competitions) allFields.push(...Competitions);
+	// 	if (filter.Games && Games) allFields.push(...Games);
+	// 	if (filter.Talks && Talks) allFields.push(...Talks);
+	// 	return allFields;
+	// }, [filter, Workshops, Competitions, Games, Talks]);
+
 	return (
 		<div className="flex flex-col min-h-[100dvh] ">
 			<Navbar />
@@ -67,40 +120,6 @@ export default function Events() {
 										</div>
 									</CardContent>
 								</Card>
-								<Card>
-									<CardContent className="flex items-center space-x-4">
-										<img
-											alt="Event"
-											className="rounded-lg overflow-hidden aspect-square object-cover object-center"
-											height="100"
-											src="/placeholder.svg"
-											width="100"
-										/>
-										<div className="space-y-1">
-											<h3 className="text-xl font-bold">Food Truck Rally</h3>
-											<p className="text-sm text-gray-500 ">
-												September 5, 2023
-											</p>
-										</div>
-									</CardContent>
-								</Card>
-								<Card>
-									<CardContent className="flex items-center space-x-4">
-										<img
-											alt="Event"
-											className="rounded-lg overflow-hidden aspect-square object-cover object-center"
-											height="100"
-											src="/placeholder.svg"
-											width="100"
-										/>
-										<div className="space-y-1">
-											<h3 className="text-xl font-bold">Art Exhibition</h3>
-											<p className="text-sm text-gray-500 ">
-												October 12-15, 2023
-											</p>
-										</div>
-									</CardContent>
-								</Card>
 							</div>
 						</div>
 					</div>
@@ -118,6 +137,76 @@ export default function Events() {
 								Register for our upcoming events and get your tickets now.
 							</p>
 						</div>
+						{/* event card grid section */}
+						<div className="flex flex-col md:flex-row justify-between w-full">
+							<div className="flex flex-col w-full md:w-1/4">
+								{/* <Input placeholder="Search for events" /> */}
+								<form
+									className="flex flex-col space-y-2 items-center"
+									action={updateEvents}
+								>
+									<label className="text-sm font-bold">
+										Filter by Category
+									</label>
+									<div className="flex flex-col">
+										<label className="flex items-center space-x-2">
+											<CheckBox
+												label="Workshops"
+												name="filter[]"
+												value="workshops"
+											/>
+
+											<span>Workshops</span>
+										</label>
+										<label className="flex items-center space-x-2">
+											<CheckBox
+												label="Competitions"
+												name="filter[]"
+												value="competitions"
+											/>
+
+											<span>Competitions</span>
+										</label>
+										<label className="flex items-center space-x-2">
+											<CheckBox label="Games" name="filter[]" value="games" />
+
+											<span>Games</span>
+										</label>
+										<label className="flex items-center space-x-2">
+											<CheckBox label="Talks" name="filter[]" value="talks" />
+
+											<span>Talks</span>
+										</label>
+									</div>
+									<Button type="submit">Apply</Button>
+								</form>
+							</div>
+							<div className="flex flex-col w-full md:w-3/4 space-y-4">
+								{events.map((event: any, index) => (
+									<Card key={index}>
+										<CardContent className="p-0 flex items-center space-x-4 text-left">
+											<img
+												alt="Event"
+												src={
+													event.image_url +
+													"-/preview/938x432/-/quality/smart/-/format/auto/"
+												}
+												className="rounded-lg overflow-hidden aspect-square object-cover object-center md:w-1/4 md:h-full"
+												height="100"
+												width="100"
+											/>
+											<div className="space-y-1 flex flex-col items-start md:w-3/4">
+												<h3 className="text-xl font-bold ">{event.name}</h3>
+												<p className="text-sm text-gray-500">{event.short}</p>
+												<p className="text-sm text-gray-500 !mt-3">
+													Registration Fee <b>{event.price}</b>
+												</p>
+											</div>
+										</CardContent>
+									</Card>
+								))}
+							</div>
+						</div>
 					</div>
 				</section>
 			</main>
@@ -125,3 +214,49 @@ export default function Events() {
 		</div>
 	);
 }
+
+const CheckBox = ({
+	label,
+	checked,
+	onChange,
+	name,
+	value,
+}: {
+	label: string;
+	checked?: boolean;
+	name: string;
+	value?: string;
+	onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
+}) => {
+	return (
+		<label
+			className="relative flex items-center p-3 rounded-full cursor-pointer"
+			htmlFor="checkbox"
+		>
+			<input
+				type="checkbox"
+				className="before:content[''] peer relative h-5 w-5 cursor-pointer appearance-none rounded-md border border-blue-gray-200 transition-all before:absolute before:top-2/4 before:left-2/4 before:block before:h-12 before:w-12 before:-translate-y-2/4 before:-translate-x-2/4 before:rounded-full before:bg-blue-gray-500 before:opacity-0 before:transition-opacity checked:border-gray-900 checked:bg-gray-900 checked:before:bg-gray-900 hover:before:opacity-10"
+				id="checkbox"
+				checked={checked}
+				name={name}
+				value={value}
+			/>
+			<span className="absolute text-white transition-opacity opacity-0 pointer-events-none top-2/4 left-2/4 -translate-y-2/4 -translate-x-2/4 peer-checked:opacity-100">
+				<svg
+					xmlns="http://www.w3.org/2000/svg"
+					className="h-3.5 w-3.5"
+					viewBox="0 0 20 20"
+					fill="currentColor"
+					stroke="currentColor"
+					stroke-width="1"
+				>
+					<path
+						fill-rule="evenodd"
+						d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+						clip-rule="evenodd"
+					></path>
+				</svg>
+			</span>
+		</label>
+	);
+};
