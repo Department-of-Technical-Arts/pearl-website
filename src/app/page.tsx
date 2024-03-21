@@ -60,7 +60,7 @@ export default function Home() {
 								redirect("/events");
 							}}
 						>
-							<p className="mx-auto max-w-[1300px] text-[#823732] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							<p className="mx-auto max-w-[1300px] text-white font-bold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								The annual cultural fest of BITS Pilani, Hyderabad Campus, that
 								grew into a national level college cultural fest with
 								participation from more than 50 colleges across India..
