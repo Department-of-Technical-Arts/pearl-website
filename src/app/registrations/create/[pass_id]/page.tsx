@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { sendRegosterRequest } from "./sendRegisterRequest";
 import { redirect } from "next/navigation";
+import RegisterButton from "@/app/ui/registrationForm/registerButton";
+import RegistrationForm from "@/app/ui/registrationForm";
 
 export default async function CreateRegistration(props: {
 	params: {
@@ -55,47 +57,9 @@ export default async function CreateRegistration(props: {
 				Register for {passData.data <= 4 ? "Day " + passData.data : "Mega Pass"}
 			</h1>
 			<h3 className="text-white">{error}</h3>
-			<form
-				action={sendRegisterRequestWithPassID}
-				className="flex flex-col gap-2"
-			>
-				<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-					<label htmlFor="name">Name</label>
-					<input
-						type="text"
-						placeholder="Name"
-						required
-						name="name"
-						className="px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-					/>
-				</div>
-				<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-					<label htmlFor="email">Email</label>
-					<input
-						type="email"
-						placeholder="Email"
-						required
-						name="email"
-						className="px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-					/>
-				</div>
-				<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-					<label htmlFor="phone">Phone</label>
-					<input
-						type="tel"
-						placeholder="Phone"
-						required
-						name="phone"
-						className="px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
-					/>
-				</div>
-				<button
-					type="submit"
-					className="hover:bg-blue-500 bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-				>
-					Register
-				</button>
-			</form>
+			<RegistrationForm
+				sendRegisterRequestWithPassID={sendRegisterRequestWithPassID}
+			/>
 			<div className="flex grow mb-auto" />
 		</div>
 	);
