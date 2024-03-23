@@ -32,6 +32,25 @@ export const POST = async (req: NextRequest) => {
 			message: "Please fill all fields",
 		});
 	}
+	// Checl if email is valid
+	const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+	if (!emailRegex.test(email)) {
+		return NextResponse.json({
+			status: 422,
+			error: true,
+			message: "Please enter a valid email",
+		});
+	}
+
+	// Check if phone number is valid
+	const phoneRegex = /^[0-9]{10}$/;
+	if (!phoneRegex.test(phoneNumber)) {
+		return NextResponse.json({
+			status: 422,
+			error: true,
+			message: "Please enter a valid phone number",
+		});
+	}
 
 	const updateQR = await QR.findOneAndUpdate(
 		{ _id: qrId },
@@ -42,7 +61,7 @@ export const POST = async (req: NextRequest) => {
 			entered_credentials: true,
 		},
 		{ new: true }
-	)
+	);
 
 	return NextResponse.json({
 		status: 200,

@@ -5,8 +5,8 @@ import QR from "@/models/qrs";
 export const GET = async (req: NextRequest) => {
 	await mongoConnect();
 
-	// TODO: Get qrId from request
-	const qrId = "jbkfd";
+	let qrId = req.nextUrl.searchParams.get("qrId") as string;
+	qrId = qrId.slice(8, -8);
 
 	const checkIfQrExists = await QR.findOne({ _id: qrId });
 	if (!checkIfQrExists) {
