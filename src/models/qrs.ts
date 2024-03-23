@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+import mongoose, { Document, Model } from "mongoose";
 import { Schema } from "mongoose";
 
 const qrSchema = new Schema({
@@ -41,6 +41,6 @@ const qrSchema = new Schema({
 	},
 });
 
-const QR = mongoose.models.qr || mongoose.model("qr", qrSchema);
+const QR = mongoose.models.qrs || mongoose.model("qrs", qrSchema);
 
 export default QR;

@@ -4,7 +4,6 @@ import QR from "@/models/qrs";
 
 export const GET = async (req: NextRequest) => {
 	await mongoConnect();
-
 	let qrId = req.nextUrl.searchParams.get("qrId") as string;
 	qrId = qrId.slice(8, -8);
 
@@ -29,6 +28,6 @@ export const GET = async (req: NextRequest) => {
 		status: 200,
 		error: false,
 		message: "QR code can be updated",
-		data: checkIfQrExists._id,
+		data: checkIfQrExists.pass,
 	});
 };

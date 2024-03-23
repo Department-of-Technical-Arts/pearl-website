@@ -6,7 +6,8 @@ export const POST = async (req: NextRequest) => {
 	await mongoConnect();
 	const body = await req.json();
 
-	const { qrId, email, name, phoneNumber } = body;
+	let { qrId, email, name, phone } = body;
+	qrId = qrId.slice(8, -8);
 
 	const checkIfQrExists = await QR.findOne({ _id: qrId });
 	if (!checkIfQrExists) {
@@ -25,7 +26,7 @@ export const POST = async (req: NextRequest) => {
 		});
 	}
 
-	if (!email || !name || !phoneNumber) {
+	if (!email || !name || !phone) {
 		return NextResponse.json({
 			status: 422,
 			error: true,
@@ -44,7 +45,7 @@ export const POST = async (req: NextRequest) => {
 
 	// Check if phone number is valid
 	const phoneRegex = /^[0-9]{10}$/;
-	if (!phoneRegex.test(phoneNumber)) {
+	if (!phoneRegex.test(phone)) {
 		return NextResponse.json({
 			status: 422,
 			error: true,
@@ -57,8 +58,9 @@ export const POST = async (req: NextRequest) => {
 		{
 			email,
 			name,
-			phone: phoneNumber,
+			phone: phone,
 			entered_credentials: true,
+			entered_credentials_at: new Date(),
 		},
 		{ new: true }
 	);
@@ -67,6 +69,6 @@ export const POST = async (req: NextRequest) => {
 		status: 200,
 		error: false,
 		message: "QR code updated successfully",
-		data: updateQR,
+		data: body.qrId,
 	});
 };
