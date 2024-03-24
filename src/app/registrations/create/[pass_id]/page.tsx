@@ -19,7 +19,11 @@ export default async function CreateRegistration(props: {
 		error = props.searchParams.message;
 	}
 	if (props.searchParams.success) {
-		redirect(`/registrations/create/success`);
+		return (
+			<div className="flex h-[100vh] w-full justify-center items-center text-white">
+				Registration successful
+			</div>
+		);
 	}
 	const pass = await fetch(
 		`${process.env.url}/api/registrations/validate?qrId=${pass_id}`,
@@ -52,7 +56,6 @@ export default async function CreateRegistration(props: {
 				alt="logo"
 				className="mx-auto h-40 w-40 object-contain"
 			/>
-			<div className="flex grow" />
 			<h1 className="text-3xl font-bold tracking-tighter text-white">
 				Register for {passData.data <= 4 ? "Day " + passData.data : "Mega Pass"}
 			</h1>
@@ -60,7 +63,7 @@ export default async function CreateRegistration(props: {
 			<RegistrationForm
 				sendRegisterRequestWithPassID={sendRegisterRequestWithPassID}
 			/>
-			<div className="flex grow mb-auto" />
+			<div className="flex grow mb-auto min-h-full" />
 		</div>
 	);
 }

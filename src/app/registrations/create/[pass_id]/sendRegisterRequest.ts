@@ -8,7 +8,9 @@ export const sendRegosterRequest = async (
 	const name = formData.get("name");
 	const email = formData.get("email");
 	const phone = formData.get("phone");
-	console.log(name, email, phone, pass_id);
+	const aadhar = formData.get("aadhar");
+	const college = formData.get("college");
+	console.log(name, email, phone, typeof aadhar, college);
 	let searchParams;
 	try {
 		const response = await fetch(
@@ -20,6 +22,8 @@ export const sendRegosterRequest = async (
 					name,
 					email,
 					phone,
+					aadhar,
+					college,
 				}),
 			}
 		);

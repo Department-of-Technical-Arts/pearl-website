@@ -6,7 +6,7 @@ export const POST = async (req: NextRequest) => {
 	await mongoConnect();
 	const body = await req.json();
 
-	let { qrId, email, name, phone } = body;
+	let { qrId, email, name, phone, aadhar, college } = body;
 	qrId = qrId.slice(8, -8);
 
 	const checkIfQrExists = await QR.findOne({ _id: qrId });
@@ -26,7 +26,7 @@ export const POST = async (req: NextRequest) => {
 		});
 	}
 
-	if (!email || !name || !phone) {
+	if (!email || !name || !phone || !aadhar || !college) {
 		return NextResponse.json({
 			status: 422,
 			error: true,
@@ -53,14 +53,26 @@ export const POST = async (req: NextRequest) => {
 		});
 	}
 
+	const aadharRegex = /^[1-9][0-9]{11}$/;
+	if (!aadharRegex.test(aadhar)) {
+		return NextResponse.json({
+			status: 422,
+			error: true,
+			message: "Please enter a valid Aadhar number",
+		});
+	}
 	const updateQR = await QR.findOneAndUpdate(
 		{ _id: qrId },
 		{
-			email,
-			name,
-			phone: phone,
-			entered_credentials: true,
-			entered_credentials_at: new Date(),
+			$set: {
+				email,
+				name,
+				phone: phone,
+				aadhar,
+				college,
+				entered_credentials: true,
+			},
+			$currentDate: { entered_credentials_at: true },
 		},
 		{ new: true }
 	);

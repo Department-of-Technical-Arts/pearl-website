@@ -22,11 +22,17 @@ const qrSchema = new Schema({
 		type: String,
 		required: true,
 	},
+	aadhar: {
+		type: String,
+	},
+	college: {
+		type: String,
+	},
 	scanned_by_guard_at: {
 		type: Date,
 		default: null,
 	},
-	entered_at: {
+	entered_credentials_at: {
 		type: Date,
 		default: null,
 	},
