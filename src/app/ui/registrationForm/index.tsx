@@ -13,6 +13,7 @@ export default function RegistrationForm(props: {
 		setLoading(true);
 		setFormData(formData);
 	};
+
 	useEffect(() => {
 		if (!formData || !loading) {
 			return;
@@ -21,10 +22,11 @@ export default function RegistrationForm(props: {
 			setLoading(false);
 		});
 	}, [loading, formData]);
+
 	return (
 		<form action={handleSubmit} className="flex flex-col gap-2">
 			<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-				<label htmlFor="name">Name</label>
+				<label className="hidden md:block text-white" htmlFor="name">Name</label>
 				<input
 					type="text"
 					placeholder="Name"
@@ -34,7 +36,7 @@ export default function RegistrationForm(props: {
 				/>
 			</div>
 			<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-				<label htmlFor="email">Email</label>
+				<label className="hidden md:block text-white" htmlFor="email">Email</label>
 				<input
 					type="email"
 					placeholder="Email"
@@ -44,7 +46,7 @@ export default function RegistrationForm(props: {
 				/>
 			</div>
 			<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-				<label htmlFor="phone">Phone</label>
+				<label className="hidden md:block text-white" htmlFor="phone">Phone</label>
 				<input
 					type="tel"
 					placeholder="Phone"
@@ -54,7 +56,7 @@ export default function RegistrationForm(props: {
 				/>
 			</div>
 			<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-				<label htmlFor="phone">Aadhar Number</label>
+				<label className="hidden md:block text-white" htmlFor="phone">Aadhar Number</label>
 				<input
 					type="number"
 					placeholder="Aadhar Number"
@@ -64,7 +66,7 @@ export default function RegistrationForm(props: {
 				/>
 			</div>
 			<div className="flex flex-row min-w-1/2 justify-between items-center gap-10">
-				<label htmlFor="phone">College/Organization</label>
+				<label className="hidden md:block text-white" htmlFor="phone">College/Organization</label>
 				<input
 					type="text"
 					placeholder="College/Organization"
