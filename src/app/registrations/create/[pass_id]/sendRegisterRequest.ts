@@ -10,7 +10,8 @@ export const sendRegosterRequest = async (
 	const phone = formData.get("phone");
 	const aadhar = formData.get("aadhar");
 	const college = formData.get("college");
-	console.log(name, email, phone, typeof aadhar, college);
+	const referral = formData.get("referral");
+	console.log(name, email, phone, typeof aadhar, college, referral);
 	let searchParams;
 	try {
 		const response = await fetch(
@@ -24,6 +25,7 @@ export const sendRegosterRequest = async (
 					phone,
 					aadhar,
 					college,
+					referral,
 				}),
 			}
 		);

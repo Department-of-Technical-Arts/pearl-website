@@ -45,6 +45,10 @@ const qrSchema = new Schema({
 		type: Date,
 		default: Date.now,
 	},
+	referral: {
+		type: String,
+		default: null,
+	},
 });
 
 const QR = mongoose.models.qrs || mongoose.model("qrs", qrSchema);

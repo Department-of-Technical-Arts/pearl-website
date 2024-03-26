@@ -1,15 +1,65 @@
 import mongoConnect from "@/utils/connectMongo";
 import { NextRequest, NextResponse } from "next/server";
 import QR from "@/models/qrs";
+import * as csv from "csv";
+
+const XMLHttpRequest = require("xhr2");
 
 export const POST = async (req: NextRequest) => {
 	await mongoConnect();
 	const body = await req.json();
 
-	let { qrId, email, name, phone, aadhar, college } = body;
+	let { qrId, email, name, phone, aadhar, college, referral } = body;
 	qrId = qrId.slice(8, -8);
 
 	const checkIfQrExists = await QR.findOne({ _id: qrId });
+	let sheetsURL = process.env.sheets;
+	if (!sheetsURL) {
+		return NextResponse.json({
+			status: 500,
+			error: true,
+			message: "Referal Codes broken. Please contact the admin.",
+		});
+	}
+	sheetsURL +=
+		(sheetsURL.indexOf("?") >= 0 ? "&" : "?") +
+		"noCache=" +
+		new Date().getTime();
+	let campusAmbassadors = new Promise((resolve, reject) => {
+		const request = new XMLHttpRequest();
+		request.open("GET", sheetsURL, true);
+		request.onreadystatechange = () => {
+			if (request.readyState === 4 && request.status === 200) {
+				const data = request.responseText;
+				csv.parse(data, (err: any, data: any) => {
+					if (err) {
+						reject(err);
+					}
+					resolve(data);
+				});
+			}
+		};
+		request.send();
+		request.onerror = () => {
+			reject("Failed to fetch data");
+		};
+	});
+	let campusAmbassadorsData = (await campusAmbassadors) as any[];
+	let validReferral = false;
+	if (referral) {
+		campusAmbassadorsData.forEach((row) => {
+			if (row[3] === referral.trim()) {
+				validReferral = true;
+			}
+		});
+	}
+	if (!validReferral) {
+		return NextResponse.json({
+			status: 400,
+			error: true,
+			message: "Invalid referral code",
+		});
+	}
 	if (!checkIfQrExists) {
 		return NextResponse.json({
 			status: 400,
@@ -61,6 +111,7 @@ export const POST = async (req: NextRequest) => {
 			message: "Please enter a valid Aadhar number",
 		});
 	}
+
 	const updateQR = await QR.findOneAndUpdate(
 		{ _id: qrId },
 		{
@@ -70,6 +121,7 @@ export const POST = async (req: NextRequest) => {
 				phone: phone,
 				aadhar,
 				college,
+				referral,
 				entered_credentials: true,
 			},
 			$currentDate: { entered_credentials_at: true },
