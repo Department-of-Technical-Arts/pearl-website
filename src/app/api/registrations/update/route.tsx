@@ -13,6 +13,7 @@ export const POST = async (req: NextRequest) => {
 	qrId = qrId.slice(8, -8);
 
 	const checkIfQrExists = await QR.findOne({ _id: qrId });
+
 	let sheetsURL = process.env.sheets;
 	if (!sheetsURL) {
 		return NextResponse.json({
@@ -25,6 +26,7 @@ export const POST = async (req: NextRequest) => {
 		(sheetsURL.indexOf("?") >= 0 ? "&" : "?") +
 		"noCache=" +
 		new Date().getTime();
+
 	let campusAmbassadors = new Promise((resolve, reject) => {
 		const request = new XMLHttpRequest();
 		request.open("GET", sheetsURL, true);
@@ -44,6 +46,7 @@ export const POST = async (req: NextRequest) => {
 			reject("Failed to fetch data");
 		};
 	});
+
 	let campusAmbassadorsData = (await campusAmbassadors) as any[];
 	let validReferral = false;
 	if (referral) {
@@ -52,14 +55,15 @@ export const POST = async (req: NextRequest) => {
 				validReferral = true;
 			}
 		});
+		if (!validReferral) {
+			return NextResponse.json({
+				status: 400,
+				error: true,
+				message: "Invalid referral code",
+			});
+		}
 	}
-	if (!validReferral) {
-		return NextResponse.json({
-			status: 400,
-			error: true,
-			message: "Invalid referral code",
-		});
-	}
+
 	if (!checkIfQrExists) {
 		return NextResponse.json({
 			status: 400,

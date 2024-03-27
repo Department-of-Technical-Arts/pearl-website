@@ -92,7 +92,6 @@ export default function RegistrationForm(props: {
 				<input
 					type="text"
 					placeholder="Referral Code"
-					required
 					name="referral"
 					className="px-3 py-2 leading-tight text-gray-700 border rounded shadow appearance-none focus:outline-none focus:shadow-outline"
 				/>
