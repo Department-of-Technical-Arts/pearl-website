@@ -19,7 +19,7 @@ export default function SponsorsPage() {
 						</h2>
 
 						<h3 className="text-center text-xl m-2 underline">
-							<Link href={""}>View our Sponsorship deck</Link>
+							<Link href={"/spons_brochure.pdf"}>View our Sponsorship deck</Link>
 						</h3>
 
 						<div className="justify-center w-full grid md:grid-cols-3 p-10 align-middle">
