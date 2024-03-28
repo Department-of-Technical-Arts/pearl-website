@@ -65,8 +65,10 @@ export default function Home() {
 								grew into a national level college cultural fest with
 								participation from more than 50 colleges across India..
 							</p>
-							<Button className="m-2 z-20 font-bold">Purchase Tickets</Button>
+							<Button className="m-2 z-20 font-bold">Check out Events</Button>
 						</form>
+						<Link href={"https://in.bookmyshow.com/activities/pearl-24-megapass-28th-31st-march/ET00392394?webview=true"}><Button className="m-2 z-20 font-bold">Buy Mega Pass</Button></Link>
+						<Link href={"https://in.bookmyshow.com/activities/pearl-24/ET00392456?webview=true"}><Button className="m-2 z-20 font-bold">Buy Day Executive Pass</Button></Link>
 					</div>
 					<div className="flex flex-col absolute top-full w-full -translate-y-1/2 z-[-2]">
 						<Image
@@ -94,7 +96,7 @@ export default function Home() {
 							>
 								Today&apos;s Events at a Glance
 							</h2>
-							<p className="mx-auto max-w-[600px] text-[#d8d2cc] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							<p className="mx-auto max-w-[600px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								Check out the events that will be happening at the festival!
 								<br />
 								Date: 28th March 2024
