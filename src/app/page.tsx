@@ -92,7 +92,7 @@ export default function Home() {
 							<h2
 								className={`text-6xl text-[#823732] font-bold tracking-tighter sm:text-8xl ${amita.className}`}
 							>
-								Today's Events at a Glance
+								Today&apos;s Events at a Glance
 							</h2>
 							<p className="mx-auto max-w-[600px] text-[#d8d2cc] md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								Check out the events that will be happening at the festival!
