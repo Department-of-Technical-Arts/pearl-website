@@ -42,8 +42,8 @@ export default function Home() {
 						alt="pillar"
 						className="absolute  hidden md:block translate-x-full sm:translate-x-0 top-0 right-0  h-full w-[200px] z-[-2] "
 					/>
-					<div className="px-4 sm:flex-col items-center justify-center space-y-2 text-center ">
-						<div className="">
+					<div className="px-4 sm:flex-col items-center justify-center space-y-2 text-center -translate-y-12">
+						<div>
 							<Image
 								src={"/logo-h.png"}
 								width={700}
@@ -54,13 +54,13 @@ export default function Home() {
 						</div>
 
 						<form
-							className="mx-auto max-w-lg space-y-2"
+							className="mx-auto max-w-4xl space-y-2"
 							action={async () => {
 								"use server";
 								redirect("/events");
 							}}
 						>
-							<p className="mx-auto max-w-[1300px] text-white font-bold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
+							<p className="mx-auto max-w-[2000px] text-white font-bold md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								The annual cultural fest of BITS Pilani, Hyderabad Campus, that
 								grew into a national level college cultural fest with
 								participation from more than 50 colleges across India..
