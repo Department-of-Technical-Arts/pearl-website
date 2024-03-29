@@ -5,7 +5,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function SponsorsPage() {
-	const sponsors = fs.readdirSync("public/sponsors");
+	const sponsors_prev = fs.readdirSync("public/sponsors_prev");
+	const sponsors_curr = fs.readdirSync("public/sponsors_curr");
 
 	return (
 		<div className="flex flex-col min-h-[100dvh]">
@@ -15,7 +16,7 @@ export default function SponsorsPage() {
 				<section className="w-full py-12 md:py-24 lg:py-32">
 					<div className="flex flex-col">
 						<h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-							Previous Sponsors
+							Current Sponsors
 						</h2>
 
 						<h3 className="text-center text-xl m-2 underline">
@@ -23,14 +24,35 @@ export default function SponsorsPage() {
 						</h3>
 
 						<div className="justify-center w-full grid md:grid-cols-3 p-10 align-middle">
-							{sponsors.map((sponsor, index) => (
+							{sponsors_curr.map((sponsor, index) => (
 								<div className="m-2" key={index}>
 									<Image
 										key={index}
 										alt="Sponsor"
 										className="rounded-lg overflow-hidden bg-white h-full object-contain object-center p-2"
 										height="3000"
-										src={`/sponsors/${sponsor}`}
+										src={`/sponsors_curr/${sponsor}`}
+										width="3000"
+									/>
+								</div>
+							))}
+						</div>
+					</div>
+
+					<div className="flex flex-col">
+						<h2 className="text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
+							Previous Sponsors
+						</h2>
+
+						<div className="justify-center w-full grid md:grid-cols-3 p-10 align-middle">
+							{sponsors_prev.map((sponsor, index) => (
+								<div className="m-2" key={index}>
+									<Image
+										key={index}
+										alt="Sponsor"
+										className="rounded-lg overflow-hidden bg-white h-full object-contain object-center p-2"
+										height="3000"
+										src={`/sponsors_prev/${sponsor}`}
 										width="3000"
 									/>
 								</div>

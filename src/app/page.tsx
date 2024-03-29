@@ -99,7 +99,7 @@ export default function Home() {
 							<p className="mx-auto max-w-[600px] text-white md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
 								Check out the events that will be happening at the festival!
 								<br />
-								Date: 28th March 2024
+								Date: 29th March 2024
 							</p>
 						</div>
 					</div>
