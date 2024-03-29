@@ -105,7 +105,7 @@ export default function Home() {
 					</div>
 					<Image
 						alt="Day 1"
-						src={"/schedule/day1.png"}
+						src={"/schedule/day2.jpg"}
 						className="w-full md:w-1/2 object-contain z-[-1] rounded-lg m-2 mx-auto"
 						width={3000}
 						height={3000}
