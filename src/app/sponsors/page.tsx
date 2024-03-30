@@ -26,14 +26,16 @@ export default function SponsorsPage() {
 						<div className="justify-center w-full grid md:grid-cols-3 p-10 align-middle">
 							{sponsors_curr.map((sponsor, index) => (
 								<div className="m-2" key={index}>
-									<Image
-										key={index}
-										alt="Sponsor"
-										className="rounded-lg overflow-hidden bg-white h-full object-contain object-center p-2"
-										height="3000"
-										src={`/sponsors_curr/${sponsor}`}
-										width="3000"
-									/>
+									<Link href={"https://" + sponsor.split(".")[0].replaceAll("_", ".")}>
+										<Image
+											key={index}
+											alt="Sponsor"
+											className="rounded-lg overflow-hidden bg-white h-full object-contain object-center p-2"
+											height="3000"
+											src={`/sponsors_curr/${sponsor}`}
+											width="3000"
+										/>
+									</Link>
 								</div>
 							))}
 						</div>
